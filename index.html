@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRJ Creative - Creative Ops Architect & AI Automation Consultant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --coral: #F48575;
+            --blue: #2846ab;
+            --purple: #8354c5;
+            --muted-purple: #8487ae;
+            --cream: #dfd7ae;
+            --dark-text: #1a1a1a;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--dark-text);
+            background: #faf8f6;
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(40, 70, 171, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--coral);
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--coral);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 133, 117, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            padding: 1.1rem 2.8rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--coral);
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--coral);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(244, 133, 117, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Wavy Divider */
+        .wave {
+            height: 60px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60"><path d="M0,30 Q300,0 600,30 T1200,30 L1200,60 L0,60 Z" fill="%23dfd7ae" opacity="0.3"/></svg>') repeat-x;
+            background-size: 600px 60px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--blue);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--muted-purple);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.8rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--coral);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '✦';
+            position: absolute;
+            top: -15px;
+            left: 2.8rem;
+            font-size: 1.8rem;
+            color: var(--cream);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border-left-color: var(--purple);
+        }
+
+        .service-price {
+            color: var(--coral);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.7rem 0;
+            color: #555;
+            font-size: 0.95rem;
+            padding-left: 1.8rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cream);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 6rem 2rem;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.8;
+            color: var(--cream);
+        }
+
+        .about p strong {
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--blue);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .contact-intro {
+            text-align: center;
+            color: var(--muted-purple);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(244, 133, 117, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            align-self: center;
+            padding: 1.2rem 3.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--blue);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.95rem;
+            border-top: 3px solid var(--coral);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--coral);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-tagline {
+            color: var(--cream);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 1.5rem;
+        }
+
+        /* Audit Toggle Card */
+        .audit-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .audit-tab {
+            background: none;
+            border: none;
+            padding: 0.7rem 0.9rem;
+            font-family: 'Georgia', serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--muted-purple);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .audit-tab.active {
+            color: var(--coral);
+            border-bottom-color: var(--coral);
+        }
+
+        .audit-tab:hover {
+            color: var(--coral);
+        }
+
+        .audit-panel-desc {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .audit-unsure {
+            font-size: 0.85rem;
+            color: var(--muted-purple);
+            margin-top: 1.2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .audit-unsure a {
+            color: var(--coral);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .audit-unsure a:hover {
+            text-decoration: underline;
+        }
+
+        /* Premiere Badge */
+        .premiere-badge {
+            display: inline-block;
+            background: var(--purple);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        /* Signature Badge */
+        .signature-badge {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        /* Featured Deliverable Section */
+        .featured-deliverable {
+            background: var(--white);
+            border: 1px solid rgba(244, 133, 117, 0.25);
+            border-radius: 16px;
+            padding: 3.5rem;
+            margin-top: 4rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .featured-deliverable .fd-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 0.6rem;
+        }
+
+        .featured-deliverable h3 {
+            font-size: 1.9rem;
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .featured-deliverable p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            max-width: 760px;
+        }
+
+        .fd-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .fd-col {
+            background: #faf8f6;
+            border-radius: 10px;
+            padding: 1.4rem 1.6rem;
+        }
+
+        .fd-col-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .fd-col p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .fd-two-col {
+                grid-template-columns: 1fr;
+            }
+            .featured-deliverable {
+                padding: 2rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">MIRJ Creative</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Creative Ops Architect & AI Automation Consultant</h1>
+            <p class="hero-tagline">Stop doing everything manually. Build smart systems that actually scale.</p>
+            <a href="https://stan.store/MIRJCreative/p/book-a-11-call-with-me-szbd45k3" target="_blank" class="cta-button">Start a Discovery Call</a>
+        </div>
+    </section>
+
+    <div class="wave"></div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">Three ways to work together — starting with the audit that matches where you're stuck.</p>
+        
+        <div class="services-grid">
+            <!-- Service 1: Audit (toggle: Operations or AI Automation) -->
+            <div class="service-card">
+                <div class="service-price">Starting at $750</div>
+                <h3>Choose Your Audit</h3>
+                <p>Not sure if the friction is a process problem or a tooling gap? Toggle between the two audits below to see what each one actually covers.</p>
+
+                <div class="audit-tabs">
+                    <button type="button" class="audit-tab active" onclick="showAudit('ops')" id="tab-ops">Operations Audit</button>
+                    <button type="button" class="audit-tab" onclick="showAudit('ai')" id="tab-ai">AI Automation Audit</button>
+                </div>
+
+                <div class="audit-panel" id="panel-ops">
+                    <p class="audit-panel-desc">For teams who know something's off but can't pinpoint whether it's a people problem, a process problem, or a tooling problem. We map handoffs, ownership, and where the work actually breaks down.</p>
+                    <ul class="service-features">
+                        <li>Full operational friction assessment</li>
+                        <li>Root-cause diagnosis across people, process, and tools</li>
+                        <li>Prioritized fix roadmap</li>
+                        <li>60-minute debrief call</li>
+                    </ul>
+                </div>
+
+                <div class="audit-panel" id="panel-ai" style="display:none;">
+                    <p class="audit-panel-desc">For teams who've already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.</p>
+                    <ul class="service-features">
+                        <li>Full workflow and tool stack assessment</li>
+                        <li>AI tool recommendations</li>
+                        <li>Prioritized automation roadmap</li>
+                        <li>60-minute debrief call</li>
+                    </ul>
+                </div>
+
+                <a href="https://stan.store/MIRJCreative/p/book-a-11-call-with-me-szbd45k3" target="_blank" class="cta-button">Book This Audit</a>
+                <p class="audit-unsure">Still not sure which one fits? <a href="https://stan.store/MIRJCreative/p/book-a-11-call-with-me-szbd45k3" target="_blank">Book a discovery call</a> and we'll help you choose.</p>
+            </div>
+
+            <!-- Service 2: Alignment Reset (Premiere Operations Package) -->
+            <div class="service-card">
+                <div class="service-price">Starting at $1,000</div>
+                <span class="premiere-badge">Premiere Operations Package</span>
+                <h3>Alignment Reset</h3>
+                <p>The premiere short-term Operations engagement. Three focused sessions to diagnose root-cause misalignment across people, systems, and priorities — and leave with a plan you can act on immediately.</p>
+                <ul class="service-features">
+                    <li>3 structured 1:1 sessions (Diagnosis → Reset Plan → Integration)</li>
+                    <li>Root-cause misalignment analysis</li>
+                    <li>Written Alignment Brief and strategy plan</li>
+                    <li>Between-session email support</li>
+                </ul>
+                <a href="https://stan.store/MIRJCreative/p/book-a-11-call-with-me-szbd45k3" target="_blank" class="cta-button">Book a Call</a>
+            </div>
+
+            <!-- Service 3: Retainer -->
+            <div class="service-card">
+                <div class="service-price">Starting at $5,000/mo</div>
+                <span class="signature-badge">Signature Deliverable Included</span>
+                <h3>AI Workflow Retainer</h3>
+                <p>Most marketing teams spend hours every week making the same decisions. This retainer builds the logic that answers those questions automatically, and keeps it sharp as your campaigns evolve.</p>
+                <ul class="service-features">
+                    <li>Platform decision logic, automated</li>
+                    <li>Custom workflow design and build</li>
+                    <li>AI tool integration and setup</li>
+                    <li>Monthly optimization and refinement</li>
+                    <li>Team documentation and handoff</li>
+                </ul>
+                <a href="https://stan.store/MIRJCreative/p/book-a-11-call-with-me-szbd45k3" target="_blank" class="cta-button">Book a Call</a>
+            </div>
+        </div>
+
+        <!-- Featured Deliverable: Platform Decision Logic -->
+        <div class="featured-deliverable">
+            <p class="fd-label">AI Workflow Retainer, Signature Deliverable</p>
+            <h3>Platform decision logic, automated</h3>
+            <p>Most marketing teams spend hours every week making the same decisions. Which channel carries this campaign? Which audience gets this message? When does it go live, and at what spend level? These are not creative decisions. They are operational ones, and they are costing your team time they do not have.</p>
+            <p>As part of the AI Workflow Retainer, MIRJ Creative consults on the decision architecture that removes that manual load. We map the logic layer behind your platform choices, translate it into AI-powered systems your team can actually run, and refine it each month as campaign data comes back.</p>
+            <p>The result is a team that executes faster, makes fewer reactive calls, and shows up to strategy conversations instead of spending the week in logistics.</p>
+            <div class="fd-two-col">
+                <div class="fd-col">
+                    <p class="fd-col-label">Entry point</p>
+                    <p>The AI Workflow Audit uncovers where manual platform decisions are slowing you down and quantifies the cost. That map becomes the foundation for everything built in the retainer.</p>
+                </div>
+                <div class="fd-col">
+                    <p class="fd-col-label">What you build in the retainer</p>
+                    <p>Decision logic frameworks, AI workflow integrations, and monthly refinement as performance data informs the system. You go in with a diagnosis and come out with a build plan.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="wave"></div>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About MIRJ Creative</h2>
+            <p>I help brands and marketing teams replace the manual grind of event activations and campaign execution with smart, <strong>AI-powered systems</strong>.</p>
+            <p>With 15+ years of hands-on experience in brand events, marketing activations, and creative operations — across companies like Capital One, MAC Cosmetics, and Dillard's — I understand what it actually takes to run high-impact activations on the ground.</p>
+            <p>Now I layer in AI workflow design to make that process <strong>faster, more consistent, and scalable</strong>. If you're a founder, CMO, or marketing lead running events and activations and you know something needs to change — let's talk.</p>
+        </div>
+    </section>
+
+    <div class="wave"></div>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Let's Work Together</h2>
+        <p class="contact-intro">Book a discovery call to discuss your needs and find the right engagement for your situation.</p>
+        <form class="contact-form" action="https://formspree.io/f/mgodgnqd" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="message">Tell me about your situation</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="cta-button submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MIRJ Creative. Crafted with intention.</p>
+        <p>
+            <a href="mailto:dehjai@mirjcreative.com">dehjai@mirjcreative.com</a>
+        </p>
+        <p class="footer-tagline">Strategy • Clarity • Systems & Operations</p>
+    </footer>
+
+    <script>
+        function showAudit(type) {
+            document.getElementById('panel-ops').style.display = type === 'ops' ? 'block' : 'none';
+            document.getElementById('panel-ai').style.display = type === 'ai' ? 'block' : 'none';
+            document.getElementById('tab-ops').classList.toggle('active', type === 'ops');
+            document.getElementById('tab-ai').classList.toggle('active', type === 'ai');
+        }
+    </script>
+</body>
+</html>
