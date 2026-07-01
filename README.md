@@ -1,2 +1,3 @@
 # mirjcreative.com
-AI Workflow Consultant | Professional website and portfolio
+Creative Ops Architect & AI Automations Consultant | Professional website and portfolio
+
