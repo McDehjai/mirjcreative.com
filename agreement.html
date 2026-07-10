@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRJ Creative — Engagement Agreement</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --coral: #F48575;
+  --blue: #2846ab;
+  --purple: #8354c5;
+  --muted-purple: #8487ae;
+  --cream: #dfd7ae;
+  --dark-text: #1a1a1a;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+}
+body {
+  font-family: 'Georgia', serif;
+  color: var(--dark-text);
+  background: #faf8f6;
+  line-height: 1.7;
+}
+header {
+  background: var(--gradient);
+  color: var(--white);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+}
+header .logo { font-size: 1.6rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 0.5rem; }
+header h1 { font-size: 1.8rem; font-weight: 700; }
+header p { color: var(--cream); font-size: 1rem; margin-top: 0.5rem; }
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+.summary-card {
+  background: var(--white);
+  border-radius: 12px;
+  border-left: 5px solid var(--coral);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.summary-card h2 { color: var(--blue); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.summary-card .price { color: var(--coral); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+.summary-card p { color: #555; font-size: 0.95rem; }
+.agreement-text {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-height: 360px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #444;
+}
+.agreement-text h3 { color: var(--blue); font-size: 1rem; margin: 1.2rem 0 0.4rem; }
+.agreement-text h3:first-child { margin-top: 0; }
+.agreement-text p { margin-bottom: 0.6rem; }
+form {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.9rem; }
+.form-group input[type="text"], .form-group input[type="email"] {
+  width: 100%; padding: 0.8rem 1rem; border: 2px solid #ddd; border-radius: 8px;
+  font-family: 'Georgia', serif; font-size: 0.95rem;
+}
+.form-group input:focus { outline: none; border-color: var(--coral); }
+.checkbox-row { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 1.5rem; }
+.checkbox-row input { margin-top: 0.3rem; width: 18px; height: 18px; flex-shrink: 0; }
+.checkbox-row label { font-size: 0.9rem; color: #444; }
+.error-msg { color: #c0392b; font-size: 0.85rem; margin-bottom: 1rem; display: none; }
+.submit-btn {
+  display: block; width: 100%; background: var(--coral); color: var(--white);
+  padding: 1rem; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600;
+  font-family: 'Georgia', serif; cursor: pointer; transition: all 0.3s ease;
+}
+.submit-btn:hover { background: var(--blue); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.fine-print { text-align: center; font-size: 0.8rem; color: #888; margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MIRJ Creative</div>
+  <h1 id="page-title">Engagement Agreement</h1>
+  <p>Step 1 of 2 — sign your agreement, then continue to your deposit payment</p>
+</header>
+
+<main>
+  <div class="summary-card">
+    <h2 id="service-name">Loading…</h2>
+    <div class="price" id="service-price"></div>
+    <p id="service-desc"></p>
+  </div>
+
+  <div class="agreement-text">
+    <h3>1. Services</h3>
+    <p>MIRJ Creative ("Consultant") agrees to provide the audit service selected above ("Services") to the undersigned client ("Client"). Scope, deliverables, and timing are as described in MIRJ Creative's published service descriptions and any intake materials the Client provides.</p>
+
+    <h3>2. Deposit &amp; Fees</h3>
+    <p>Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750–$1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below.</p>
+
+    <h3>3. Timeline</h3>
+    <p>The engagement proceeds in five stages: agreement and deposit, intake and discovery, working session(s), delivery of the written deliverable (within 5 business days of the working session), and a delivery call. A 30-day follow-up window for questions is included at no additional charge.</p>
+
+    <h3>4. Revisions</h3>
+    <p>This engagement includes up to 2 rounds of revision on the delivered findings. Additional revisions beyond the included rounds will be billed at $250/hour or a flat fee agreed upon in writing.</p>
+
+    <h3>5. Cancellation &amp; Refunds</h3>
+    <p>Client may cancel with 7 days' written notice prior to the scheduled working session for a full refund of the deposit. Once the working session is scheduled and confirmed, the deposit becomes non-refundable. Work completed prior to cancellation will be billed at the agreed rate on a prorated basis.</p>
+
+    <h3>6. Intellectual Property</h3>
+    <p>Upon receipt of full payment, Client owns the final deliverables. MIRJ Creative retains ownership of all frameworks, tools, methodologies, and processes used to deliver the Services, and retains the right to reference the engagement in its portfolio in general terms unless Client requests otherwise in writing.</p>
+
+    <h3>7. Confidentiality</h3>
+    <p>Both parties agree to keep proprietary information, strategies, and communications shared during this engagement confidential, both during and after its term, except where disclosure is required by law or the information is already public.</p>
+
+    <h3>8. Independent Contractor</h3>
+    <p>MIRJ Creative is an independent contractor, not an employee, partner, or agent of Client, and is solely responsible for its own taxes, insurance, and expenses.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>MIRJ Creative's total liability under this Agreement shall not exceed the fees paid. Neither party is liable for indirect, incidental, or consequential damages.</p>
+
+    <h3>10. Governing Law</h3>
+    <p>This Agreement is governed by the laws of the Commonwealth of Virginia. Disputes will first be addressed through good-faith negotiation, then mediation in Virginia if unresolved, before any litigation.</p>
+
+    <h3>11. Signature</h3>
+    <p>By typing your full legal name below and checking the box, you agree this constitutes your electronic signature and acceptance of this Agreement, with the same legal effect as a handwritten signature.</p>
+  </div>
+
+  <form id="agreement-form">
+    <div class="form-group">
+      <label for="fullName">Full legal name</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="business">Business / organization (optional)</label>
+      <input type="text" id="business" name="business">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="signature">Type your full legal name again as your signature</label>
+      <input type="text" id="signature" name="signature" required>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="agree" name="agree" required>
+      <label for="agree">I have read and agree to the terms of this Engagement Agreement, and I understand my typed name above is my legally binding electronic signature.</label>
+    </div>
+    <div class="error-msg" id="error-msg"></div>
+    <button type="submit" class="submit-btn" id="submit-btn">Sign &amp; continue to payment</button>
+    <p class="fine-print">You'll be redirected to Stripe to complete your $375 deposit immediately after signing.</p>
+  </form>
+</main>
+
+<script>
+var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzJ2_iZkrTl-gOJLnI8ICvYUpyUtCSHujUiRvmUfkHD3k8ebLcdwurEFi41ztMFX_Hqlg/exec';
+
+var SERVICES = {
+  ops: {
+    name: 'Operations Audit',
+    price: '$375 Deposit',
+    desc: 'For teams who know something\'s off but can\'t pinpoint whether it\'s a people problem, a process problem, or a tooling problem.',
+    stripeUrl: 'https://buy.stripe.com/fZu8wJ4Hm8wQb9E9MO7ss00'
+  },
+  ai: {
+    name: 'AI Automation Audit',
+    price: '$375 Deposit',
+    desc: 'For teams who\'ve already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.',
+    stripeUrl: 'https://buy.stripe.com/6oU8wJfm03cwdhM2km7ss01'
+  }
+};
+
+function getParam(name) {
+  var params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+var serviceKey = getParam('service') === 'ai' ? 'ai' : 'ops';
+var service = SERVICES[serviceKey];
+
+document.getElementById('page-title').textContent = service.name + ' — Engagement Agreement';
+document.getElementById('service-name').textContent = service.name;
+document.getElementById('service-price').textContent = service.price;
+document.getElementById('service-desc').textContent = service.desc;
+document.title = service.name + ' — Engagement Agreement | MIRJ Creative';
+
+document.getElementById('agreement-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var errorEl = document.getElementById('error-msg');
+  var fullName = document.getElementById('fullName').value.trim();
+  var signature = document.getElementById('signature').value.trim();
+
+  if (fullName.toLowerCase() !== signature.toLowerCase()) {
+    errorEl.textContent = 'Your typed signature must match your full legal name exactly.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Signing…';
+
+  var payload = {
+    service: serviceKey,
+    serviceName: service.name,
+    fullName: fullName,
+    business: document.getElementById('business').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    signature: signature,
+    agreed: true
+  };
+
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    body: JSON.stringify(payload)
+  }).catch(function () {
+    /* proceed to payment even if logging fails, so a backend hiccup never blocks a paying client */
+  }).finally(function () {
+    window.location.href = service.stripeUrl;
+  });
+});
+</script>
+
+</body>
+</html>
