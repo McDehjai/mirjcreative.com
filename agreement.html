@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIRJ Creative — Engagement Agreement</title>
+<title>Engagement Agreement | MIRJ Creative</title>
+<link rel="icon" type="image/png" href="/assets/icon-mark-color.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --coral: #F48575;
-  --blue: #2846ab;
-  --purple: #8354c5;
-  --muted-purple: #8487ae;
-  --cream: #dfd7ae;
-  --dark-text: #1a1a1a;
+  --coral: #FF8A70;
+  --blue: #004AAD;
+  --purple: #CB6CE6;
+  --muted-purple: #7A6A9C;
+  --cream: #7FE0C4;
+  --dark-text: #1A1725;
   --white: #ffffff;
-  --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+  --gradient: linear-gradient(135deg, #004AAD 0%, #CB6CE6 100%);
 }
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'EB Garamond', serif;
   color: var(--dark-text);
   background: #faf8f6;
   line-height: 1.7;
@@ -28,7 +30,9 @@ header {
   padding: 2.5rem 2rem 2rem;
   text-align: center;
 }
-header .logo { font-size: 1.6rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 0.5rem; }
+header .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 0.5rem; }
+header .logo .mirj-serif { font-family: 'EB Garamond', serif; font-style: italic; font-weight: 400; color: var(--purple); }
+header .logo .logo-creative { color: var(--white); }
 header h1 { font-size: 1.8rem; font-weight: 700; }
 header p { color: var(--cream); font-size: 1rem; margin-top: 0.5rem; }
 main {
@@ -71,7 +75,7 @@ form {
 .form-group label { display: block; margin-bottom: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.9rem; }
 .form-group input[type="text"], .form-group input[type="email"] {
   width: 100%; padding: 0.8rem 1rem; border: 2px solid #ddd; border-radius: 8px;
-  font-family: 'Georgia', serif; font-size: 0.95rem;
+  font-family: 'EB Garamond', serif; font-size: 0.95rem;
 }
 .form-group input:focus { outline: none; border-color: var(--coral); }
 .checkbox-row { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 1.5rem; }
@@ -81,7 +85,7 @@ form {
 .submit-btn {
   display: block; width: 100%; background: var(--coral); color: var(--white);
   padding: 1rem; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600;
-  font-family: 'Georgia', serif; cursor: pointer; transition: all 0.3s ease;
+  font-family: 'EB Garamond', serif; cursor: pointer; transition: all 0.3s ease;
 }
 .submit-btn:hover { background: var(--blue); }
 .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -91,9 +95,9 @@ form {
 <body>
 
 <header>
-  <div class="logo">MIRJ Creative</div>
+  <div class="logo"><span class="mirj-serif">MIRJ</span> <span class="logo-creative">CREATIVE</span></div>
   <h1 id="page-title">Engagement Agreement</h1>
-  <p>Step 1 of 2 — sign your agreement, then continue to your deposit payment</p>
+  <p>Step 1 of 2: sign your agreement, then continue to your deposit payment</p>
 </header>
 
 <main>
@@ -108,7 +112,7 @@ form {
     <p>MIRJ Creative ("Consultant") agrees to provide the audit service selected above ("Services") to the undersigned client ("Client"). Scope, deliverables, and timing are as described in MIRJ Creative's published service descriptions and any intake materials the Client provides.</p>
 
     <h3>2. Deposit &amp; Fees</h3>
-    <p>Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750–$1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below.</p>
+    <p>Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750 to $1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below.</p>
 
     <h3>3. Timeline</h3>
     <p>The engagement proceeds in five stages: agreement and deposit, intake and discovery, working session(s), delivery of the written deliverable (within 5 business days of the working session), and a delivery call. A 30-day follow-up window for questions is included at no additional charge.</p>
@@ -191,11 +195,11 @@ function getParam(name) {
 var serviceKey = getParam('service') === 'ai' ? 'ai' : 'ops';
 var service = SERVICES[serviceKey];
 
-document.getElementById('page-title').textContent = service.name + ' — Engagement Agreement';
+document.getElementById('page-title').textContent = service.name + ': Engagement Agreement';
 document.getElementById('service-name').textContent = service.name;
 document.getElementById('service-price').textContent = service.price;
 document.getElementById('service-desc').textContent = service.desc;
-document.title = service.name + ' — Engagement Agreement | MIRJ Creative';
+document.title = service.name + ': Engagement Agreement | MIRJ Creative';
 
 document.getElementById('agreement-form').addEventListener('submit', function (e) {
   e.preventDefault();
