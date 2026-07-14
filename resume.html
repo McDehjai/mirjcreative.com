@@ -192,7 +192,6 @@ align-items: start;
 }
 @media (max-width: 700px) {
 .page-wrap { grid-template-columns: 1fr; }
-.sidebar { position: static; top: auto; }
 nav { flex-wrap: wrap; }
 .nav-toggle { display: flex; }
 .nav-links {
@@ -236,6 +235,9 @@ border-bottom: 2px solid var(--cream);
 
 /* SIDEBAR */
 .sidebar { position: sticky; top: 72px; }
+@media (max-width: 700px) {
+  .sidebar { position: static; top: auto; }
+}
 
 .photo-wrap {
 width: 80px;
