@@ -686,7 +686,7 @@
                     </ul>
                 </div>
 
-                <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" class="cta-button">Book This Audit</a>
+                <a href="/agreement.html?service=ops" class="cta-button" id="audit-book-btn">Book This Audit</a>
                 <p class="audit-unsure">Still not sure which one fits? <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank">Book a discovery call</a> and we'll help you choose.</p>
             </div>
 
@@ -797,6 +797,7 @@
             document.getElementById('panel-ai').style.display = type === 'ai' ? 'block' : 'none';
             document.getElementById('tab-ops').classList.toggle('active', type === 'ops');
             document.getElementById('tab-ai').classList.toggle('active', type === 'ai');
+            document.getElementById('audit-book-btn').href = '/agreement.html?service=' + type;
         }
     </script>
 </body>
