@@ -33,6 +33,12 @@
         header nav a { color: var(--white); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
         header nav a:hover { color: var(--coral); }
 
+        .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 28px; height: 22px; background: none; border: none; cursor: pointer; padding: 0; z-index: 1100; }
+        .nav-toggle span { display: block; width: 100%; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         .hero { background: var(--gradient); color: var(--white); padding: 8rem 2rem 4.5rem; text-align: center; }
         .hero .eyebrow {
             display: inline-block; background: rgba(255,255,255,0.15); color: var(--cream);
@@ -114,7 +120,15 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .stats-bar { grid-template-columns: repeat(2, 1fr); margin-top: -1.5rem; }
-            header nav { display: none; }
+            .nav-toggle { display: flex; }
+            header nav {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(30, 52, 128, 0.98);
+                flex-direction: column; align-items: center; gap: 0;
+                max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+            }
+            header nav.mobile-open { max-height: 240px; }
+            header nav a { margin-left: 0; padding: 1rem; width: 100%; text-align: center; }
         }
     </style>
     <!-- Pinterest Tag -->
@@ -137,11 +151,16 @@
 <body>
     <header>
         <a href="/" class="logo">MIRJ Creative</a>
-        <nav>
+        <nav id="main-nav">
             <a href="/#services">Services</a>
             <a href="/#about">About</a>
             <a href="/#contact">Contact</a>
         </nav>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMobileNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section class="hero">
@@ -251,5 +270,24 @@
         <p>&copy; 2026 MIRJ Creative. Crafted with intention.</p>
         <p><a href="mailto:dehjai@mirjcreative.com">dehjai@mirjcreative.com</a></p>
     </footer>
+
+    <script>
+        function toggleMobileNav() {
+            var nav = document.getElementById('main-nav');
+            var toggle = document.getElementById('nav-toggle');
+            var isOpen = nav.classList.toggle('mobile-open');
+            toggle.classList.toggle('open', isOpen);
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        document.getElementById('main-nav').addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                document.getElementById('main-nav').classList.remove('mobile-open');
+                var toggle = document.getElementById('nav-toggle');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
 </body>
 </html>
