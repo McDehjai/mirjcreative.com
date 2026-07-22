@@ -205,7 +205,23 @@
       });
     }
 
-    loadEvent("mirjcreative/30min");
+    const typeMap = {
+      consult: "mirjcreative/30min",
+      audit: "mirjcreative/audit-chat",
+      alignment: "mirjcreative/alignment-chat"
+    };
+    const requestedType = new URLSearchParams(window.location.search).get("type");
+    const initialSlug = typeMap[requestedType] || "mirjcreative/30min";
+    loadEvent(initialSlug);
+
+    document.querySelectorAll(".service-pill").forEach(function (btn) {
+      if (btn.getAttribute("data-slug") === initialSlug) {
+        document.querySelectorAll(".service-pill").forEach(function (b) {
+          b.classList.remove("active");
+        });
+        btn.classList.add("active");
+      }
+    });
 
     document.querySelectorAll(".service-pill").forEach(function (btn) {
       btn.addEventListener("click", function () {
