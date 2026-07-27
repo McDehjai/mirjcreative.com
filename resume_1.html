@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Dehjai Courtney White | MIRJ Creative</title>
+  <meta name="description" content="Resume and professional background for Dehjai Courtney White, Founder of MIRJ Creative. AI workflow consulting, brand strategy, and event marketing." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral:   #F48575;
+      --blue:    #2846ab;
+      --purple:  #8354c5;
+      --muted:   #8487ae;
+      --cream:   #dfd7ae;
+      --dark:    #1a1a2e;
+      --light:   #f9f7f4;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .nav-logo span { color: var(--coral); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--coral); }
+    .nav-cta {
+      background: var(--coral);
+      color: var(--white) !important;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+    }
+    .nav-cta:hover { background: var(--purple) !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -70px; right: -70px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(244,133,117,0.15);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; left: -50px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(223,215,174,0.1);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .hero h1 span { color: var(--cream); }
+    .hero .tagline {
+      margin-top: 0.65rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+    }
+    .hero .pill-row {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .hero .pill-row a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(223,215,174,0.45);
+      border-radius: 100px;
+      transition: all 0.2s;
+    }
+    .hero .pill-row a:hover {
+      background: var(--coral);
+      border-color: var(--coral);
+      color: var(--white);
+    }
+
+    /* ACTION BAR */
+    .action-bar {
+      background: var(--dark);
+      text-align: center;
+      padding: 0.7rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .action-bar a {
+      color: var(--coral);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .action-bar a:hover { color: var(--cream); }
+
+    /* LAYOUT */
+    .page-wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .nav-hide-mobile { display: none; }
+    }
+
+    /* CARD */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 16px rgba(40,70,171,0.07);
+      margin-bottom: 1.5rem;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--cream);
+    }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 72px; }
+
+    .photo-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .sidebar-name {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    .sidebar-role {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-list { list-style: none; }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.55rem;
+    }
+    .contact-list li a {
+      color: var(--blue);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-list li a:hover { color: var(--coral); }
+    .contact-icon { color: var(--coral); flex-shrink: 0; font-size: 0.85rem; margin-top: 1px; }
+
+    /* Booking button in sidebar */
+    .booking-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1.1rem;
+      background: linear-gradient(135deg, var(--coral), var(--purple));
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .booking-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* Skill bars */
+    .skill-item { margin-bottom: 0.8rem; }
+    .skill-label { font-size: 0.78rem; color: var(--dark); font-weight: 500; margin-bottom: 0.3rem; }
+    .skill-bar { height: 4px; background: #eceaf4; border-radius: 10px; overflow: hidden; }
+    .skill-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--coral), var(--purple));
+    }
+
+    /* Tags */
+    .tag-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      background: rgba(131,84,197,0.1);
+      color: var(--purple);
+      font-weight: 500;
+    }
+    .tag.coral-tag {
+      background: rgba(244,133,117,0.1);
+      color: var(--coral);
+    }
+
+    /* Education */
+    .edu-item { margin-bottom: 1rem; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-school { font-weight: 600; font-size: 0.85rem; color: var(--dark); }
+    .edu-degree { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+    .edu-year { font-size: 0.72rem; color: var(--coral); font-weight: 600; margin-top: 0.1rem; }
+
+    /* MAIN */
+    .section-block {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 16px rgba(40,70,171,0.07);
+      margin-bottom: 1.5rem;
+    }
+    .section-block:last-child { margin-bottom: 0; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--cream);
+    }
+
+    .about-text { font-size: 0.9rem; color: #444; line-height: 1.8; }
+
+    /* Experience */
+    .exp-item { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #f0eee8; }
+    .exp-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .exp-title { font-weight: 600; font-size: 0.92rem; color: var(--dark); }
+    .exp-company { font-size: 0.8rem; color: var(--coral); font-weight: 600; margin-top: 0.1rem; }
+    .exp-dates { font-size: 0.75rem; color: var(--muted); white-space: nowrap; margin-top: 0.1rem; }
+    .exp-desc { font-size: 0.84rem; color: #555; line-height: 1.7; margin-top: 0.45rem; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.65rem; }
+
+    /* Achievements */
+    .achievement {
+      background: linear-gradient(135deg, rgba(244,133,117,0.07), rgba(131,84,197,0.07));
+      border-left: 3px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .achievement:last-child { margin-bottom: 0; }
+    .achievement-title { font-weight: 600; font-size: 0.87rem; color: var(--dark); margin-bottom: 0.35rem; }
+    .achievement-body { font-size: 0.83rem; color: #555; line-height: 1.65; font-style: italic; }
+
+    /* CTA */
+    .cta-block {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-block p { font-size: 0.92rem; margin-bottom: 1.2rem; opacity: 0.92; line-height: 1.6; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .cta-btns a {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+    .cta-btns a:hover { transform: translateY(-2px); opacity: 0.9; }
+    .btn-white { background: var(--white); color: var(--purple); }
+    .btn-outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.6); color: var(--white); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--dark);
+    }
+    footer a { color: var(--coral); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media print {
+      nav, .action-bar, .cta-block, footer { display: none; }
+      .page-wrap { padding: 1rem; }
+      .section-block, .card { box-shadow: none; border: 1px solid #e0ddd8; }
+    }
+  </style>
+  <!-- Pinterest Tag -->
+  <script>
+  !function(e){if(!window.pintrk){window.pintrk = function () {
+  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2613892466117');
+  pintrk('page');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
+  </noscript>
+  <!-- end Pinterest Tag -->
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">MIRJ <span>Creative</span></a>
+    <div class="nav-links">
+      <a href="/" class="nav-hide-mobile">Home</a>
+      <a href="/#services" class="nav-hide-mobile">Services</a>
+      <a href="/resume.html" class="active nav-hide-mobile">Resume</a>
+      <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Dehjai <span>Courtney White</span></h1>
+      <p class="tagline">Founder, MIRJ Creative &nbsp;·&nbsp; Creative Strategist &nbsp;·&nbsp; AI-Directed Developer</p>
+      <div class="pill-row">
+        <a href="mailto:Dehjai@MIRJCreative.com">Dehjai@MIRJCreative.com</a>
+        <a href="https://www.linkedin.com/in/dehjaicwhite" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" rel="noopener">Book a Session</a>
+        <a href="https://mirjcreative.com">mirjcreative.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <a href="javascript:window.print()">&#10515; Print or Save as PDF</a>
+    <a href="mailto:Dehjai@MIRJCreative.com?subject=Resume%20Request">Request Full CV &#8594;</a>
+  </div>
+
+  <!-- BODY -->
+  <div class="page-wrap">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="card">
+        <div class="photo-wrap">D</div>
+        <div class="sidebar-name">Dehjai Courtney White</div>
+        <div class="sidebar-role">Founder, MIRJ Creative</div>
+
+        <ul class="contact-list">
+          <li><span class="contact-icon">✉</span><a href="mailto:Dehjai@MIRJCreative.com">Dehjai@MIRJCreative.com</a></li>
+          <li><span class="contact-icon">✉</span><a href="mailto:D.Courtney.White@gmail.com">D.Courtney.White@gmail.com</a></li>
+          <li><span class="contact-icon">⌖</span><span>Newport News / Richmond, VA</span></li>
+          <li><span class="contact-icon">↗</span><a href="https://www.linkedin.com/in/dehjaicwhite" target="_blank" rel="noopener">linkedin.com/in/dehjaicwhite</a></li>
+          <li><span class="contact-icon">↗</span><a href="https://mirjcreative.com" target="_blank" rel="noopener">mirjcreative.com</a></li>
+        </ul>
+
+        <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" rel="noopener" class="booking-btn">
+          &#128197; Book a Discovery Call
+        </a>
+      </div>
+
+      <!-- Core Skills -->
+      <div class="card">
+        <div class="card-title">Core Skills</div>
+        <div class="skill-item">
+          <div class="skill-label">Event Strategy &amp; Activations</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">Brand Marketing &amp; Storytelling</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">AI Workflow Consulting</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">AI-Directed Development</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">Creative Operations</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">Creator &amp; Influencer Engagement</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">Campaign Operations &amp; Analytics</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:84%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">Program &amp; People Operations</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="card">
+        <div class="card-title">Tools &amp; Tech</div>
+        <div class="tag-wrap">
+          <span class="tag">Salesforce</span>
+          <span class="tag">Asana</span>
+          <span class="tag">Slack</span>
+          <span class="tag">Canva</span>
+          <span class="tag">Claude AI</span>
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Perplexity AI</span>
+          <span class="tag coral-tag">GitHub Pages</span>
+          <span class="tag coral-tag">Squarespace DNS</span>
+          <span class="tag coral-tag">Formspree</span>
+          <span class="tag coral-tag">Stripe</span>
+          <span class="tag coral-tag">HTML / CSS / JS</span>
+          <span class="tag coral-tag">Python</span>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card">
+        <div class="card-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-school">Virginia Wesleyan University</div>
+          <div class="edu-degree">B.A. in Psychology</div>
+          <div class="edu-year">2012 &mdash; Norfolk, VA</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">The Catholic University of America</div>
+          <div class="edu-degree">Graduate Coursework (MSW)</div>
+          <div class="edu-year">2019 &mdash; Washington, D.C.</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <div class="section-block">
+        <div class="section-title">About</div>
+        <p class="about-text">
+          With 15+ years spanning brand events, creative operations, and program management, I specialize in building systems that make creative work flow. Through MIRJ Creative, I consult with marketing agencies and brand-side teams on AI workflow design, helping them cut execution overhead and amplify output without burning out their people.
+        </p>
+        <p class="about-text" style="margin-top:0.85rem;">
+          My background at Capital One and MAC Cosmetics gave me a deep foundation in brand activations, experiential marketing, and stakeholder engagement. I bring that operational fluency into every engagement, whether I'm auditing an agency's content pipeline, designing an AI-powered campaign workflow, or coaching a team through a creative reset.
+        </p>
+        <p class="about-text" style="margin-top:0.85rem;">
+          Beyond strategy, I build the systems myself. Working as an AI-directed developer, I direct Claude to design and ship real technical infrastructure, client onboarding flows connected to Stripe and Formspree, budget planning tools, automated document generation, and internal operations dashboards. I own the business logic and workflow architecture, then direct AI tools to execute the build, giving clients production-ready systems without the overhead of a traditional dev team.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Founder &amp; AI Workflow Consultant</div>
+              <div class="exp-company">MIRJ Creative / De-Intuitive Coaching LLC</div>
+            </div>
+            <div class="exp-dates">2024 &mdash; Present</div>
+          </div>
+          <p class="exp-desc">
+            Founded an AI workflow consulting practice serving event marketing agencies and brand-side marketing teams. Design and implement AI-powered operational systems that streamline campaign execution, reduce overhead, and increase creative output. Direct Claude to build and ship the underlying technical infrastructure, including a Stripe and Formspree-integrated client onboarding flow, automated welcome packet and proposal generation, budget and pricing planning tools, and an internal operations dashboard, all deployed and maintained on GitHub Pages. Core services include AI Workflow Audits, Alignment Resets, and Retainer consulting packages.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">AI Workflow Design</span>
+            <span class="tag">Creative Ops</span>
+            <span class="tag">Client Strategy</span>
+            <span class="tag">Consulting</span>
+            <span class="tag coral-tag">AI-Directed Development</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Creative Partner</div>
+              <div class="exp-company">Capital One</div>
+            </div>
+            <div class="exp-dates">2018 &mdash; 2022</div>
+          </div>
+          <p class="exp-desc">
+            Served as brand strategist and event project manager specializing in experience-led marketing, community partnerships, and audience engagement. Led large-scale activations and sponsorships including the Capital One Café x TNI partnership (2019), which became the largest monthly recurring event on record. Recognized as Money and Life Mentor Coach (2021) for change management coaching, well-being programming, and psychological safety initiatives.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Brand Activations</span>
+            <span class="tag">Event Strategy</span>
+            <span class="tag">Community Partnerships</span>
+            <span class="tag">Change Management</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Creative Ops | Project Manager | Brand Strategist</div>
+              <div class="exp-company">Freelance / Independent</div>
+            </div>
+            <div class="exp-dates">2020 &mdash; 2024</div>
+          </div>
+          <p class="exp-desc">
+            Delivered creative project management and brand strategy across multi-channel campaigns, experiential marketing, and operational clarity engagements. Partnered with creators and small businesses to develop brand narratives that drove engagement, streamlined execution, and supported sustainable growth.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Campaign Management</span>
+            <span class="tag">Brand Strategy</span>
+            <span class="tag">Client Work</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Program Operations Specialist</div>
+              <div class="exp-company">Newport News Public Schools</div>
+            </div>
+            <div class="exp-dates">2023 &mdash; 2026</div>
+          </div>
+          <p class="exp-desc">
+            People-centered educator and operations lead managing complex, high-stakes environments. Skilled in systems design, stakeholder communication, asynchronous learning, and behavior-informed program execution. Known for calm leadership and creating operational structure in fast-moving, emotionally dynamic settings.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Program Operations</span>
+            <span class="tag">Stakeholder Communication</span>
+            <span class="tag">Systems Design</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Operations Manager &amp; Beauty Consultant</div>
+              <div class="exp-company">MAC Cosmetics</div>
+            </div>
+            <div class="exp-dates">Earlier Career</div>
+          </div>
+          <p class="exp-desc">
+            Built early foundation in brand experience, client relationships, and product storytelling within a premium retail environment. Developed skills in audience engagement and brand-to-consumer connection that carried forward into event marketing and creative strategy work.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Brand Experience</span>
+            <span class="tag">Client Relations</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Key Achievements</div>
+        <div class="achievement">
+          <div class="achievement-title">Creative Partner Recognition, Capital One (2019)</div>
+          <div class="achievement-body">Acknowledged for community impact through the Capital One Café x Network Incubator partnership, producing the largest monthly recurring event on record at the time.</div>
+        </div>
+        <div class="achievement">
+          <div class="achievement-title">Money &amp; Life Mentor Coach, Capital One (2021)</div>
+          <div class="achievement-body">Recognized for change management coaching, mentoring future coaches and associates in well-being exercises, psychological safety programming, and accountability practices.</div>
+        </div>
+        <div class="achievement">
+          <div class="achievement-title">AI-Directed Development, MIRJ Creative (2025 &ndash; Present)</div>
+          <div class="achievement-body">Directed the design and build of MIRJ Creative's full client-facing technical stack, a signature-gated onboarding flow integrated with Stripe and Formspree, automated welcome packet and proposal generation, budget planning tools, and an internal operations dashboard, all built with Claude and deployed on GitHub Pages with no monthly software overhead.</div>
+        </div>
+        <div class="achievement">
+          <div class="achievement-title">Maya R. &nbsp;|&nbsp; MIRJ Creative Client</div>
+          <div class="achievement-body">"I walked into this process overwhelmed, creatively disconnected, and struggling to organize my next chapter. I left with structure, direction, and a clearer understanding of how I want to build my life and career moving forward."</div>
+        </div>
+        <div class="achievement">
+          <div class="achievement-title">Sya Marie &nbsp;|&nbsp; MIRJ Creative Client</div>
+          <div class="achievement-body">"MIRJ Creative helped me translate all of the ideas, pressure, and transition I was carrying into an actual vision with direction. I felt clearer after one session than I had in months."</div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <p>Ready to bring AI-powered clarity to your marketing workflow?<br>Let's talk about what MIRJ Creative can build for your team.</p>
+        <div class="cta-btns">
+          <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" rel="noopener" class="btn-white">Book a Discovery Call</a>
+          <a href="mailto:Dehjai@MIRJCreative.com" class="btn-outline">Send an Email</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 MIRJ Creative &nbsp;|&nbsp; De-Intuitive Coaching LLC &nbsp;&mdash;&nbsp;
+    <a href="mailto:Dehjai@MIRJCreative.com">Dehjai@MIRJCreative.com</a>
+    &nbsp;|&nbsp;
+    <a href="/">Back to mirjcreative.com</a>
+  </footer>
+
+</body>
+</html>
