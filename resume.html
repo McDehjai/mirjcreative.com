@@ -165,6 +165,7 @@
     @media (max-width: 700px) {
       .page-wrap { grid-template-columns: 1fr; }
       .nav-hide-mobile { display: none; }
+      .sidebar { position: static; top: auto; }
     }
 
     /* CARD */
@@ -257,8 +258,12 @@
     .booking-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
     /* Skill bars */
-    .skill-item { margin-bottom: 0.8rem; }
-    .skill-label { font-size: 0.78rem; color: var(--dark); font-weight: 500; margin-bottom: 0.3rem; }
+    .skill-item { margin-bottom: 0.8rem; cursor: pointer; }
+    .skill-label { font-size: 0.78rem; color: var(--dark); font-weight: 500; margin-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; }
+    .skill-toggle { font-size: 0.7rem; color: var(--purple); opacity: 0.6; transition: transform 0.2s ease; flex-shrink: 0; }
+    .skill-item.open .skill-toggle { transform: rotate(45deg); }
+    .skill-detail { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; font-size: 0.74rem; color: #666; line-height: 1.55; }
+    .skill-item.open .skill-detail { max-height: 100px; padding-top: 0.4rem; }
     .skill-bar { height: 4px; background: #eceaf4; border-radius: 10px; overflow: hidden; }
     .skill-fill {
       height: 100%;
@@ -458,37 +463,45 @@
       <!-- Core Skills -->
       <div class="card">
         <div class="card-title">Core Skills</div>
-        <div class="skill-item">
-          <div class="skill-label">Event Strategy &amp; Activations</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Event Strategy &amp; Activations <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          <div class="skill-detail">Planning and executing large scale brand activations, sponsorships, and audience experiences from concept through live execution.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">Brand Marketing &amp; Storytelling</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Brand Marketing &amp; Storytelling <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          <div class="skill-detail">Crafting brand narratives and marketing content that build audience connection and drive engagement.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">AI Workflow Consulting</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">AI Workflow Consulting <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          <div class="skill-detail">Auditing and redesigning marketing and creative workflows so teams execute faster with less manual overhead.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">AI-Directed Development</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">AI-Directed Development <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          <div class="skill-detail">Directing Claude to design and ship real client facing infrastructure, from onboarding flows to automated document generation.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">Creative Operations</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Creative Operations <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          <div class="skill-detail">Building the systems, SOPs, and handoffs that keep creative and marketing teams running smoothly.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">Creator &amp; Influencer Engagement</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Creator &amp; Influencer Engagement <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+          <div class="skill-detail">Sourcing, briefing, and managing creator partnerships that extend brand reach and authenticity.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">Campaign Operations &amp; Analytics</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Campaign Operations &amp; Analytics <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:84%"></div></div>
+          <div class="skill-detail">Tracking campaign performance and turning data into clear, actionable next steps.</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-label">Program &amp; People Operations</div>
+        <div class="skill-item" onclick="this.classList.toggle('open')">
+          <div class="skill-label">Program &amp; People Operations <span class="skill-toggle">+</span></div>
           <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          <div class="skill-detail">Leading complex, high stakes programs with a focus on stakeholder communication and team wellbeing.</div>
         </div>
       </div>
 
