@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Groundwork Kit | MIRJ Creative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #F48575;
+    --blue: #2846AB;
+    --purple: #8354C5;
+    --cream: #DFD7AE;
+    --teal: #2C8C82;
+    --ink: #2B2420;
+    --paper: #FBF9F4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+    color: #fff;
+    padding: 80px 24px 90px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    color: var(--coral);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .hero p {
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto;
+    color: #EDE9F7;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .files-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(43,36,32,0.10);
+    margin-top: -50px;
+    padding: 44px 40px;
+  }
+  .files-card h2 {
+    color: var(--blue);
+    font-size: 22px;
+    margin-bottom: 26px;
+  }
+
+  .file-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #EFEAE0;
+  }
+  .file-row:last-of-type { border-bottom: none; }
+  .file-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .file-info p {
+    font-size: 13.5px;
+    color: #8b8177;
+  }
+  .file-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .badge-pdf { background: #FBEAE6; color: var(--coral); }
+  .badge-docx { background: #E7EEFB; color: var(--blue); }
+
+  .download-btn {
+    flex-shrink: 0;
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+  .download-btn:hover { background: var(--purple); }
+
+  .asana-note {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 26px 30px;
+    margin-top: 28px;
+    font-size: 14.5px;
+  }
+  .asana-note strong { color: var(--ink); }
+  .asana-note a { color: var(--blue); font-weight: 700; }
+
+  .next-steps {
+    margin: 60px 0 80px;
+  }
+  .next-steps h2 {
+    color: var(--blue);
+    font-size: 22px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .steps-list {
+    list-style: none;
+    counter-reset: step;
+  }
+  .steps-list li {
+    counter-increment: step;
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+  .steps-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .support {
+    text-align: center;
+    padding-bottom: 80px;
+    font-size: 14px;
+    color: #8b8177;
+  }
+  .support a { color: var(--blue); font-weight: 700; }
+
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 26px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="eyebrow">Order Confirmed</div>
+    <h1>Your Groundwork Kit is ready</h1>
+    <p>Thank you for your purchase. Everything you need is right here, save this page or download your files below.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="files-card">
+      <h2>Your Files</h2>
+
+      <div class="file-row">
+        <div class="file-info">
+          <div class="file-badge badge-pdf">PDF</div>
+          <h3>MIRJ Groundwork Kit</h3>
+          <p>The complete kit: agreement template, welcome packet, branding basics, and automation guide.</p>
+        </div>
+        <a class="download-btn" href="https://drive.google.com/file/d/1a82_u6cXkF3TAHmzbG8Zu_bCQGH34SLE/view" target="_blank" rel="noopener">Download</a>
+      </div>
+
+      <div class="file-row">
+        <div class="file-info">
+          <div class="file-badge badge-docx">DOCX</div>
+          <h3>Welcome Packet, Editable Version</h3>
+          <p>A designed, fully editable Word and Google Docs version you can personalize and reuse.</p>
+        </div>
+        <a class="download-btn" href="https://drive.google.com/file/d/1NJW8uklRZXgwO0VZ2YAwq1rEtkQXrQYU/view" target="_blank" rel="noopener">Download</a>
+      </div>
+    </div>
+
+    <div class="asana-note">
+      <strong>Don't forget your onboarding template.</strong> The kit also includes a duplicable Notion onboarding board with usage notes on every task. <a href="https://app.notion.com/p/MIRJ-Groundwork-Kit-Onboarding-Template-3b410196bfbb81e781c6e5f55a52ecd3?source=copy_link" target="_blank" rel="noopener">Open the onboarding template →</a> and click "Duplicate" in the top right to add it to your own workspace.
+    </div>
+
+    <div class="next-steps">
+      <h2>What to Do Next</h2>
+      <ul class="steps-list">
+        <li>Download both files above and save them somewhere you'll find them again.</li>
+        <li>Duplicate the onboarding template into your own Notion workspace.</li>
+        <li>Open the kit PDF and start with the "What's Included" page, it walks you through everything in order.</li>
+        <li>Personalize the welcome packet with your business name, then save it as your permanent, reusable version.</li>
+      </ul>
+    </div>
+
+    <div class="support">
+      Questions about your order? Reach out any time at <a href="mailto:dehjai@mirjcreative.com">dehjai@mirjcreative.com</a>
+    </div>
+  </div>
+
+  <footer>
+    MIRJ CREATIVE &nbsp;·&nbsp; mirjcreative.com
+  </footer>
+
+</body>
+</html>
