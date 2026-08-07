@@ -509,6 +509,49 @@ border-radius: 20px;
 margin-bottom: 1rem;
 }
 
+/* Build Badge */
+.build-badge {
+display: inline-block;
+background: var(--blue);
+color: var(--white);
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 4px 12px;
+border-radius: 20px;
+margin-bottom: 1rem;
+}
+
+/* Waitlist form */
+.waitlist-form {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+}
+
+.waitlist-input {
+width: 100%;
+padding: 0.9rem 1.2rem;
+border: 2px solid #ddd;
+border-radius: 8px;
+font-family: 'Georgia', serif;
+font-size: 0.95rem;
+transition: border-color 0.3s ease;
+}
+
+.waitlist-input:focus {
+outline: none;
+border-color: var(--coral);
+box-shadow: 0 0 0 3px rgba(244, 133, 117, 0.1);
+}
+
+.waitlist-form .cta-button {
+align-self: flex-start;
+border: none;
+cursor: pointer;
+}
+
 /* Featured Deliverable Section */
 .featured-deliverable {
 background: var(--white);
@@ -711,7 +754,7 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <!-- Services -->
 <section class="services" id="services">
 <h2 class="section-title">Services</h2>
-<p class="section-subtitle">Three ways to work together — starting with the audit that matches where you're stuck.</p>
+<p class="section-subtitle">Four ways to work together, from a fast diagnostic to a fully built operational foundation.</p>
 
 <div class="services-grid">
 <!-- Service 1: Audit (toggle: Operations or AI Automation) -->
@@ -778,6 +821,52 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <li>Written monthly progress summary</li>
 </ul>
 <a href="/book.html" class="cta-button">Book a Call</a>
+</div>
+
+<!-- Service 4: Foundation Build (toggle: Starter or Complete) -->
+<div class="service-card">
+<div class="service-price">Starting at $3,500</div>
+<span class="build-badge">Waitlist Open</span>
+<h3>Foundation Build</h3>
+<p>For early stage startups and small businesses who want their operational foundation built for them. A live website, a working intake system, and a workspace to run the business from, delivered and launched by MIRJ Creative.</p>
+
+<div class="audit-tabs">
+<button type="button" class="audit-tab active" onclick="showFoundation('starter')" id="tab-starter">Starter</button>
+<button type="button" class="audit-tab" onclick="showFoundation('complete')" id="tab-complete">Complete</button>
+</div>
+
+<div class="audit-panel" id="panel-starter">
+<p class="audit-panel-desc">$3,500. The core foundation for a business just getting off the ground.</p>
+<ul class="service-features">
+<li>Website build and launch (up to 3 pages)</li>
+<li>Client intake form and contact integration</li>
+<li>Payment processing setup guide (PDF and Loom walkthrough)</li>
+<li>Notion workspace setup with basic templates</li>
+<li>Brand style guide starter doc</li>
+<li>14 day post launch support window</li>
+</ul>
+</div>
+
+<div class="audit-panel" id="panel-complete" style="display:none;">
+<p class="audit-panel-desc">$6,000. Everything in Starter, plus the systems to manage clients and scale.</p>
+<ul class="service-features">
+<li>Website build and launch (up to 5 pages)</li>
+<li>Client onboarding sequence (agreement gate, welcome packet)</li>
+<li>Full Notion workspace with expanded templates and an internal ops dashboard</li>
+<li>Fully built CRM with pipeline tracking, deal stages, and a follow up system</li>
+<li>Core automations connecting forms, CRM, and onboarding</li>
+<li>Brand style guide and SOP starter doc</li>
+<li>30 day post launch support window</li>
+</ul>
+</div>
+
+<form class="waitlist-form" action="https://formspree.io/f/mgodgnqd" method="POST" id="foundation-waitlist-form">
+<input type="hidden" name="_subject" value="Foundation Build Waitlist Signup">
+<input type="hidden" name="interest" value="Foundation Build">
+<input type="email" name="email" class="waitlist-input" placeholder="Your email address" required>
+<button type="submit" class="cta-button">Join the Waitlist</button>
+</form>
+<p class="audit-unsure">Foundation Build opens for bookings in September 2026. Either tier can add a 90 day maintenance and iteration retainer for $1,500 per month.</p>
 </div>
 </div>
 
@@ -857,6 +946,13 @@ document.getElementById('panel-ai').style.display = type === 'ai' ? 'block' : 'n
 document.getElementById('tab-ops').classList.toggle('active', type === 'ops');
 document.getElementById('tab-ai').classList.toggle('active', type === 'ai');
 document.getElementById('audit-book-btn').href = '/agreement.html?service=' + type;
+}
+
+function showFoundation(type) {
+document.getElementById('panel-starter').style.display = type === 'starter' ? 'block' : 'none';
+document.getElementById('panel-complete').style.display = type === 'complete' ? 'block' : 'none';
+document.getElementById('tab-starter').classList.toggle('active', type === 'starter');
+document.getElementById('tab-complete').classList.toggle('active', type === 'complete');
 }
 
 function toggleMobileNav() {
