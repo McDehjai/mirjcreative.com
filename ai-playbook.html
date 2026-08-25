@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Playbook | MIRJ Creative</title>
+<meta name="description" content="A free guide for small business owners and enterprise leaders: why AI matters, what it delivers at your size, what you need before you start, and where to begin with MIRJ Creative.">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+        --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+        --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+        --white: #ffffff;
+        --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+    }
+    body { font-family: 'Georgia', serif; color: var(--dark-text); background: #faf8f6; line-height: 1.7; }
+    a { color: inherit; }
+    .hero { background: var(--gradient); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; }
+    .hero .logo { font-size: 1.6rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 2rem; }
+    .hero .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
+    .hero h1 { font-size: 2.6rem; margin-bottom: 1rem; line-height: 1.2; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 1.15rem; color: var(--cream); max-width: 640px; margin: 0 auto; }
+
+    .content { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .whats-inside { background: var(--white); border-left: 5px solid var(--purple); border-radius: 12px;
+                    padding: 2.2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .whats-inside h2 { color: var(--blue); font-size: 1.4rem; margin-bottom: 1.2rem; }
+    .whats-inside ul { list-style: none; }
+    .whats-inside li { padding-left: 1.6rem; position: relative; margin-bottom: 0.9rem; color: #444; }
+    .whats-inside li::before { content: "\2713"; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
+
+    .form-card { background: var(--white); border-radius: 12px; padding: 2.4rem;
+                 box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .form-card h2 { color: var(--blue); font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .form-card .form-sub { color: #666; font-size: 0.98rem; margin-bottom: 1.6rem; }
+    .form-row { margin-bottom: 1.1rem; }
+    .form-row label { display: block; font-size: 0.9rem; font-weight: 700; color: var(--dark-text); margin-bottom: 0.35rem; }
+    .form-row input { width: 100%; padding: 0.8rem 1rem; border: 1px solid #ddd; border-radius: 8px;
+                       font-family: inherit; font-size: 1rem; }
+    .form-row input:focus { outline: none; border-color: var(--purple); }
+    .cta-button { display: inline-block; background: var(--coral); color: var(--white);
+                  padding: 1rem 2.4rem; text-decoration: none; border-radius: 50px; font-size: 1rem;
+                  border: 2px solid var(--coral); font-weight: 600; transition: all 0.3s ease; cursor: pointer; }
+    .cta-button:hover { background: transparent; color: var(--coral); }
+    .form-note { font-size: 0.85rem; color: var(--muted-purple); margin-top: 1rem; }
+    .form-error { display: none; color: #b3413a; font-size: 0.9rem; margin-top: 1rem; }
+
+    .download-panel { display: none; background: var(--white); border-left: 5px solid var(--coral); border-radius: 12px;
+                       padding: 2.4rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+    .download-panel h2 { color: var(--blue); font-size: 1.5rem; margin-bottom: 0.8rem; }
+    .download-panel p { color: #555; margin-bottom: 1.6rem; }
+
+
+    footer { background: var(--blue); color: var(--white); text-align: center; padding: 2.5rem 2rem;
+             font-size: 0.9rem; border-top: 3px solid var(--coral); }
+    footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
+    @media (max-width: 600px) { .hero h1 { font-size: 1.9rem; } .content { padding: 2.5rem 1.2rem; } .form-card, .whats-inside, .download-panel { padding: 1.6rem; } }
+</style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo">MIRJ CREATIVE</div>
+        <div class="eyebrow">Free Guide</div>
+        <h1>The AI Playbook for Small Business and Enterprise</h1>
+        <p>Why AI matters, what it actually delivers at your size, what you need in place before you start, and exactly where to begin, the MIRJ Creative way.</p>
+    </section>
+
+    <section class="content">
+        <div class="whats-inside">
+            <h2>What's inside</h2>
+            <ul>
+                <li>Why AI adoption has moved past the experimental phase, with current data on enterprise and small business adoption</li>
+                <li>The real benefits for small business versus enterprise, and where those needs actually diverge</li>
+                <li>The five things that have to be true before AI adoption works, at any size</li>
+                <li>Why most AI initiatives stall, and how to avoid the same traps</li>
+                <li>MIRJ Creative's entry point ladder, so you know exactly where to start and what it costs</li>
+            </ul>
+        </div>
+
+        <div class="form-card" id="playbook-form-card">
+            <h2>Get your free copy</h2>
+            <p class="form-sub">Enter your name, email, and business and the playbook is yours instantly.</p>
+            <form id="playbook-form" action="https://formspree.io/f/mgodgnqd" method="POST">
+                <input type="hidden" name="_subject" value="AI Playbook Download">
+                <input type="hidden" name="interest" value="AI Playbook">
+                <input type="hidden" name="_next" value="https://mirjcreative.com/ai-playbook.html?sent=1#download">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="business">Business Name</label>
+                    <input type="text" id="business" name="business" required>
+                </div>
+                <button type="submit" class="cta-button">Send Me the Playbook</button>
+                <p class="form-note">We will never sell or share your information. You may hear from MIRJ Creative about the topics covered in the playbook.</p>
+                <p class="form-error" id="form-error">Something went wrong submitting the form. Please try again or email <a href="mailto:hello@mirjcreative.com" style="color:#2846ab;">hello@mirjcreative.com</a>.</p>
+            </form>
+        </div>
+
+        <div class="download-panel" id="download">
+            <h2>You're in. Here's your copy.</h2>
+            <p>Thanks, your details are on their way to MIRJ Creative. Download the playbook below, it's yours to keep.</p>
+            <a class="cta-button" href="/downloads/MIRJ-AI-Playbook.pdf" download>Download the AI Playbook (PDF)</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MIRJ Creative LLC. Crafted with intention.</p>
+        <p><a href="mailto:hello@mirjcreative.com">hello@mirjcreative.com</a></p>
+    </footer>
+
+    <script>
+    (function () {
+        var form = document.getElementById('playbook-form');
+        var formCard = document.getElementById('playbook-form-card');
+        var downloadPanel = document.getElementById('download');
+        var errorMsg = document.getElementById('form-error');
+
+        function showDownload() {
+            formCard.style.display = 'none';
+            downloadPanel.style.display = 'block';
+            downloadPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Fallback path: Formspree redirected back here after a plain form post.
+        if (window.location.search.indexOf('sent=1') !== -1) {
+            showDownload();
+        }
+
+        // Primary path: submit via fetch so the download appears without leaving the page.
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            errorMsg.style.display = 'none';
+            var data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (response.ok) {
+                    showDownload();
+                } else {
+                    errorMsg.style.display = 'block';
+                }
+            }).catch(function () {
+                errorMsg.style.display = 'block';
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
