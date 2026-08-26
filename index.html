@@ -19,6 +19,7 @@ box-sizing: border-box;
 --cream: #dfd7ae;
 --dark-text: #1a1a1a;
 --white: #ffffff;
+--mint: #4FB99C;
 --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
 }
 
@@ -225,6 +226,7 @@ margin-right: auto;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 gap: 3rem;
+margin-bottom: 3rem;
 }
 
 .service-card {
@@ -295,6 +297,171 @@ left: 0;
 color: var(--cream);
 font-weight: bold;
 font-size: 1.2rem;
+}
+
+/* Segmented services (Startups & First-Time Founders / Established Businesses reframe) */
+.segment-block {
+margin-bottom: 4.5rem;
+}
+
+.segment-block:last-child {
+margin-bottom: 0;
+}
+
+.segment-kicker {
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+font-size: 0.8rem;
+font-weight: 700;
+margin-bottom: 0.6rem;
+}
+
+.segment-kicker.free {
+color: var(--mint);
+}
+
+.segment-kicker.startup {
+color: var(--coral);
+}
+
+.segment-kicker.established {
+color: var(--purple);
+}
+
+.segment-heading {
+text-align: center;
+font-size: 2rem;
+color: var(--blue);
+margin-bottom: 0.8rem;
+font-weight: 700;
+}
+
+.segment-desc {
+text-align: center;
+color: #666;
+max-width: 640px;
+margin: 0 auto 2.5rem;
+font-size: 1.05rem;
+line-height: 1.7;
+}
+
+.services-grid.solo-card {
+grid-template-columns: 1fr;
+max-width: 620px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.service-card.no-star::before {
+content: none;
+}
+
+.service-card.accent-mint {
+border-left-color: var(--mint);
+}
+
+.service-card.accent-mint h3 {
+color: var(--mint);
+}
+
+.service-card.accent-mint .service-price {
+color: var(--mint);
+}
+
+.service-card.accent-mint .cta-button {
+background: var(--mint);
+border-color: var(--mint);
+}
+
+.service-card.accent-mint .cta-button:hover {
+background: transparent;
+color: var(--mint);
+box-shadow: 0 8px 20px rgba(79, 185, 156, 0.3);
+}
+
+.no-price-line {
+font-size: 0.85rem;
+color: var(--muted-purple);
+font-style: italic;
+margin-bottom: 1rem;
+}
+
+.card-tagline {
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: var(--muted-purple);
+margin-bottom: 0.6rem;
+font-weight: 700;
+}
+
+.best-for-note {
+font-size: 0.88rem;
+color: #555;
+background: #f4f1eb;
+padding: 0.7rem 0.9rem;
+border-radius: 8px;
+margin-bottom: 1.2rem;
+}
+
+.best-for-note strong {
+color: var(--dark-text);
+}
+
+.reveal-panel {
+display: none;
+background: #faf8f6;
+border-radius: 8px;
+padding: 0.9rem 1.1rem;
+font-size: 0.9rem;
+color: #444;
+margin-bottom: 1.2rem;
+line-height: 1.6;
+}
+
+.reveal-panel.open {
+display: block;
+}
+
+.ar-group-note {
+max-width: 900px;
+margin: 0 auto 2.5rem;
+padding: 1.2rem 1.6rem;
+background: var(--white);
+border: 1px solid var(--purple);
+border-radius: 10px;
+font-size: 0.95rem;
+color: #444;
+text-align: center;
+}
+
+.ar-group-note strong {
+color: var(--purple);
+}
+
+.free-group-note {
+max-width: 900px;
+margin: 0 auto 2.5rem;
+padding: 1.2rem 1.6rem;
+background: var(--white);
+border: 1px solid var(--mint);
+border-radius: 10px;
+font-size: 0.95rem;
+color: #444;
+text-align: center;
+}
+
+.free-group-note strong {
+color: var(--mint);
+}
+
+.flow-note {
+font-size: 0.8rem;
+color: var(--muted-purple);
+font-style: italic;
+margin-top: -0.6rem;
+margin-bottom: 1rem;
 }
 
 /* About Section */
@@ -754,78 +921,46 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <!-- Services -->
 <section class="services" id="services">
 <h2 class="section-title">Services</h2>
-<p class="section-subtitle">Four ways to work together, from a fast diagnostic to a fully built operational foundation.</p>
+<p class="section-subtitle">Start free, then go as deep as your business needs, from a quick self-check to a fully built operational foundation.</p>
 
+<div class="segment-block">
+<div class="free-group-note">
+<strong>Start Here, Free Tools.</strong> No cost, no commitment. See where things actually stand before you decide what to do next.
+</div>
 <div class="services-grid">
-<!-- Service 1: Audit (toggle: Operations or AI Automation) -->
+
+<div class="service-card accent-mint no-star">
+<h3>Workflow Health Scorecard</h3>
+<p>A 10 question self check on how your business's systems are really holding up, scored into a result tier with a next step suited to where you land.</p>
+<a href="/scorecard.html" class="cta-button">Take the Scorecard</a>
+</div>
+
+<div class="service-card accent-mint no-star">
+<h3>AI Playbook</h3>
+<p>A guide to where AI actually helps a growing business, what to put in place before you start, and MIRJ Creative's recommended entry points.</p>
+<a href="/ai-playbook.html" class="cta-button">Get the Playbook</a>
+<p class="flow-note">Name, business, and email required before the download unlocks, same as today.</p>
+</div>
+
+</div>
+</div>
+
+<div class="segment-block">
+<div class="segment-kicker startup">Starting Out</div>
+<h3 class="segment-heading">For Startups &amp; First-Time Founders</h3>
+<p class="segment-desc">You're building from scratch, wearing every hat, and don't want to guess your way through the systems that hold a business together.</p>
+<div class="services-grid">
+
 <div class="service-card">
-<div class="service-price">Starting at $750</div>
-<h3>Choose Your Audit</h3>
-<p>Not sure if the friction is a process problem or a tooling gap? Toggle between the two audits below to see what each one actually covers.</p>
-
-<div class="audit-tabs">
-<button type="button" class="audit-tab active" onclick="showAudit('ops')" id="tab-ops">Operations Audit</button>
-<button type="button" class="audit-tab" onclick="showAudit('ai')" id="tab-ai">AI Automation Audit</button>
+<div class="no-price-line">Self-serve digital product</div>
+<h3>Groundwork Kit</h3>
+<p>A Notion-based starter kit built as a centralized hub for customer-facing business owners: CRM, welcome packets, and a contract template, ready to customize.</p>
+<a href="/digital-downloads.html" class="cta-button">See What's Included</a>
+<p class="flow-note">Takes you to the Shop page, where the full price and everything included is shown.</p>
 </div>
 
-<div class="audit-panel" id="panel-ops">
-<p class="audit-panel-desc">For teams who know something's off but can't pinpoint whether it's a people problem, a process problem, or a tooling problem. We map handoffs, ownership, and where the work actually breaks down.</p>
-<ul class="service-features">
-<li>Full operational friction assessment</li>
-<li>Root-cause diagnosis across people, process, and tools</li>
-<li>Prioritized fix roadmap</li>
-<li>60-minute debrief call</li>
-</ul>
-</div>
-
-<div class="audit-panel" id="panel-ai" style="display:none;">
-<p class="audit-panel-desc">For teams who've already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.</p>
-<ul class="service-features">
-<li>Full workflow and tool stack assessment</li>
-<li>AI tool recommendations</li>
-<li>Prioritized automation roadmap</li>
-<li>60-minute debrief call</li>
-</ul>
-</div>
-
-<a href="/agreement.html?service=ops" class="cta-button" id="audit-book-btn">Book This Audit</a>
-<p class="audit-unsure">Still not sure which one fits? <a href="/book.html?type=audit">Book a discovery call</a> and we'll help you choose. Not ready for either yet? <a href="/ai-playbook.html">Get the free AI Playbook</a> first.</p>
-</div>
-
-<!-- Service 2: Alignment Reset (Premiere Operations Package) -->
 <div class="service-card">
-<div class="service-price">Starting at $1,000</div>
-<span class="premiere-badge">Premiere Operations Package</span>
-<h3>Alignment Reset</h3>
-<p>The premiere short-term Operations engagement. Three focused sessions to diagnose root-cause misalignment across people, systems, and priorities, and leave with a plan you can act on immediately.</p>
-<ul class="service-features">
-<li>3 structured 1:1 sessions (Diagnosis → Reset Plan → Integration)</li>
-<li>Root-cause misalignment analysis</li>
-<li>Written Alignment Brief and strategy plan</li>
-<li>Between-session email support</li>
-</ul>
-<a href="/book.html?type=alignment" class="cta-button">Book a Call</a>
-</div>
-
-<!-- Service 3: Retainer -->
-<div class="service-card">
-<div class="service-price">Starting at $5,000/mo</div>
-<span class="signature-badge">Signature Deliverable Included</span>
-<h3>Operations & Automation Retainer</h3>
-<p>A dedicated operations partner, on retainer. Some months the work is process and systems, like SOPs, ownership, and handoffs. Other months it's AI workflow automation. Most months it's both, scoped to whatever's actually slowing your team down.</p>
-<ul class="service-features">
-<li>Ongoing process & workflow optimization</li>
-<li>AI tool integration where it moves the needle</li>
-<li>Custom systems design and build</li>
-<li>Monthly strategy call and priority-setting</li>
-<li>Written monthly progress summary</li>
-</ul>
-<a href="/book.html" class="cta-button">Book a Call</a>
-</div>
-
-<!-- Service 4: Foundation Build (toggle: Starter or Complete) -->
-<div class="service-card">
-<div class="service-price">Starting at $3,500</div>
+<div class="no-price-line">Waitlist open, opens September 2026</div>
 <span class="build-badge">Waitlist Open</span>
 <h3>Foundation Build</h3>
 <p>For early stage startups and small businesses who want their operational foundation built for them. A live website, a working intake system, and a workspace to run the business from, delivered and launched by MIRJ Creative.</p>
@@ -866,7 +1001,97 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <input type="email" name="email" class="waitlist-input" placeholder="Your email address" required>
 <button type="submit" class="cta-button">Join the Waitlist</button>
 </form>
-<p class="audit-unsure">Foundation Build opens for bookings in September 2026. Either tier can add a 90 day maintenance and iteration retainer for $1,500 per month.</p>
+<p class="audit-unsure">Either tier can add a 90 day maintenance and iteration retainer for $1,500 per month.</p>
+</div>
+
+</div>
+</div>
+
+<div class="segment-block">
+<div class="segment-kicker established">Scaling</div>
+<h3 class="segment-heading">For Established Businesses</h3>
+<p class="segment-desc">You're a year or two in, growth has stalled, and something in your people, process, or tools is broken, even if you can't name it yet.</p>
+
+<div class="services-grid solo-card">
+<div class="service-card">
+<div class="no-price-line">See what's involved, then get your starting price</div>
+<h3>Choose Your Audit</h3>
+<p>Not sure if the friction is a process problem or a tooling gap? Toggle between the two audits below to see what each one actually covers.</p>
+
+<div class="audit-tabs">
+<button type="button" class="audit-tab active" onclick="showAudit('ops')" id="tab-ops">Operations Audit</button>
+<button type="button" class="audit-tab" onclick="showAudit('ai')" id="tab-ai">AI Automation Audit</button>
+</div>
+
+<div class="audit-panel" id="panel-ops">
+<p class="audit-panel-desc">For teams who know something's off but can't pinpoint whether it's a people problem, a process problem, or a tooling problem. We map handoffs, ownership, and where the work actually breaks down.</p>
+<ul class="service-features">
+<li>Full operational friction assessment</li>
+<li>Root-cause diagnosis across people, process, and tools</li>
+<li>Prioritized fix roadmap</li>
+<li>60-minute debrief call</li>
+</ul>
+</div>
+
+<div class="audit-panel" id="panel-ai" style="display:none;">
+<p class="audit-panel-desc">For teams who've already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.</p>
+<ul class="service-features">
+<li>Full workflow and tool stack assessment</li>
+<li>AI tool recommendations</li>
+<li>Prioritized automation roadmap</li>
+<li>60-minute debrief call</li>
+</ul>
+</div>
+
+<div id="audit-reveal" class="reveal-panel">Starting deposit: <strong>$750</strong>, due at booking and credited toward your total. Any remaining balance is invoiced after your debrief.</div>
+<a href="/agreement.html?service=ops" class="cta-button" id="audit-book-btn" onclick="return revealPrice('audit-reveal', this, 'Continue to Audit')">Let's Scope It</a>
+<p class="audit-unsure">Still not sure which one fits? <a href="/book.html?type=audit">Book a discovery call</a> and we'll help you choose. Not ready for either yet? <a href="/ai-playbook.html">Get the free AI Playbook</a> first.</p>
+</div>
+</div>
+
+<div class="ar-group-note">
+<strong>Alignment Reset, choose your starting point.</strong> Both options use the same Diagnose, Clarify, Realign, Recommend method. The difference is scope: one broken process, or your whole business. If you can point to one specific process that's broken, start with the Mini Alignment Reset. If it feels like everything is a little off and you can't isolate just one thing, start with the full Alignment Reset.
+</div>
+
+<div class="services-grid">
+
+<div class="service-card no-star">
+<div class="no-price-line">One process, fast turnaround</div>
+<h3>Mini Alignment Reset</h3>
+<p class="card-tagline">Start With One Broken Process</p>
+<p>Pick one process, client intake, project handoff, content approval, or AI automation opportunities, and get a fast, focused diagnosis without committing to a bigger engagement first.</p>
+<div class="best-for-note"><strong>Best for:</strong> testing how MIRJ Creative works before a larger commitment, or when only one specific process feels off.</div>
+<div id="mini-ar-reveal" class="reveal-panel">Starting at <strong>$250</strong> (a $250 deposit is due at booking, credited toward your total; larger scope single processes total $350). Turnaround is 3 to 5 business days. Available once per client.</div>
+<a href="/mini-alignment-reset.html" class="cta-button" onclick="return revealPrice('mini-ar-reveal', this, 'Continue to Mini Reset')">See Pricing &amp; Book</a>
+</div>
+
+<div class="service-card no-star">
+<div class="no-price-line">Full business diagnosis</div>
+<h3>Full Alignment Reset</h3>
+<p class="card-tagline">Diagnose the Whole System</p>
+<span class="premiere-badge">Premiere Operations Package</span>
+<p>For founders and leaders carrying too much. A 2 to 3 week engagement across three sessions, Discovery, Diagnosis, Realignment, looking at root cause misalignment across your people, systems, and priorities, not just one process.</p>
+<div class="best-for-note"><strong>Best for:</strong> when more than one thing feels off and you can't isolate a single broken process, or when leadership bandwidth and roles need untangling. Not task execution, project management, VA support, or therapy.</div>
+<div id="full-ar-reveal" class="reveal-panel">Starting at <strong>$1,000</strong> for the full 2 to 3 week, 3 session engagement. Deliverable is a written Alignment Brief.</div>
+<a href="/book.html?type=alignment" class="cta-button" onclick="return revealPrice('full-ar-reveal', this, 'Continue to Full Reset')">See Pricing &amp; Book</a>
+</div>
+
+</div>
+
+<div class="services-grid solo-card">
+<div class="service-card">
+<div class="no-price-line">Custom monthly scope, let's talk</div>
+<span class="signature-badge">Signature Deliverable Included</span>
+<h3>Operations &amp; Automation Retainer</h3>
+<p>A dedicated operations partner, on retainer. Some months the work is process and systems, like SOPs, ownership, and handoffs. Other months it's AI workflow automation. Most months it's both, scoped to whatever's actually slowing your team down.</p>
+<ul class="service-features">
+<li>Ongoing process &amp; workflow optimization</li>
+<li>AI tool integration where it moves the needle</li>
+<li>Custom systems design and build</li>
+<li>Monthly strategy call and priority-setting</li>
+<li>Written monthly progress summary</li>
+</ul>
+<a href="/book.html" class="cta-button">Let's Talk</a>
 </div>
 </div>
 
@@ -875,7 +1100,7 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <p class="fd-label">Operations & Automation Retainer, Example Deliverable</p>
 <h3>Platform decision logic, automated</h3>
 <p>Most marketing teams spend hours every week making the same decisions. Which channel carries this campaign? Which audience gets this message? When does it go live, and at what spend level? These are not creative decisions. They are operational ones, and they are costing your team time they do not have.</p>
-<p>As part of the Operations & Automation Retainer, MIRJ Creative consults on the decision architecture that removes that manual load. We map the logic layer behind your platform choices, translate it into AI-powered systems your team can actually run, and refine it each month as campaign data comes back. This is one example of what a retainer month can build. Other engagements lean more into process and systems work, or a mix of both.</p>
+<p>As part of the Operations &amp; Automation Retainer, MIRJ Creative consults on the decision architecture that removes that manual load. We map the logic layer behind your platform choices, translate it into AI-powered systems your team can actually run, and refine it each month as campaign data comes back. This is one example of what a retainer month can build. Other engagements lean more into process and systems work, or a mix of both.</p>
 <p>The result is a team that executes faster, makes fewer reactive calls, and shows up to strategy conversations instead of spending the week in logistics.</p>
 <div class="fd-two-col">
 <div class="fd-col">
@@ -887,6 +1112,8 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <p>Decision logic frameworks, process documentation, AI workflow integrations, and monthly refinement as the work evolves. You go in with a diagnosis and come out with a build plan.</p>
 </div>
 </div>
+</div>
+
 </div>
 
 </section>
@@ -953,6 +1180,16 @@ document.getElementById('panel-starter').style.display = type === 'starter' ? 'b
 document.getElementById('panel-complete').style.display = type === 'complete' ? 'block' : 'none';
 document.getElementById('tab-starter').classList.toggle('active', type === 'starter');
 document.getElementById('tab-complete').classList.toggle('active', type === 'complete');
+}
+
+function revealPrice(panelId, btn, revealedLabel) {
+var panel = document.getElementById(panelId);
+if (!panel.classList.contains('open')) {
+panel.classList.add('open');
+btn.textContent = revealedLabel;
+return false;
+}
+return true;
 }
 
 function toggleMobileNav() {
