@@ -168,6 +168,59 @@
     margin-top: 14px;
   }
 
+  /* Mini Alignment Reset service card */
+  .service-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(43,36,32,0.10);
+    margin-top: 40px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 28px;
+    border-top: 4px solid var(--purple);
+  }
+  @media (max-width: 760px) {
+    .service-card { grid-template-columns: 1fr; text-align: center; }
+  }
+  .service-card .service-badge {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .service-card h2 {
+    color: var(--purple);
+    font-size: 24px;
+    margin: 0 0 6px;
+  }
+  .service-card p {
+    color: #6b6156;
+    font-size: 15px;
+    max-width: 480px;
+    margin-bottom: 4px;
+  }
+  .service-card .service-price {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .service-card .cta-button {
+    background: var(--purple);
+    white-space: nowrap;
+  }
+  .service-card .cta-button:hover {
+    background: var(--blue);
+  }
+
   /* Free resource card */
   .free-card {
     background: #fff;
@@ -408,6 +461,16 @@
       <h3>Want it fully set up for you?</h3>
       <p>The Groundwork Kit is built to be self serve, but if you would rather hand off the setup entirely, Foundation Build is MIRJ Creative's done for you version, including a fully automated intake and payment flow.</p>
       <a href="#">Foundation Build, coming soon →</a>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-badge">Diagnostic Service</span>
+        <h2>Mini Alignment Reset</h2>
+        <p>A fast, focused look at one broken process, client intake, project handoff, content approval, or AI automation opportunities. One diagnostic call, a one page summary of what's working and what's not, and three prioritized recommendations. No implementation, just clarity and direction.</p>
+        <div class="service-price">Starting at $250, available once per client</div>
+      </div>
+      <a href="/mini-alignment-reset.html" class="cta-button">See Details &amp; Book</a>
     </div>
 
     <div class="free-card">
