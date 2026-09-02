@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Systems Retainer | MIRJ Creative</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --coral: #F48575;
+  --blue: #2846ab;
+  --purple: #8354c5;
+  --muted-purple: #8487ae;
+  --cream: #dfd7ae;
+  --dark-text: #1a1a1a;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+}
+body {
+  font-family: 'Georgia', serif;
+  color: var(--dark-text);
+  background: #faf8f6;
+  line-height: 1.7;
+}
+a { color: inherit; }
+
+.top-link-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 0;
+}
+.top-link {
+  font-size: 0.85rem;
+  color: var(--muted-purple);
+  text-decoration: none;
+}
+.top-link:hover { text-decoration: underline; }
+
+.hero {
+  background: var(--gradient);
+  color: var(--white);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+}
+.hero .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+}
+.hero .eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero p {
+  color: var(--cream);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.hero-note {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 0.9rem !important;
+  font-style: italic;
+  margin-top: 1rem !important;
+  max-width: 560px !important;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4rem;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.section-label {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 0.6rem;
+}
+.section-heading {
+  text-align: center;
+  font-size: 1.9rem;
+  color: var(--blue);
+  margin-bottom: 2.2rem;
+  font-weight: 700;
+}
+
+/* Includes list, matching service-features pattern */
+.includes-card {
+  background: var(--white);
+  border-left: 5px solid var(--coral);
+  border-radius: 12px;
+  padding: 2.5rem 2.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 3.5rem;
+}
+.service-features {
+  list-style: none;
+}
+.service-features li {
+  padding: 0.8rem 0;
+  color: #555;
+  font-size: 1rem;
+  padding-left: 1.9rem;
+  position: relative;
+  line-height: 1.7;
+}
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Tier group note, matching ar-group-note */
+.tier-group-note {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  padding: 1.2rem 1.6rem;
+  background: var(--white);
+  border: 1px solid var(--purple);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+}
+.tier-group-note strong { color: var(--purple); }
+
+/* Pricing tiers, matching service-card pattern exactly */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.service-card {
+  background: var(--white);
+  padding: 2.2rem 1.8rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--coral);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+.service-card.no-star::before { content: none; }
+.service-card::before {
+  content: '✦';
+  position: absolute;
+  top: -15px;
+  left: 1.8rem;
+  font-size: 1.8rem;
+  color: var(--cream);
+}
+.service-card.featured {
+  border-left-color: var(--purple);
+}
+.signature-badge {
+  display: inline-block;
+  background: var(--coral);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.no-price-line {
+  font-size: 0.83rem;
+  color: var(--muted-purple);
+  font-style: italic;
+  margin-bottom: 0.9rem;
+}
+.service-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+.service-card ul.tier-includes {
+  list-style: none;
+  margin-bottom: 1.2rem;
+}
+.service-card ul.tier-includes li {
+  padding: 0.45rem 0;
+  color: #555;
+  font-size: 0.86rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.55;
+}
+.service-card ul.tier-includes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.cadence-line {
+  font-size: 0.82rem;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.service-card p.card-desc {
+  color: #666;
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.best-for-note {
+  font-size: 0.85rem;
+  color: #555;
+  background: #f4f1eb;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  margin-bottom: 1.1rem;
+}
+.best-for-note strong { color: var(--dark-text); }
+.cta-button {
+  display: inline-block;
+  background: var(--coral);
+  color: var(--white);
+  padding: 0.85rem 1.6rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--coral);
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+.cta-button:hover {
+  background: transparent;
+  color: var(--coral);
+}
+.service-card.featured .cta-button {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+.service-card.featured .cta-button:hover {
+  background: transparent;
+  color: var(--purple);
+}
+
+/* Featured Deliverable, matching site pattern exactly */
+.featured-deliverable {
+  background: var(--white);
+  border: 1px solid rgba(244, 133, 117, 0.25);
+  border-radius: 16px;
+  padding: 3rem 2.8rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  margin-bottom: 3rem;
+}
+.featured-deliverable .fd-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.6rem;
+}
+.featured-deliverable h3 {
+  font-size: 1.7rem;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+.featured-deliverable p {
+  color: #555;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+.fd-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+}
+.fd-col {
+  background: #faf8f6;
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+}
+.fd-col-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-purple);
+  margin-bottom: 0.5rem;
+}
+.fd-col p { font-size: 0.92rem; color: #555; margin-bottom: 0; }
+
+.closing-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted-purple);
+}
+.closing-note a { color: var(--coral); font-weight: 700; text-decoration: none; }
+.closing-note a:hover { text-decoration: underline; }
+
+footer {
+  background: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--coral);
+}
+footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 800px) {
+  .tiers-grid { grid-template-columns: 1fr; }
+  .fd-two-col { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.9rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-link-wrap">
+  <a class="top-link" href="/index.html">&larr; back to mirjcreative.com</a>
+</div>
+
+<section class="hero">
+  <div class="logo">MIRJ CREATIVE</div>
+  <div class="eyebrow">Operations &amp; Automation Retainer</div>
+  <h1>Growth Systems Retainer</h1>
+  <p>A dedicated systems partner for your business. I build and maintain the automated systems behind your sales, onboarding, and operations, so growth does not depend on you doing everything by hand.</p>
+  <p class="hero-note">Every engagement starts with a conversation, and most begin with an Audit, so the scope is built on real findings, not a guess.</p>
+</section>
+
+<main>
+
+  <p class="intro">Some months the work is process and systems, like SOPs, ownership, and handoffs. Other months it is AI workflow automation. Most months it is both, scoped to whatever is actually slowing your team down.</p>
+
+  <div class="section-label">What This Includes</div>
+  <h2 class="section-heading">Everything that moves a lead into a client</h2>
+
+  <div class="includes-card">
+    <ul class="service-features">
+      <li>Automated lead capture and qualification workflows</li>
+      <li>CRM and pipeline maintenance, Asana, HubSpot, or your existing stack</li>
+      <li>Client onboarding and intake automation</li>
+      <li>AI agent builds for repetitive operational tasks</li>
+      <li>Monthly systems audit and optimization recommendations</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Scope</div>
+  <h2 class="section-heading">Choose Your Starting Point</h2>
+
+  <div class="tier-group-note">
+    <strong>Not sure which scope fits?</strong> One bottleneck and light maintenance points to Starter. A few active workflows plus an AI build points to Growth. Full coverage across lead gen, CRM, onboarding, and reporting points to Scale. Every engagement is scoped and quoted after a conversation, there is no self-serve pricing here.
+  </div>
+
+  <div class="tiers-grid">
+
+    <div class="service-card no-star">
+      <div class="no-price-line">Custom monthly scope</div>
+      <h3>Starter</h3>
+      <div class="cadence-line">Monthly check in</div>
+      <p class="card-desc">For one clear bottleneck that needs to be built and kept running.</p>
+      <ul class="tier-includes">
+        <li>One core workflow built and maintained, lead capture, onboarding, or CRM automation</li>
+        <li>Monthly check in call</li>
+        <li>Monthly systems note covering what changed and what's next</li>
+        <li>Email support between check ins</li>
+      </ul>
+      <div class="best-for-note"><strong>Best for:</strong> testing the retainer on your highest priority bottleneck.</div>
+      <a href="/book.html?type=retainer" class="cta-button">Let's Talk</a>
+    </div>
+
+    <div class="service-card no-star">
+      <div class="no-price-line">Custom monthly scope</div>
+      <h3>Growth</h3>
+      <div class="cadence-line">Biweekly check ins</div>
+      <p class="card-desc">For businesses juggling more than one broken handoff at a time.</p>
+      <ul class="tier-includes">
+        <li>Two to three active workflows built and maintained</li>
+        <li>One AI agent build for a repetitive operational task</li>
+        <li>Biweekly check in calls</li>
+        <li>Priority turnaround on fixes and requests</li>
+        <li>Written progress summary each month</li>
+      </ul>
+      <div class="best-for-note"><strong>Best for:</strong> businesses juggling more than one broken handoff at a time.</div>
+      <a href="/book.html?type=retainer" class="cta-button">Let's Talk</a>
+    </div>
+
+    <div class="service-card featured no-star">
+      <span class="signature-badge">Full Coverage</span>
+      <div class="no-price-line">Custom monthly scope</div>
+      <h3>Scale</h3>
+      <div class="cadence-line">Weekly check ins</div>
+      <p class="card-desc">For teams ready to hand off the entire operations layer.</p>
+      <ul class="tier-includes">
+        <li>Full stack coverage, lead capture, CRM, onboarding, and AI agents</li>
+        <li>Reporting dashboards built and maintained</li>
+        <li>Weekly check in calls</li>
+        <li>Same week turnaround on fixes and requests</li>
+        <li>Written monthly progress summary</li>
+      </ul>
+      <div class="best-for-note"><strong>Best for:</strong> teams ready to hand off the entire operations layer.</div>
+      <a href="/book.html?type=retainer" class="cta-button">Let's Talk</a>
+    </div>
+
+  </div>
+
+  <div class="featured-deliverable">
+    <p class="fd-label">Growth Systems Retainer, Example Deliverable</p>
+    <h3>Platform decision logic, automated</h3>
+    <p>Most marketing teams spend hours every week making the same decisions. Which channel carries this campaign, which audience gets this message, when does it go live. These are operational decisions costing your team time it does not have.</p>
+    <p>As part of the Growth Systems Retainer, MIRJ Creative consults on the decision architecture that removes that manual load, then refines it each month as new data comes back.</p>
+    <div class="fd-two-col">
+      <div class="fd-col">
+        <p class="fd-col-label">Entry point</p>
+        <p>Either audit, Operations or AI Workflow, maps where manual decisions are slowing you down. That map becomes the foundation for the retainer.</p>
+      </div>
+      <div class="fd-col">
+        <p class="fd-col-label">What you build in the retainer</p>
+        <p>Decision logic frameworks, process documentation, AI workflow integrations, and monthly refinement as the work evolves.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="closing-note">Not sure which scope fits, or whether you need an Audit first? <a href="/book.html?type=retainer">Book a discovery call</a> and we will figure it out together, before anything is billed.</p>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 MIRJ Creative LLC. Crafted with intention.</p>
+  <p><a href="mailto:hello@mirjcreative.com">hello@mirjcreative.com</a></p>
+</footer>
+
+</body>
+</html>
