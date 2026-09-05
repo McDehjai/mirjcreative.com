@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Brand Clarity Audit, Intake | MIRJ Creative</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+  --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+}
+body { font-family: 'Georgia', serif; color: var(--dark-text); background: #faf8f6; line-height: 1.7; }
+
+.hero { background: var(--gradient); color: var(--white); padding: 4.5rem 2rem 3.5rem; text-align: center; }
+.hero .logo { font-size: 1.5rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 1.5rem; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.25; max-width: 640px; margin-left: auto; margin-right: auto; }
+.hero p { font-size: 1.05rem; color: var(--cream); max-width: 580px; margin: 0 auto; }
+
+.content { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+.progress-note {
+  background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 1.1rem 1.4rem; margin-bottom: 1.6rem; font-size: 0.88rem; color: #555;
+  text-align: center;
+}
+.progress-note strong { color: var(--blue); }
+
+form {
+  background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2.2rem;
+}
+.form-section-label {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--purple);
+  font-weight: 700; margin: 1.8rem 0 0.3rem; padding-top: 1.6rem; border-top: 1px solid #eee;
+}
+.form-section-label.first { margin-top: 0; padding-top: 0; border-top: none; }
+.form-section-sub { font-size: 0.85rem; color: #6b6b6b; margin-bottom: 1.1rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.92rem; }
+.form-group .hint { font-size: 0.82rem; color: var(--muted-purple); margin-top: 0.3rem; }
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 0.8rem 1rem; border: 2px solid #ddd; border-radius: 8px;
+  font-family: 'Georgia', serif; font-size: 0.95rem; background: var(--white);
+}
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--coral); }
+.optional-tag { color: var(--muted-purple); font-weight: normal; font-size: 0.82rem; }
+
+.submit-btn {
+  display: block; width: 100%; background: var(--coral); color: var(--white);
+  padding: 1.1rem; border: none; border-radius: 50px; font-size: 1.02rem; font-weight: 600;
+  font-family: 'Georgia', serif; cursor: pointer; transition: all 0.3s ease;
+}
+.submit-btn:hover { background: var(--blue); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.submit-note { text-align: center; font-size: 0.82rem; color: var(--muted-purple); margin-top: 0.8rem; }
+.form-error {
+  display: none; color: #c0392b; font-size: 0.88rem; margin-bottom: 1rem;
+}
+
+.download-panel {
+  display: none; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2.4rem; text-align: center;
+}
+.download-panel .check {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--gradient); color: var(--white);
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 1rem;
+}
+.download-panel h2 { color: var(--blue); font-size: 1.4rem; margin-bottom: 0.8rem; }
+.download-panel p { color: #555; margin-bottom: 0.6rem; }
+
+footer {
+  background: var(--blue); color: var(--white); text-align: center; padding: 2.2rem 2rem;
+  font-size: 0.9rem; border-top: 3px solid var(--coral);
+}
+footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 600px) { .hero h1 { font-size: 1.7rem; } .content { padding: 2.5rem 1.2rem; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="logo">MIRJ CREATIVE</div>
+  <h1>Your Brand Clarity Audit intake.</h1>
+  <p>The same nine question deep dive MIRJ Creative used to build its own brand core, now built around your business. Plan on 20 to 30 minutes, and feel free to draft your answers elsewhere first if that is easier.</p>
+</section>
+
+<div class="content">
+
+  <div class="progress-note">Nine short sections. Answer in your own words, there are no wrong answers here, only <strong>specific</strong> or <strong>vague</strong>, and specific is what makes your brief sharp.</div>
+
+  <form id="intake-form" action="https://formspree.io/f/REPLACE_WITH_BRAND_CLARITY_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="Brand Clarity Audit Intake">
+    <input type="hidden" name="interest" value="Brand Clarity Audit">
+
+    <div class="form-error" id="form-error">Something went wrong submitting the form. Please try again or email <a href="mailto:hello@mirjcreative.com" style="color:#2846ab;">hello@mirjcreative.com</a>.</div>
+
+    <div class="form-section-label first">The basics</div>
+    <div class="form-group">
+      <label for="fullName">Full name</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="business">Business name</label>
+      <input type="text" id="business" name="business" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-section-label">01. Established identity</div>
+    <div class="form-section-sub">What already exists, so we build on it instead of starting over.</div>
+    <div class="form-group">
+      <label for="establishedIdentity">Do you already have a logo, brand colors, fonts, or a tagline in place</label>
+      <textarea id="establishedIdentity" name="establishedIdentity" placeholder="Describe what already exists today, including anything you like or dislike about it. If you are starting from a blank page, say so." required></textarea>
+    </div>
+
+    <div class="form-section-label">02. Audience</div>
+    <div class="form-section-sub">Who we serve.</div>
+    <div class="form-group">
+      <label for="audience">Describe your ideal client or customer</label>
+      <textarea id="audience" name="audience" placeholder="Who are they, what stage of their journey are they in when they find you, and what do they care about most" required></textarea>
+    </div>
+
+    <div class="form-section-label">03. Transformation</div>
+    <div class="form-section-sub">The change you create.</div>
+    <div class="form-group">
+      <label for="transformationBefore">Before working with you, what does your client's world look like</label>
+      <textarea id="transformationBefore" name="transformationBefore" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="transformationAfter">After working with you, what has changed for them</label>
+      <textarea id="transformationAfter" name="transformationAfter" required></textarea>
+    </div>
+
+    <div class="form-section-label">04. Field</div>
+    <div class="form-section-sub">Brands your audience already trusts.</div>
+    <div class="form-group">
+      <label for="field">Name two or three brands or businesses your audience already knows or compares you to</label>
+      <textarea id="field" name="field" placeholder="What do you do differently from each of them" required></textarea>
+    </div>
+
+    <div class="form-section-label">05. Feeling</div>
+    <div class="form-section-sub">The feeling in the room.</div>
+    <div class="form-group">
+      <label for="feeling">How should someone feel after interacting with your brand</label>
+      <textarea id="feeling" name="feeling" placeholder="On your site, in a meeting, using your product or service" required></textarea>
+    </div>
+
+    <div class="form-section-label">06. Position</div>
+    <div class="form-section-sub">How you would say what makes you different, in your own words.</div>
+    <div class="form-group">
+      <label for="position">In one or two sentences, what makes you different from others who do something similar <span class="optional-tag">(optional)</span></label>
+      <textarea id="position" name="position" placeholder="Take your best shot, we will sharpen this either way"></textarea>
+    </div>
+
+    <div class="form-section-label">07. Personality</div>
+    <div class="form-section-sub">If your brand were a person.</div>
+    <div class="form-group">
+      <label for="personality">What three to five traits would define your brand's personality</label>
+      <input type="text" id="personality" name="personality" placeholder="For example, direct, grounded, warm, quietly confident" required>
+    </div>
+
+    <div class="form-section-label">08. Vocabulary</div>
+    <div class="form-section-sub">Words we own, words we reject.</div>
+    <div class="form-group">
+      <label for="wordsOwn">What words or phrases do you want associated with your brand</label>
+      <input type="text" id="wordsOwn" name="wordsOwn" required>
+    </div>
+    <div class="form-group">
+      <label for="wordsReject">What words or phrases do you want to avoid</label>
+      <input type="text" id="wordsReject" name="wordsReject" required>
+    </div>
+
+    <div class="form-section-label">09. The story</div>
+    <div class="form-section-sub">Your 30 second story.</div>
+    <div class="form-group">
+      <label for="story">How would you describe your business out loud to someone new, in about 30 seconds</label>
+      <textarea id="story" name="story" placeholder="Write it exactly how you would actually say it" required></textarea>
+    </div>
+
+    <div class="form-section-label">What you already have</div>
+    <div class="form-section-sub">Optional, but helpful.</div>
+    <div class="form-group">
+      <label for="existingAssets">Link to your current website, logo, or brand materials <span class="optional-tag">(optional)</span></label>
+      <input type="url" id="existingAssets" name="existingAssets" placeholder="https://">
+      <div class="hint">If it is a shared drive folder, set sharing to anyone with the link can view.</div>
+    </div>
+    <div class="form-group">
+      <label for="notes">Anything else we should know <span class="optional-tag">(optional)</span></label>
+      <textarea id="notes" name="notes"></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submit-btn">Get My Brand Clarity Brief</button>
+    <div class="submit-note">This is the only step. Clicking this sends your answers straight to us, nothing else to schedule.</div>
+  </form>
+
+  <div class="download-panel" id="confirmation-panel">
+    <div class="check">&#10003;</div>
+    <h2>You're all set.</h2>
+    <p>Your answers are in. Your Brand Clarity Brief and Action Brief will be built from them and emailed to you within 5 business days.</p>
+    <p>Questions in the meantime? Email <a href="mailto:hello@mirjcreative.com" style="color:#2846ab; font-weight:600;">hello@mirjcreative.com</a>.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 MIRJ Creative LLC. Crafted with intention.</p>
+  <p><a href="mailto:hello@mirjcreative.com">hello@mirjcreative.com</a></p>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('intake-form');
+  var confirmationPanel = document.getElementById('confirmation-panel');
+  var errorMsg = document.getElementById('form-error');
+
+  // Fallback path: Formspree redirected back here after a plain form post.
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    form.style.display = 'none';
+    confirmationPanel.style.display = 'block';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        confirmationPanel.style.display = 'block';
+        confirmationPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        errorMsg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Get My Brand Clarity Brief';
+      }
+    }).catch(function () {
+      errorMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Get My Brand Clarity Brief';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
