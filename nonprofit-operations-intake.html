@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Nonprofit Operations Intake | MIRJ Creative</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+    --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+    --white: #ffffff; --bg: #faf8f6;
+    --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+  }
+  body { font-family: 'Georgia', serif; color: var(--dark-text); background: var(--bg); line-height: 1.7; }
+
+  .hero { background: var(--gradient); color: var(--white); padding: 4rem 2rem 3.5rem; text-align: center; }
+  .hero .logo { font-size: 1.4rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 1.75rem; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 0.85rem; line-height: 1.2; }
+  .hero p { font-size: 1.05rem; color: var(--cream); max-width: 620px; margin: 0 auto; font-style: italic; }
+
+  .content { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .intro-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 1.75rem 2rem; margin-bottom: 2.25rem;
+  }
+  .intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.1rem; }
+  .intro-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .intro-row { grid-template-columns: 1fr; } }
+
+  .section-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 2rem 2rem 1.5rem; margin-bottom: 1.75rem;
+  }
+  .section-num { color: var(--coral); font-weight: 700; font-size: 0.95rem; }
+  .section-title { color: var(--purple); font-size: 1.4rem; margin: 0.2rem 0 0.5rem; padding-bottom: 0.65rem;
+                   border-bottom: 2px solid var(--purple); }
+  .section-desc { font-style: italic; color: var(--muted-purple); font-size: 0.95rem; margin-bottom: 1.4rem; }
+
+  label { display: block; font-weight: 700; font-size: 0.98rem; margin-bottom: 0.4rem; color: var(--dark-text); }
+  .field { margin-bottom: 1.4rem; }
+  .field .hint { font-size: 0.82rem; color: var(--muted-purple); font-weight: normal; font-style: italic; margin-top: 0.25rem; }
+
+  input[type="text"], input[type="email"], input[type="date"], textarea {
+    width: 100%; font-family: 'Georgia', serif; font-size: 1rem; color: var(--dark-text);
+    border: 1px solid #ddd6d0; border-radius: 8px; padding: 0.65rem 0.8rem; background: var(--bg);
+    outline: none; transition: border-color 0.2s;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea:focus {
+    border-color: var(--coral);
+  }
+  textarea { min-height: 4.5rem; resize: vertical; }
+
+  .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; }
+  th { background: #ece5f5; color: var(--purple); text-align: left; font-size: 0.85rem;
+       padding: 0.6rem 0.6rem; border: 1px solid #ddd6d0; white-space: nowrap; }
+  td { border: 1px solid #ddd6d0; padding: 0.4rem; }
+  td input { border: none; background: transparent; padding: 0.4rem; font-size: 0.92rem; }
+  td input:focus { background: #fff; border-radius: 4px; }
+
+  .add-row-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: 1.5px dashed var(--purple);
+    color: var(--purple); font-family: 'Georgia', serif; font-size: 0.88rem; font-weight: 700;
+    padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+  }
+  .add-row-btn:hover { background: var(--purple); color: var(--white); }
+
+  .upload-box {
+    background: #f6f2fb; border: 1.5px dashed var(--purple); border-radius: 10px;
+    padding: 1.4rem 1.5rem; margin-bottom: 1.4rem;
+  }
+  .upload-box-title { font-weight: 700; color: var(--purple); font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .upload-box-desc { font-size: 0.9rem; color: #555; margin-bottom: 0.9rem; line-height: 1.55; }
+  .upload-box input[type="text"] { background: var(--white); }
+
+  .cta-button {
+    display: block; width: 100%; background: var(--coral); color: var(--white); border: 2px solid var(--coral);
+    padding: 1.1rem 2rem; font-size: 1.1rem; font-family: 'Georgia', serif; font-weight: 700;
+    border-radius: 50px; cursor: pointer; transition: all 0.3s ease; margin-top: 0.5rem;
+  }
+  .cta-button:hover { background: transparent; color: var(--coral); }
+
+  .submit-block { text-align: center; margin-top: 0.5rem; }
+  .submit-note { font-size: 0.85rem; color: var(--muted-purple); margin-top: 1rem; }
+  .submit-error {
+    display: none; background: #fdecea; color: #b13b2d; border-radius: 8px; padding: 0.9rem 1.1rem;
+    font-size: 0.92rem; margin-top: 1.2rem; text-align: left;
+  }
+
+  .success-panel { display: none; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 3rem 2rem; text-align: center; }
+  .success-panel .check { width: 56px; height: 56px; border-radius: 50%; background: var(--gradient); color: var(--white);
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem; }
+  .success-panel h2 { color: var(--blue); font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .success-panel p { color: #555; max-width: 480px; margin: 0 auto; }
+
+  footer { background: var(--blue); color: var(--white); text-align: center; padding: 2.5rem 2rem;
+           font-size: 0.9rem; border-top: 3px solid var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">MIRJ CREATIVE</div>
+  <h1>Nonprofit Operations Intake</h1>
+  <p>A full picture of how your organization runs today, mission, board, programs, and money, before we recommend what comes next.</p>
+</div>
+
+<div class="content">
+
+  <form id="intake-form">
+
+    <div class="intro-card">
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="org-name">Organization Name</label>
+          <input type="text" id="org-name" name="Organization Name" required>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="completed-by">Completed By / Role</label>
+          <input type="text" id="completed-by" name="Completed By / Role" required>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+          <div class="hint">So we can follow up and send next steps.</div>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="Date" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section-card">
+      <div class="section-num">1</div>
+      <div class="section-title">Organization Snapshot</div>
+      <div class="section-desc">The basics, so we know the shape of the organization before we go deep.</div>
+
+      <div class="field">
+        <label>What is your mission, in one or two sentences?</label>
+        <textarea name="1. Mission" required></textarea>
+      </div>
+      <div class="field">
+        <label>How long has the organization been operating?</label>
+        <textarea name="1. How long operating" required></textarea>
+      </div>
+      <div class="field">
+        <label>What locations, chapters, or service areas does the organization operate in?</label>
+        <textarea name="1. Locations or chapters" required></textarea>
+      </div>
+      <div class="field">
+        <label>How many people are currently involved in running the organization? Include board members, staff, and active volunteers.</label>
+        <textarea name="1. People involved" required></textarea>
+      </div>
+      <div class="field">
+        <label>What is the busiest season, cycle, or time of year, and why?</label>
+        <textarea name="1. Busiest season"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section-card">
+      <div class="section-num">2</div>
+      <div class="section-title">Board and Governance</div>
+      <div class="section-desc">This section only applies if your organization has a board. If it does not, write N/A on each field and move on.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Board Role / Title</th><th>Term Started</th><th>Term Status</th></tr>
+          </thead>
+          <tbody id="board-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('board-table','Board Member',['Name','Board Role / Title','Term Started','Term Status'])">+ Add Board Member</button>
+
+      <div class="field" style="margin-top:1.5rem;">
+        <label>How are board decisions made? For example majority vote, consensus, or executive decision.</label>
+        <textarea name="2. How decisions are made"></textarea>
+      </div>
+      <div class="field">
+        <label>How often does the board meet, and in what format?</label>
+        <textarea name="2. Meeting cadence and format" required></textarea>
+      </div>
+      <div class="field">
+        <label>Are any board members currently transitioning off, stepping into new roles, or being recruited? Who, and by when?</label>
+        <textarea name="2. Board transitions" required></textarea>
+      </div>
+      <div class="field">
+        <label>How are new board members recruited and onboarded today?</label>
+        <textarea name="2. Board recruitment and onboarding"></textarea>
+      </div>
+      <div class="field">
+        <label>Is there a written succession plan for board leadership? If so, where is it kept?</label>
+        <textarea name="2. Succession plan"></textarea>
+      </div>
+      <div class="field">
+        <label>What written governance documents exist today, such as bylaws, a conflict of interest policy, or committee descriptions, and where are they stored?</label>
+        <textarea name="2. Governance documents"></textarea>
+      </div>
+      <div class="field">
+        <label>What is the single biggest open question or decision facing the board right now?</label>
+        <textarea name="2. Biggest open board question" required></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section-card">
+      <div class="section-num">3</div>
+      <div class="section-title">Staff, Volunteer, and Committee Roles</div>
+      <div class="section-desc">Fill in every role currently being filled, even informally. Include roles one person is covering out of necessity, not just what is on an org chart.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Role / Title</th><th>Who Currently Holds It</th><th>Core Responsibilities</th><th>Hours / Week</th></tr>
+          </thead>
+          <tbody id="roles-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('roles-table','Role',['Title','Who Currently Holds It','Core Responsibilities','Hours / Week'])">+ Add Role</button>
+
+      <div class="field" style="margin-top:1.5rem;">
+        <label>Which of these roles exist only in one person's head, meaning if that person left tomorrow, the work would stop or suffer?</label>
+        <textarea name="3. Roles that exist only in one person's head" required></textarea>
+      </div>
+      <div class="field">
+        <label>Where are two or more people currently doing the same task without a clear owner?</label>
+        <textarea name="3. Duplicate ownership"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section-card">
+      <div class="section-num">4</div>
+      <div class="section-title">Program and Event Operations</div>
+      <div class="section-desc">Walk through how a typical program or event moves from idea to completion.</div>
+
+      <div class="field">
+        <label>What happens at the start of planning a new program or event?</label>
+        <textarea name="4. Start of program planning" required></textarea>
+      </div>
+      <div class="field">
+        <label>What happens in the thick of running the program or event, the bulk of the work?</label>
+        <textarea name="4. Running the program"></textarea>
+      </div>
+      <div class="field">
+        <label>What happens after a program or event wraps? Debriefs, reporting, thank you notes, and so on.</label>
+        <textarea name="4. After the program wraps"></textarea>
+      </div>
+      <div class="field">
+        <label>Where do things slow down, get confusing, or create the most friction while planning or running programs?</label>
+        <textarea name="4. Program friction points" required></textarea>
+      </div>
+      <div class="field">
+        <label>What tasks happen automatically or out of habit, without being written down anywhere?</label>
+        <textarea name="4. Habitual undocumented tasks"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section-card">
+      <div class="section-num">5</div>
+      <div class="section-title">Member and Participant Journey</div>
+      <div class="section-desc">Trace one member or participant from first contact through active involvement.</div>
+
+      <div class="field">
+        <label>How does someone typically find or connect with the organization, and become a member or participant?</label>
+        <textarea name="5. First contact and joining" required></textarea>
+      </div>
+      <div class="field">
+        <label>What does onboarding look like once someone joins?</label>
+        <textarea name="5. Onboarding" required></textarea>
+      </div>
+      <div class="field">
+        <label>What does the member or participant experience look like month to month?</label>
+        <textarea name="5. Month to month experience"></textarea>
+      </div>
+      <div class="field">
+        <label>What happens when a member becomes less active or leaves? Any follow up or exit process?</label>
+        <textarea name="5. Member drop off or exit"></textarea>
+      </div>
+      <div class="field">
+        <label>Where do members most often get confused, frustrated, or disengaged?</label>
+        <textarea name="5. Where members disengage"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section-card">
+      <div class="section-num">6</div>
+      <div class="section-title">Tools and Systems Inventory</div>
+      <div class="section-desc">List every platform, app, or system currently in use, even spreadsheets and paper logs.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Platform / Tool</th><th>Purpose</th><th>Who Has Access</th><th>Monthly Cost</th></tr>
+          </thead>
+          <tbody id="tools-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('tools-table','Tool',['Platform Name','Purpose','Who Has Access','Monthly Cost'])">+ Add Tool</button>
+
+      <div class="field" style="margin-top:1.5rem;">
+        <label>How is your team currently using AI tools, if at all?</label>
+        <textarea name="6. Current AI usage"></textarea>
+      </div>
+      <div class="field">
+        <label>Which of these tools talk to each other automatically, and which require manual re-entry of the same information?</label>
+        <textarea name="6. Tool integration vs manual re-entry"></textarea>
+      </div>
+      <div class="field">
+        <label>Are there any homemade workarounds, personal spreadsheets, sticky notes, or text reminders that are not official but that someone relies on daily?</label>
+        <textarea name="6. Homemade workarounds"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section-card">
+      <div class="section-num">7</div>
+      <div class="section-title">Communication Channels</div>
+      <div class="section-desc">How information actually moves, not how it is supposed to move.</div>
+
+      <div class="field">
+        <label>How does the board and staff communicate internally day to day? In person, text, email, group chat, or a project management tool.</label>
+        <textarea name="7. Internal communication" required></textarea>
+      </div>
+      <div class="field">
+        <label>How does the organization communicate with members? Which channel is used for which purpose.</label>
+        <textarea name="7. Member communication" required></textarea>
+      </div>
+      <div class="field">
+        <label>What important information tends to get lost, delayed, or miscommunicated most often?</label>
+        <textarea name="7. Information that gets lost"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="section-card">
+      <div class="section-num">8</div>
+      <div class="section-title">Financial and Fundraising Operations</div>
+      <div class="section-desc">The money and paperwork side of the organization.</div>
+
+      <div class="field">
+        <label>Who handles dues collection, bookkeeping, and financial recordkeeping, and what tools do they use?</label>
+        <textarea name="8. Dues, bookkeeping, and recordkeeping" required></textarea>
+      </div>
+      <div class="field">
+        <label>What are the organization's primary funding sources today? For example dues, grants, individual donations, sponsorships, or fundraising events.</label>
+        <textarea name="8. Funding sources" required></textarea>
+      </div>
+      <div class="field">
+        <label>Are there any grants or funding applications currently in progress, and what are their deadlines?</label>
+        <textarea name="8. Grants in progress"></textarea>
+      </div>
+      <div class="field">
+        <label>What recurring bills, subscriptions, or vendor payments need to be tracked?</label>
+        <textarea name="8. Recurring bills and subscriptions"></textarea>
+      </div>
+      <div class="field">
+        <label>What financial reporting currently happens, and who sees it? Board, funders, or the general membership.</label>
+        <textarea name="8. Financial reporting"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="section-card">
+      <div class="section-num">9</div>
+      <div class="section-title">Recurring Programs, Events, and Cadence</div>
+      <div class="section-desc">Everything that happens on a schedule, mapped to who owns it and what it touches.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Program / Task</th><th>Frequency</th><th>Owner</th><th>Tool(s) Used</th></tr>
+          </thead>
+          <tbody id="tasks-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('tasks-table','Task',['Name','Frequency','Owner','Tool(s) Used'])">+ Add Program or Task</button>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="section-card">
+      <div class="section-num">10</div>
+      <div class="section-title">Documentation Status</div>
+      <div class="section-desc">What is actually written down versus what lives only in someone's memory.</div>
+
+      <div class="field">
+        <label>What processes already have written instructions, checklists, or SOPs? Where are they stored?</label>
+        <textarea name="10. Existing documentation"></textarea>
+      </div>
+
+      <div class="upload-box">
+        <div class="upload-box-title">Share your existing documents</div>
+        <p class="upload-box-desc">Bylaws, policy and procedure documents, committee descriptions, onboarding curriculum, or anything else already written down. We would rather read them directly than have you retype them here.</p>
+        <p class="upload-box-desc">A quick note on this section: it is for the audit itself. Anything you have already shared with us through Drive does not need to be resent here, we already have it and will pull from it. Use this space only for anything additional the audit needs that we do not already have access to. What you have already shared will still matter, it comes back into play once we get to building out what the audit recommends.</p>
+        <div class="field" style="margin-bottom:0.9rem;">
+          <label>Link to your existing documents</label>
+          <input type="text" name="10. Link to existing documents" placeholder="Google Drive folder, Dropbox, Notion, shared server, etc.">
+          <div class="hint">A folder link covering everything is easiest. Set sharing to "anyone with the link can view" so we are not stuck requesting access.</div>
+        </div>
+        <p class="upload-box-desc" style="margin-bottom:0;">No link to share, or the files only exist as photos, scans, or something on someone's desktop? Email them to <a href="mailto:hello@mirjcreative.com" style="color:var(--purple);">hello@mirjcreative.com</a> with your organization name in the subject line, and we will match them up with this form.</p>
+      </div>
+
+      <div class="field">
+        <label>What processes have never been written down anywhere?</label>
+        <textarea name="10. Undocumented processes" required></textarea>
+      </div>
+      <div class="field">
+        <label>How are new members or new board members currently trained or oriented? Is there a formal process or is it word of mouth?</label>
+        <textarea name="10. New member and board training"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="section-card">
+      <div class="section-num">11</div>
+      <div class="section-title">Pain Points and Bottlenecks</div>
+      <div class="section-desc">Where the friction actually is, in plain language.</div>
+
+      <div class="field">
+        <label>What breaks down first when the organization gets busy or a key person is unavailable?</label>
+        <textarea name="11. What breaks down first" required></textarea>
+      </div>
+      <div class="field">
+        <label>What is the single biggest source of stress or burnout for leadership right now?</label>
+        <textarea name="11. Biggest source of stress" required></textarea>
+      </div>
+      <div class="field">
+        <label>If one thing could be fixed, automated, or taken off someone's plate immediately, what would it be?</label>
+        <textarea name="11. One thing to fix first" required></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 12 -->
+    <div class="section-card">
+      <div class="section-num">12</div>
+      <div class="section-title">Goals for This Engagement</div>
+      <div class="section-desc">What a successful outcome looks like, in your own words.</div>
+
+      <div class="field">
+        <label>What does the organization need to look like in six months for this to have been worth it?</label>
+        <textarea name="12. Six month goal" required></textarea>
+      </div>
+      <div class="field">
+        <label>What is your ideal timeline for this engagement? Include any hard deadlines or milestone dates we should plan around, such as an upcoming board meeting.</label>
+        <textarea name="12. Timeline and deadlines" required></textarea>
+      </div>
+      <div class="field">
+        <label>How do you prefer to receive findings and recommendations? For example a written report, a live walkthrough, or a board presentation.</label>
+        <textarea name="12. Preferred delivery format"></textarea>
+      </div>
+      <div class="field">
+        <label>Who else should be looped in during this process? Names, roles, and preferred contact methods.</label>
+        <textarea name="12. Other stakeholders"></textarea>
+      </div>
+      <div class="field">
+        <label>What are you not willing to change, even if it would be more efficient? Culture, member experience, or your own personal involvement.</label>
+        <textarea name="12. What not to change"></textarea>
+      </div>
+      <div class="field">
+        <label>Anything else we should know before we begin?</label>
+        <textarea name="12. Anything else"></textarea>
+      </div>
+    </div>
+
+    <div class="submit-block">
+      <button type="submit" class="cta-button" id="submit-btn">Submit Intake Form</button>
+      <p class="submit-note">Everything here stays between us and shapes exactly where we focus first. No pressure to have perfect answers, "N/A" or "not sure" is a fine answer anywhere.</p>
+      <div class="submit-error" id="submit-error">Something went wrong sending this form. Please check your connection and try again, or email hello@mirjcreative.com directly and we will get you sorted.</div>
+    </div>
+  </form>
+
+  <div class="success-panel" id="success-panel">
+    <div class="check">&#10003;</div>
+    <h2>Received. Thank you.</h2>
+    <p>Your Nonprofit Operations Intake Form has been submitted. We will review everything before your next call and follow up if we need anything else.</p>
+  </div>
+
+</div>
+
+<footer>
+  MIRJ Creative | Operations and Automation Consulting
+</footer>
+
+<script>
+  var rowCounts = { 'board-table': 0, 'roles-table': 0, 'tools-table': 0, 'tasks-table': 0 };
+
+  function addRow(tableBodyId, prefix, columns) {
+    var tbody = document.getElementById(tableBodyId);
+    rowCounts[tableBodyId] += 1;
+    var n = rowCounts[tableBodyId];
+    var tr = document.createElement('tr');
+    columns.forEach(function (col) {
+      var td = document.createElement('td');
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.name = prefix + ' ' + n + ' - ' + col;
+      td.appendChild(input);
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
+
+  // Seed starting rows to match the printed form
+  for (var i = 0; i < 5; i++) { addRow('board-table', 'Board Member', ['Name', 'Board Role / Title', 'Term Started', 'Term Status']); }
+  for (var i = 0; i < 6; i++) { addRow('roles-table', 'Role', ['Title', 'Who Currently Holds It', 'Core Responsibilities', 'Hours / Week']); }
+  for (var i = 0; i < 6; i++) { addRow('tools-table', 'Tool', ['Platform Name', 'Purpose', 'Who Has Access', 'Monthly Cost']); }
+  for (var i = 0; i < 8; i++) { addRow('tasks-table', 'Task', ['Name', 'Frequency', 'Owner', 'Tool(s) Used']); }
+
+  document.getElementById('intake-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var errorBox = document.getElementById('submit-error');
+    var btn = document.getElementById('submit-btn');
+    errorBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var data = new FormData(form);
+    var orgName = data.get('Organization Name') || 'Unknown Organization';
+    data.append('_subject', 'Nonprofit Operations Intake, ' + orgName);
+
+    fetch('https://formspree.io/f/mgodgnqd', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('success-panel').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    }).catch(function () {
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Submit Intake Form';
+    });
+  });
+</script>
+
+</body>
+</html>
