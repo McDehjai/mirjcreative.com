@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /operations-intake.html
+Disallow: /nonprofit-operations-intake.html
 Disallow: /audit-access-ai.html
 Disallow: /audit-access-ops.html
 Disallow: /groundwork-kit-access.html
