@@ -109,7 +109,7 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <header>
   <div class="logo">MIRJ Creative</div>
   <h1 id="page-title">Engagement Agreement</h1>
-  <p>Step 1 of 2: sign your agreement, then continue to your deposit payment</p>
+  <p id="step-subtitle">Step 1 of 2: sign your agreement, then continue to your deposit payment</p>
 </header>
 
 <main>
@@ -124,19 +124,20 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
     <p>MIRJ Creative LLC ("Consultant") agrees to provide the audit service selected above ("Services") to the undersigned client ("Client"). Scope, deliverables, and timing are as described in MIRJ Creative's published service descriptions and any intake materials the Client provides.</p>
 
     <h3>2. Deposit &amp; Fees</h3>
-    <p>Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750 to $1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below. The remaining balance is invoiced once scope is confirmed and is due in full before the delivery call described in Section 3.</p>
+    <p id="fee-clause">Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750 to $1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below. The remaining balance is invoiced once scope is confirmed and is due in full before the delivery call described in Section 3.</p>
 
     <h3>3. Timeline</h3>
-    <p>The engagement proceeds in four stages: agreement and deposit, intake and discovery, working session(s), and a delivery call held within 5 business days of the working session. The written deliverable is provided during the delivery call itself, not as a separate step. A 30-day follow-up window for questions is included at no additional charge.</p>
+    <p>The engagement proceeds in four stages: agreement, intake and discovery, working session(s), and a delivery call held within 5 business days of the working session. The written deliverable is provided during the delivery call itself, not as a separate step. A 30-day follow-up window for questions is included at no additional charge.</p>
 
     <h3>4. Revisions</h3>
-    <p>This engagement includes up to 2 rounds of revision on the delivered findings. Additional revisions beyond the included rounds will be billed at $250/hour or a flat fee agreed upon in writing.</p>
+    <p>This engagement includes up to 2 rounds of revision on the delivered findings. Additional revisions beyond the included rounds will be billed at $250/hour or a flat fee agreed upon in writing, or, for a pro bono engagement, addressed as capacity allows and agreed upon between both parties.</p>
 
-    <h3>5. Cancellation &amp; Refunds</h3>
-    <p>Client may cancel with 7 days' written notice prior to the scheduled working session for a full refund of the deposit. Once the working session is scheduled and confirmed, the deposit becomes non-refundable. Work completed prior to cancellation will be billed at the agreed rate on a prorated basis. Once the final deliverable has been delivered at the delivery call, all services rendered are considered complete and no refunds will be issued.</p>
+    <h3>5. Cancellation</h3>
+    <p id="cancellation-clause">Client may cancel with 7 days' written notice prior to the scheduled working session for a full refund of the deposit. Once the working session is scheduled and confirmed, the deposit becomes non-refundable. Work completed prior to cancellation will be billed at the agreed rate on a prorated basis. Once the final deliverable has been delivered at the delivery call, all services rendered are considered complete and no refunds will be issued.</p>
 
     <h3>6. Intellectual Property</h3>
-    <p>Upon receipt of full payment, Client owns the final deliverables. MIRJ Creative retains ownership of all frameworks, tools, methodologies, and processes used to deliver the Services, and retains the right to reference the engagement in its portfolio in general terms unless Client requests otherwise in writing.</p>
+    <p>Upon receipt of full payment where applicable, Client owns the final deliverables. MIRJ Creative retains ownership of all frameworks, tools, methodologies, and processes used to deliver the Services, and retains the right to reference the engagement in its portfolio in general terms unless Client requests otherwise in writing.</p>
+    <p>Client agrees not to reproduce, repurpose, distribute, or share MIRJ Creative's proprietary frameworks, tools, templates, intake materials, or methodologies with any third party, including other organizations, without MIRJ Creative's prior written consent. This restriction applies to MIRJ Creative's underlying materials, not to Client's own final deliverables, which Client is free to use internally as already described above.</p>
 
     <h3>7. Confidentiality</h3>
     <p>Both parties agree to keep proprietary information, strategies, and communications shared during this engagement confidential, both during and after its term, except where disclosure is required by law or the information is already public.</p>
@@ -145,10 +146,10 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
     <p>MIRJ Creative is an independent contractor, not an employee, partner, or agent of Client, and is solely responsible for its own taxes, insurance, and expenses.</p>
 
     <h3>9. Limitation of Liability</h3>
-    <p>MIRJ Creative's total liability under this Agreement shall not exceed the fees paid. Neither party is liable for indirect, incidental, or consequential damages.</p>
+    <p>MIRJ Creative's total liability under this Agreement shall not exceed the fees paid, or, for a pro bono engagement where no fees are paid, shall not exceed the value of the deliverables provided. Neither party is liable for indirect, incidental, or consequential damages.</p>
 
     <h3>10. Governing Law</h3>
-    <p>This Agreement is governed by the laws of the Commonwealth of Virginia. Disputes will first be addressed through good-faith negotiation, then mediation in Virginia if unresolved, before any litigation.</p>
+    <p>This Agreement is governed by the laws of the Commonwealth of Virginia. Disputes will first be addressed through good faith negotiation, then mediation in Virginia if unresolved, before any litigation.</p>
 
     <h3>11. Signature</h3>
     <p>By typing your full legal name below and checking the box, you agree this constitutes your electronic signature and acceptance of this Agreement, with the same legal effect as a handwritten signature.</p>
@@ -176,8 +177,8 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
       <label for="agree">I have read and agree to the terms of this Engagement Agreement, and I understand my typed name above is my legally binding electronic signature.</label>
     </div>
     <div class="error-msg" id="error-msg"></div>
-    <button type="submit" class="submit-btn" id="submit-btn">Sign &amp; continue to payment</button>
-    <p class="fine-print">You'll be redirected to Stripe to complete your $375 deposit immediately after signing.</p>
+    <button type="submit" class="submit-btn" id="submit-btn">Sign &amp; continue</button>
+    <p class="fine-print" id="fine-print">You'll be redirected to Stripe to complete your $375 deposit immediately after signing.</p>
   </form>
 </main>
 
@@ -189,13 +190,31 @@ var SERVICES = {
     name: 'Operations Audit',
     price: '$375 Deposit',
     desc: 'For teams who know something\'s off but can\'t pinpoint whether it\'s a people problem, a process problem, or a tooling problem.',
-    stripeUrl: 'https://buy.stripe.com/fZu8wJ4Hm8wQb9E9MO7ss00'
+    stripeUrl: 'https://buy.stripe.com/fZu8wJ4Hm8wQb9E9MO7ss00',
+    stepSubtitle: 'Step 1 of 2: sign your agreement, then continue to your deposit payment',
+    finePrint: 'You\'ll be redirected to Stripe to complete your $375 deposit immediately after signing.',
+    feeClause: 'Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750 to $1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below. The remaining balance is invoiced once scope is confirmed and is due in full before the delivery call described in Section 3.',
+    cancellationClause: 'Client may cancel with 7 days\' written notice prior to the scheduled working session for a full refund of the deposit. Once the working session is scheduled and confirmed, the deposit becomes non-refundable. Work completed prior to cancellation will be billed at the agreed rate on a prorated basis. Once the final deliverable has been delivered at the delivery call, all services rendered are considered complete and no refunds will be issued.'
   },
   ai: {
     name: 'AI Automation Audit',
     price: '$375 Deposit',
     desc: 'For teams who\'ve already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.',
-    stripeUrl: 'https://buy.stripe.com/6oU8wJfm03cwdhM2km7ss01'
+    stripeUrl: 'https://buy.stripe.com/6oU8wJfm03cwdhM2km7ss01',
+    stepSubtitle: 'Step 1 of 2: sign your agreement, then continue to your deposit payment',
+    finePrint: 'You\'ll be redirected to Stripe to complete your $375 deposit immediately after signing.',
+    feeClause: 'Client agrees to pay a $375 deposit to begin the Services. This deposit is credited in full toward the final project total, which is typically $750 to $1,500 depending on scope and is confirmed in writing after intake and discovery. The $375 deposit is non-refundable once the working session is scheduled, per Section 5 below. The remaining balance is invoiced once scope is confirmed and is due in full before the delivery call described in Section 3.',
+    cancellationClause: 'Client may cancel with 7 days\' written notice prior to the scheduled working session for a full refund of the deposit. Once the working session is scheduled and confirmed, the deposit becomes non-refundable. Work completed prior to cancellation will be billed at the agreed rate on a prorated basis. Once the final deliverable has been delivered at the delivery call, all services rendered are considered complete and no refunds will be issued.'
+  },
+  probono: {
+    name: 'Operations Audit, Pro Bono Engagement',
+    price: 'Pro Bono, No Cost',
+    desc: 'A full operations and governance audit provided at no cost. This is a limited, selectively offered arrangement, not a standard rate for any organization type.',
+    redirectUrl: 'https://mirjcreative.com/nonprofit-operations-intake.html',
+    stepSubtitle: 'Step 1 of 2: sign your agreement, then continue to your intake form',
+    finePrint: 'You\'ll be redirected to your intake form immediately after signing.',
+    feeClause: 'This engagement is provided to Client at no cost, as a specific pro bono arrangement extended to Client by MIRJ Creative at its sole discretion. This arrangement does not extend to any other organization or future engagement unless separately and explicitly agreed to in writing. No deposit or fee is due at any stage of this engagement unless both parties separately agree in writing to a different arrangement for future work.',
+    cancellationClause: 'Either party may end this engagement at any time with written notice. Since no payment is exchanged under this Agreement, no refund provisions apply. MIRJ Creative reserves the right to conclude or decline further pro bono work at its discretion if capacity or circumstances change.'
   }
 };
 
@@ -204,13 +223,18 @@ function getParam(name) {
   return params.get(name);
 }
 
-var serviceKey = getParam('service') === 'ai' ? 'ai' : 'ops';
+var requestedService = getParam('service');
+var serviceKey = SERVICES.hasOwnProperty(requestedService) ? requestedService : 'ops';
 var service = SERVICES[serviceKey];
 
 document.getElementById('page-title').textContent = service.name + ': Engagement Agreement';
+document.getElementById('step-subtitle').textContent = service.stepSubtitle;
 document.getElementById('service-name').textContent = service.name;
 document.getElementById('service-price').textContent = service.price;
 document.getElementById('service-desc').textContent = service.desc;
+document.getElementById('fee-clause').textContent = service.feeClause;
+document.getElementById('cancellation-clause').textContent = service.cancellationClause;
+document.getElementById('fine-print').textContent = service.finePrint;
 document.title = service.name + ': Engagement Agreement | MIRJ Creative';
 
 document.getElementById('agreement-form').addEventListener('submit', function (e) {
@@ -244,9 +268,9 @@ document.getElementById('agreement-form').addEventListener('submit', function (e
     method: 'POST',
     body: JSON.stringify(payload)
   }).catch(function () {
-    /* proceed to payment even if logging fails, so a backend hiccup never blocks a paying client */
+    /* proceed even if logging fails, so a backend hiccup never blocks the client */
   }).finally(function () {
-    window.location.href = service.stripeUrl;
+    window.location.href = service.redirectUrl || service.stripeUrl;
   });
 });
 </script>
