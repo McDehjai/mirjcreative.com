@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Dehjai White | MIRJ Creative</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#1A1725;
+    --panel:rgba(255,255,255,0.04);
+    --panel-active:rgba(255,255,255,0.08);
+    --ink:#EDE7F6;
+    --muted:#A99BC0;
+    --gold:#DFD7AE;
+    --coral:#FF8A70;
+    --mint:#7FE0C4;
+    --rule:rgba(255,138,112,0.35);
+    --font-serif:'EB Garamond', Georgia, 'Times New Roman', serif;
+    --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{margin:0;padding:0;}
+
+  body{
+    min-height:100vh;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--font-serif);
+    display:flex;
+    justify-content:center;
+    padding:0 0 48px;
+  }
+
+  main{
+    width:100%;
+    max-width:440px;
+    min-height:100vh;
+    background:var(--ground);
+    display:flex;
+    flex-direction:column;
+  }
+
+  .hero{
+    background:linear-gradient(135deg,#2846AB 0%,#5D4EBA 25%,#9A51C0 50%,#C44EBA 75%,#E74CB5 100%);
+    padding:44px 24px 34px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+
+  .mark{ width:76px; height:44px; }
+
+  .wordmark{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:#FBF9F4;
+    text-align:center;
+  }
+
+  .card-body{
+    padding:34px 28px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  h1{
+    margin:0;
+    font-size:clamp(30px,7vw,38px);
+    font-style:italic;
+    font-weight:400;
+    line-height:1.15;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+
+  .kicker{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--coral);
+    margin:2px 0 20px;
+  }
+
+  .tagline-block{
+    border-left:2px solid var(--rule);
+    padding-left:16px;
+    margin-bottom:8px;
+  }
+
+  .tagline{
+    font-style:italic;
+    font-size:18px;
+    color:var(--gold);
+    line-height:1.5;
+  }
+
+  .rule{
+    height:1px;
+    background:var(--rule);
+    border:none;
+    margin:28px 28px 22px;
+  }
+
+  .actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:0 28px;
+  }
+
+  .action{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    text-decoration:none;
+    color:inherit;
+    background:var(--panel);
+    border-left:2px solid var(--coral);
+    border-radius:2px;
+    padding:14px 18px;
+    min-height:56px;
+    transition:background 0.15s ease, transform 0.1s ease;
+  }
+
+  .action:active{
+    background:var(--panel-active);
+    transform:scale(0.99);
+  }
+
+  .action-text{ display:flex; flex-direction:column; gap:3px; min-width:0; }
+
+  .action-label{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  .action-value{
+    font-size:18px;
+    color:var(--ink);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .chevron{ color:var(--coral); font-size:18px; flex-shrink:0; }
+
+  .save-contact{
+    margin:26px 28px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--coral);
+    border-radius:999px;
+    padding:16px 20px;
+    min-height:56px;
+    transition:background 0.15s ease, transform 0.1s ease;
+  }
+
+  .save-contact:active{
+    background:rgba(255,138,112,0.12);
+    transform:scale(0.99);
+  }
+
+  footer{
+    margin-top:auto;
+    padding:30px 28px 0;
+    text-align:center;
+  }
+
+  footer .rule{ margin:0 0 16px; }
+
+  .foot-line{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    line-height:1.9;
+  }
+
+  .foot-line a{ color:var(--muted); text-decoration:none; }
+
+  @media (max-width:380px){
+    .card-body{ padding:30px 22px 22px; }
+    .actions{ padding:0 22px; }
+    .save-contact{ margin:24px 22px 0; }
+    footer{ padding:26px 22px 0; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="hero">
+    <svg class="mark" viewBox="0 0 76 44" aria-hidden="true">
+      <defs>
+        <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3A55BD"/>
+          <stop offset="100%" stop-color="#B36BE0"/>
+        </linearGradient>
+      </defs>
+      <circle cx="16" cy="22" r="14" fill="url(#circleGradient)"/>
+      <circle cx="38" cy="22" r="14" fill="#FF8A70"/>
+      <circle cx="60" cy="22" r="14" fill="#7FE0C4"/>
+    </svg>
+    <div class="wordmark">MIRJ Creative</div>
+  </div>
+
+  <div class="card-body">
+    <h1>Dehjai White</h1>
+    <p class="kicker">Founder, MIRJ Creative</p>
+    <div class="tagline-block">
+      <p class="tagline">Clarity. Alignment. Opportunity.</p>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <div class="actions">
+    <a class="action" href="tel:+18043840343">
+      <span class="action-text">
+        <span class="action-label">Call</span>
+        <span class="action-value">804.384.0343</span>
+      </span>
+      <span class="chevron">&#8594;</span>
+    </a>
+
+    <a class="action" href="https://mirjcreative.com/book.html?type=consult">
+      <span class="action-text">
+        <span class="action-label">Book</span>
+        <span class="action-value">Discovery Call</span>
+      </span>
+      <span class="chevron">&#8594;</span>
+    </a>
+
+    <a class="action" href="mailto:hello@mirjcreative.com">
+      <span class="action-text">
+        <span class="action-label">Email</span>
+        <span class="action-value">hello@mirjcreative.com</span>
+      </span>
+      <span class="chevron">&#8594;</span>
+    </a>
+
+    <a class="action" href="https://mirjcreative.com">
+      <span class="action-text">
+        <span class="action-label">Website</span>
+        <span class="action-value">mirjcreative.com</span>
+      </span>
+      <span class="chevron">&#8594;</span>
+    </a>
+  </div>
+
+  <a class="save-contact" href="/downloads/MIRJ-Creative-Contact-Card.vcf">
+    Save Contact
+  </a>
+
+  <footer>
+    <hr class="rule" />
+    <p class="foot-line">mirjcreative.com<br/>hello@mirjcreative.com</p>
+  </footer>
+</main>
+
+</body>
+</html>
