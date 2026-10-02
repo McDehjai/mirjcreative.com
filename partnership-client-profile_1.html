@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>MIRJ Creative, Partnership Client Background and Details</title>
+<style>
+  :root{
+    --coral:#F48575;
+    --blue:#2846AB;
+    --purple:#8354C5;
+    --cream:#DFD7AE;
+    --muted:#8487AE;
+    --dark:#1A1A1A;
+    --bg:#FAF8F6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--bg);
+    color:var(--dark);
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 55%,var(--coral) 100%);
+    color:#fff;
+    padding:56px 24px 44px;
+    text-align:center;
+  }
+  .hero h1{
+    margin:0 0 10px;
+    font-size:28px;
+    font-weight:normal;
+    letter-spacing:0.3px;
+  }
+  .hero p{
+    margin:0;
+    font-size:15px;
+    opacity:0.92;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:36px 20px 70px;
+  }
+  .intro{
+    background:#fff;
+    border:1px solid rgba(40,70,171,0.15);
+    border-left:4px solid var(--coral);
+    padding:18px 20px;
+    border-radius:6px;
+    margin-bottom:34px;
+    font-size:15px;
+  }
+  form{background:transparent;}
+  .section{
+    margin-bottom:34px;
+  }
+  .section-kicker{
+    color:var(--purple);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:6px;
+  }
+  .section h2{
+    margin:0 0 18px;
+    font-size:20px;
+    color:var(--blue);
+    border-bottom:2px solid var(--cream);
+    padding-bottom:10px;
+  }
+  .field{
+    margin-bottom:18px;
+  }
+  label{
+    display:block;
+    font-size:14.5px;
+    font-weight:bold;
+    margin-bottom:6px;
+    color:var(--dark);
+  }
+  .hint{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:4px;
+    font-style:italic;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=date],
+  textarea,
+  select{
+    width:100%;
+    padding:10px 12px;
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:15px;
+    border:1px solid #cfcfd6;
+    border-radius:5px;
+    background:#fff;
+    color:var(--dark);
+  }
+  textarea{
+    min-height:80px;
+    resize:vertical;
+  }
+  input:focus,textarea:focus,select:focus{
+    outline:none;
+    border-color:var(--blue);
+  }
+  .submit-row{
+    margin-top:40px;
+    text-align:center;
+  }
+  button{
+    background:var(--coral);
+    color:#fff;
+    border:none;
+    padding:14px 34px;
+    font-size:16px;
+    font-family:Georgia,'Times New Roman',serif;
+    border-radius:30px;
+    cursor:pointer;
+  }
+  button:hover{opacity:0.92;}
+  .footer-note{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:18px;
+  }
+  #confirmation{
+    display:none;
+    text-align:center;
+    background:#fff;
+    border:1px solid rgba(40,70,171,0.15);
+    border-radius:8px;
+    padding:48px 28px;
+  }
+  #confirmation h2{
+    color:var(--blue);
+    border-bottom:none;
+    margin-bottom:10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>MIRJ Creative</h1>
+  <p>Partnership Client Background and Details</p>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    This form is for any partner organization to complete when introducing MIRJ Creative to a new client or collaboration. The details below give MC what it needs on file for scoping and infrastructure mapping before engagement work begins. Fill in what you know now, you can always follow up with more later.
+  </div>
+
+  <form id="partnershipForm" action="https://formspree.io/f/mgodgnqd" method="POST">
+    <input type="hidden" name="_subject" value="Partnership Client Background and Details Submission">
+
+    <div class="section">
+      <div class="section-kicker">Section 1</div>
+      <h2>Partner and Submission Info</h2>
+
+      <div class="field">
+        <label for="partnerOrg">Partner organization name</label>
+        <input type="text" id="partnerOrg" name="Partner organization name" required>
+      </div>
+      <div class="field">
+        <label for="partnerContact">Partner contact name and role</label>
+        <input type="text" id="partnerContact" name="Partner contact name and role" required>
+      </div>
+      <div class="field">
+        <label for="partnerEmail">Partner contact email</label>
+        <input type="email" id="partnerEmail" name="Partner contact email" required>
+      </div>
+      <div class="field">
+        <label for="submittedDate">Date submitted</label>
+        <input type="date" id="submittedDate" name="Date submitted">
+      </div>
+      <div class="field">
+        <label for="relationship">Relationship to MC</label>
+        <select id="relationship" name="Relationship to MC">
+          <option value="Referral">Referral</option>
+          <option value="Licensing partner">Licensing partner</option>
+          <option value="Joint offering">Joint offering</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="partnershipExpectations">How do you picture this partnership working, and what are your expectations of MIRJ Creative</label>
+        <textarea id="partnershipExpectations" name="Partnership expectations"></textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-kicker">Section 2</div>
+      <h2>Client or Company Background</h2>
+
+      <div class="field">
+        <label for="companyName">Company or business name</label>
+        <input type="text" id="companyName" name="Company or business name" placeholder="Leave blank if not yet known">
+      </div>
+      <div class="field">
+        <label for="industry">Industry or specialization</label>
+        <input type="text" id="industry" name="Industry or specialization">
+      </div>
+      <div class="field">
+        <label for="clientContact">Primary contact name at the client company</label>
+        <input type="text" id="clientContact" name="Primary contact name at the client company">
+      </div>
+      <div class="field">
+        <label for="clientRole">Primary contact role or title</label>
+        <input type="text" id="clientRole" name="Primary contact role or title">
+      </div>
+      <div class="field">
+        <label for="clientContactInfo">Primary contact email or phone</label>
+        <input type="text" id="clientContactInfo" name="Primary contact email or phone">
+      </div>
+      <div class="field">
+        <label for="clientWebsite">Company website, if any</label>
+        <input type="text" id="clientWebsite" name="Company website">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-kicker">Section 3</div>
+      <h2>Team and Structure</h2>
+
+      <div class="field">
+        <label for="teamSize">Current team size</label>
+        <input type="text" id="teamSize" name="Current team size">
+      </div>
+      <div class="field">
+        <label for="teamGrowth">Projected team size or growth target</label>
+        <input type="text" id="teamGrowth" name="Projected team size or growth target">
+      </div>
+      <div class="field">
+        <label for="locations">Number of locations or offices</label>
+        <input type="text" id="locations" name="Number of locations or offices">
+      </div>
+      <div class="field">
+        <label for="decisionMaker">Who makes the final decision on this engagement</label>
+        <input type="text" id="decisionMaker" name="Decision maker" placeholder="Owner, board, etc.">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-kicker">Section 4</div>
+      <h2>Operations and Infrastructure</h2>
+
+      <div class="field">
+        <label for="techStack">Current tech stack and tools in use</label>
+        <textarea id="techStack" name="Current tech stack and tools in use"></textarea>
+      </div>
+      <div class="field">
+        <label for="dayToDay">Day to day operations overview</label>
+        <textarea id="dayToDay" name="Day to day operations overview"></textarea>
+      </div>
+      <div class="field">
+        <label for="compliance">Compliance or regulatory requirements that apply</label>
+        <textarea id="compliance" name="Compliance or regulatory requirements" placeholder="For example HIPAA, DAR, or none"></textarea>
+      </div>
+      <div class="field">
+        <label for="painPoints">Known pain points or challenges</label>
+        <textarea id="painPoints" name="Known pain points or challenges"></textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-kicker">Section 5</div>
+      <h2>Goals and Timeline</h2>
+
+      <div class="field">
+        <label for="growthGoals">Growth goals</label>
+        <textarea id="growthGoals" name="Growth goals"></textarea>
+      </div>
+      <div class="field">
+        <label for="startDate">Expected engagement start date</label>
+        <input type="text" id="startDate" name="Expected engagement start date">
+      </div>
+      <div class="field">
+        <label for="finalizeBefore">What should be finalized before the engagement begins</label>
+        <textarea id="finalizeBefore" name="What should be finalized before the engagement begins"></textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-kicker">Section 6</div>
+      <h2>Anything Else</h2>
+
+      <div class="field">
+        <label for="anythingElse">Anything else MIRJ Creative should know before scoping or infrastructure mapping begins</label>
+        <textarea id="anythingElse" name="Anything else"></textarea>
+      </div>
+    </div>
+
+    <input type="hidden" name="_next" value="?sent=1">
+
+    <div class="submit-row">
+      <button type="submit">Submit</button>
+      <p class="footer-note">Your answers go directly to MIRJ Creative.</p>
+    </div>
+  </form>
+
+  <div id="confirmation">
+    <h2>Thank you</h2>
+    <p>This has been sent over to MIRJ Creative. We will follow up as the engagement moves forward.</p>
+  </div>
+
+</div>
+
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      document.getElementById('partnershipForm').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    }
+
+    var form = document.getElementById('partnershipForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response){
+        form.style.display = 'none';
+        document.getElementById('confirmation').style.display = 'block';
+      }).catch(function(){
+        form.submit();
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
