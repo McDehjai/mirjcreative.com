@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://mirjcreative.com/creator-check.html">
 <meta name="description" content="A free 5 question check on how your creative business is really running, scored into a result with a clear next step. Built for social media creators.">
 <meta property="og:type" content="website">
@@ -77,6 +78,14 @@ main {
   font-family: 'Georgia', serif; font-size: 0.95rem;
 }
 .form-group input:focus { outline: none; border-color: var(--coral); }
+.plat-grid { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+.plat-row { border: 2px solid #ddd; border-radius: 8px; padding: 0.6rem 0.9rem; background: #fff; }
+.plat-row.on { border-color: var(--coral); }
+.plat-row .plat-top { display: flex; align-items: center; gap: 0.6rem; margin: 0; cursor: pointer; color: #1a1a1a; font-weight: 600; font-size: 0.95rem; }
+.plat-row .plat-top input { width: 18px; height: 18px; padding: 0; accent-color: var(--coral); flex: none; }
+.plat-row .plat-handle { display: none; margin-top: 0.6rem; }
+.plat-row.on .plat-handle { display: block; }
+.form-hint { color: #666; font-size: 0.82rem; margin: -0.2rem 0 0.7rem; font-weight: 400; }
 .error-msg { color: #c0392b; font-size: 0.88rem; margin-bottom: 1rem; display: none; }
 .submit-btn {
   display: block; width: 100%; background: var(--coral); color: var(--white);
@@ -124,7 +133,7 @@ main {
   <div id="lead-screen" class="hidden">
     <div class="lead-card">
       <h2>Your result is ready</h2>
-      <p class="lead-sub">Enter your name and email to see your score.</p>
+      <p class="lead-sub">Enter your name, email, and the platforms you create on to see your score.</p>
       <div class="form-group">
         <label for="fullName">Full name</label>
         <input type="text" id="fullName" autocomplete="name">
@@ -132,6 +141,11 @@ main {
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>Where do you create?</label>
+        <p class="form-hint">Select every platform you post on and add your handle for each.</p>
+        <div class="plat-grid" id="plat-grid"></div>
       </div>
       <div class="error-msg" id="lead-error"></div>
       <button type="button" class="submit-btn" id="see-results-btn">See My Score</button>
@@ -256,12 +270,60 @@ function getTier(score) {
   }
 }
 
+
+var PLATFORMS = ['Instagram', 'TikTok', 'YouTube', 'Threads', 'Pinterest', 'LinkedIn', 'X', 'Facebook', 'Twitch', 'Other'];
+(function buildPlatforms() {
+  var grid = document.getElementById('plat-grid');
+  PLATFORMS.forEach(function (name, i) {
+    var row = document.createElement('div');
+    row.className = 'plat-row';
+    var top = document.createElement('label');
+    top.className = 'plat-top';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.id = 'plat-' + i;
+    cb.value = name;
+    top.appendChild(cb);
+    top.appendChild(document.createTextNode(name));
+    var h = document.createElement('input');
+    h.type = 'text';
+    h.className = 'plat-handle';
+    h.id = 'handle-' + i;
+    h.placeholder = name === 'Other' ? 'Platform name and handle' : '@yourhandle';
+    h.setAttribute('aria-label', name + ' handle');
+    h.autocapitalize = 'off';
+    cb.addEventListener('change', function () {
+      row.classList.toggle('on', cb.checked);
+      if (cb.checked) h.focus();
+    });
+    row.appendChild(top);
+    row.appendChild(h);
+    grid.appendChild(row);
+  });
+})();
+
+function collectPlatforms() {
+  var out = [];
+  PLATFORMS.forEach(function (name, i) {
+    if (document.getElementById('plat-' + i).checked) {
+      out.push({ platform: name, handle: document.getElementById('handle-' + i).value.trim() });
+    }
+  });
+  return out;
+}
+
 document.getElementById('see-results-btn').addEventListener('click', function () {
   var errorEl = document.getElementById('lead-error');
   var fullName = document.getElementById('fullName').value.trim();
   var email = document.getElementById('email').value.trim();
   if (!fullName || !email || email.indexOf('@') === -1) {
     errorEl.textContent = 'Please enter your name and a valid email.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  var plats = collectPlatforms();
+  if (!plats.length || plats.some(function (x) { return !x.handle; })) {
+    errorEl.textContent = 'Please select at least one platform and add your handle for each one you select.';
     errorEl.style.display = 'block';
     return;
   }
@@ -274,6 +336,7 @@ document.getElementById('see-results-btn').addEventListener('click', function ()
     email: email,
     score: finalScore,
     tier: result.tier,
+    platforms: plats.map(function (x) { return x.platform + ': ' + x.handle; }).join('; '),
     source: 'creator-check'
   };
 

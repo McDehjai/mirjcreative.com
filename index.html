@@ -1119,6 +1119,29 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 </div>
 
 <div class="segment-block">
+<div class="segment-kicker startup">Brand &amp; Creators</div>
+<h3 class="segment-heading">For Brands &amp; Creators</h3>
+<p class="segment-desc">Your work is visible, but the business behind it is running on memory. Get clarity on the brand, or structure behind the content, without handing anyone the wheel.</p>
+<div class="services-grid">
+
+<div class="service-card">
+<div class="no-price-line">Self-serve, no call required</div>
+<h3>Brand Clarity Audit</h3>
+<p>Work through nine guided sections on your own time. We turn your answers into a complete Brand Clarity Brief and a prioritized Action Brief you can start working from right away.</p>
+<a href="/brand-clarity-audit.html" class="cta-button">See How It Works</a>
+</div>
+
+<div class="service-card">
+<div class="no-price-line">New for creators</div>
+<h3>The Influencer Audit</h3>
+<p>Operations infrastructure for social media creators who want to stay in charge. No agency, no manager. A clear plan for the systems behind your content, your deals, and your money.</p>
+<a href="/influencer-audit.html" class="cta-button">Explore the Audit</a>
+</div>
+
+</div>
+</div>
+
+<div class="segment-block">
 <div class="segment-kicker established">Scaling</div>
 <h3 class="segment-heading">For Established Businesses</h3>
 <p class="segment-desc">You're a year or two in, growth has stalled, and something in your people, process, or tools is broken, even if you can't name it yet.</p>
@@ -1126,37 +1149,19 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <div class="services-grid solo-card">
 <div class="service-card">
 <div class="no-price-line">See what's involved, then get your starting price</div>
-<h3>Choose Your Audit</h3>
-<p>Not sure if the friction is a process problem or a tooling gap? Toggle between the two audits below to see what each one actually covers.</p>
-
-<div class="audit-tabs">
-<button type="button" class="audit-tab active" onclick="showAudit('ops')" id="tab-ops">Operations Audit</button>
-<button type="button" class="audit-tab" onclick="showAudit('ai')" id="tab-ai">AI Automation Audit</button>
-</div>
-
-<div class="audit-panel" id="panel-ops">
-<p class="audit-panel-desc">For teams who know something's off but can't pinpoint whether it's a people problem, a process problem, or a tooling problem. We map handoffs, ownership, and where the work actually breaks down.</p>
+<h3>Operations &amp; AI Automation Audit</h3>
+<p>One audit that finds where the friction lives and where automation can take the manual work off your plate. For teams who know something is off but can't yet say whether it's a people problem, a process problem, or a tooling gap.</p>
 <ul class="service-features">
-<li>Full operational friction assessment</li>
+<li>Full operational friction and workflow assessment</li>
 <li>Root-cause diagnosis across people, process, and tools</li>
-<li>Prioritized fix roadmap</li>
-<li>60-minute debrief call</li>
+<li>AI and automation recommendations where they actually help</li>
+<li>Prioritized fix and automation roadmap</li>
+<li>Two 45 minute calls: one to fill in gaps from your intake, one to debrief your findings</li>
 </ul>
-</div>
 
-<div class="audit-panel" id="panel-ai" style="display:none;">
-<p class="audit-panel-desc">For teams who've already spotted the friction and want to know exactly where AI and automation can take the manual work off their plate.</p>
-<ul class="service-features">
-<li>Full workflow and tool stack assessment</li>
-<li>AI tool recommendations</li>
-<li>Prioritized automation roadmap</li>
-<li>60-minute debrief call</li>
-</ul>
-</div>
-
-<div id="audit-reveal" class="reveal-panel">Starting deposit: <strong>$750</strong>, due at booking and credited toward your total. Any remaining balance is invoiced after your debrief.</div>
-<a href="/agreement.html?service=ops" class="cta-button" id="audit-book-btn" onclick="return revealPrice('audit-reveal', this, 'Continue to Audit')">Let's Scope It</a>
-<p class="audit-unsure">Still not sure which one fits? <a href="/book.html?type=audit">Book a discovery call</a> and we'll help you choose. Not ready for either yet? <a href="/ai-playbook.html">Get the free AI Playbook</a> first.</p>
+<div id="audit-reveal" class="reveal-panel">Starting deposit: <strong>$375</strong>, due at booking and credited toward your total. Any remaining balance is invoiced after your initial call.</div>
+<a href="/agreement.html?service=audit" class="cta-button" id="audit-book-btn" onclick="return revealPrice('audit-reveal', this, 'Continue to Audit')">Let's Scope It</a>
+<p class="audit-unsure">Not sure it's the right fit? <a href="/book.html?type=audit">Book a discovery call</a> and we'll help you decide. Not ready yet? <a href="/ai-playbook.html">Get the free AI Playbook</a> first.</p>
 </div>
 </div>
 
@@ -1220,14 +1225,6 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 </footer>
 
 <script>
-function showAudit(type) {
-document.getElementById('panel-ops').style.display = type === 'ops' ? 'block' : 'none';
-document.getElementById('panel-ai').style.display = type === 'ai' ? 'block' : 'none';
-document.getElementById('tab-ops').classList.toggle('active', type === 'ops');
-document.getElementById('tab-ai').classList.toggle('active', type === 'ai');
-document.getElementById('audit-book-btn').href = '/agreement.html?service=' + type;
-}
-
 function showFoundation(type) {
 document.getElementById('panel-starter').style.display = type === 'starter' ? 'block' : 'none';
 document.getElementById('panel-complete').style.display = type === 'complete' ? 'block' : 'none';

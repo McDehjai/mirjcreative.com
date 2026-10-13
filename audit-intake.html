@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Audit Intake | MIRJ Creative</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+    --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+    --white: #ffffff; --bg: #faf8f6;
+    --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+  }
+  body { font-family: 'Georgia', serif; color: var(--dark-text); background: var(--bg); line-height: 1.7; }
+
+  .hero { background: var(--gradient); color: var(--white); padding: 4rem 2rem 3.5rem; text-align: center; }
+  .hero .logo { font-size: 1.4rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 1.75rem; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 0.85rem; line-height: 1.2; }
+  .hero p { font-size: 1.05rem; color: var(--cream); max-width: 620px; margin: 0 auto; font-style: italic; }
+
+  .content { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .intro-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 1.75rem 2rem; margin-bottom: 2.25rem;
+  }
+  .intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.1rem; }
+  .intro-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .intro-row { grid-template-columns: 1fr; } }
+
+  .section-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 2rem 2rem 1.5rem; margin-bottom: 1.75rem;
+  }
+  .section-num { color: var(--coral); font-weight: 700; font-size: 0.95rem; }
+  .section-title { color: var(--purple); font-size: 1.4rem; margin: 0.2rem 0 0.5rem; padding-bottom: 0.65rem;
+                   border-bottom: 2px solid var(--purple); }
+  .section-desc { font-style: italic; color: var(--muted-purple); font-size: 0.95rem; margin-bottom: 1.4rem; }
+
+  label { display: block; font-weight: 700; font-size: 0.98rem; margin-bottom: 0.4rem; color: var(--dark-text); }
+  .field { margin-bottom: 1.4rem; }
+  .field .hint { font-size: 0.82rem; color: var(--muted-purple); font-weight: normal; font-style: italic; margin-top: 0.25rem; }
+
+  input[type="text"], input[type="email"], input[type="date"], textarea {
+    width: 100%; font-family: 'Georgia', serif; font-size: 1rem; color: var(--dark-text);
+    border: 1px solid #ddd6d0; border-radius: 8px; padding: 0.65rem 0.8rem; background: var(--bg);
+    outline: none; transition: border-color 0.2s;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea:focus {
+    border-color: var(--coral);
+  }
+  textarea { min-height: 4.5rem; resize: vertical; }
+
+  .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; }
+  th { background: #ece5f5; color: var(--purple); text-align: left; font-size: 0.85rem;
+       padding: 0.6rem 0.6rem; border: 1px solid #ddd6d0; white-space: nowrap; }
+  td { border: 1px solid #ddd6d0; padding: 0.4rem; }
+  td input { border: none; background: transparent; padding: 0.4rem; font-size: 0.92rem; }
+  td input:focus { background: #fff; border-radius: 4px; }
+
+  .add-row-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: 1.5px dashed var(--purple);
+    color: var(--purple); font-family: 'Georgia', serif; font-size: 0.88rem; font-weight: 700;
+    padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+  }
+  .add-row-btn:hover { background: var(--purple); color: var(--white); }
+
+  .upload-box {
+    background: #f6f2fb; border: 1.5px dashed var(--purple); border-radius: 10px;
+    padding: 1.4rem 1.5rem; margin-bottom: 1.4rem;
+  }
+  .upload-box-title { font-weight: 700; color: var(--purple); font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .upload-box-desc { font-size: 0.9rem; color: #555; margin-bottom: 0.9rem; line-height: 1.55; }
+  .upload-box input[type="text"] { background: var(--white); }
+
+  .cta-button {
+    display: block; width: 100%; background: var(--coral); color: var(--white); border: 2px solid var(--coral);
+    padding: 1.1rem 2rem; font-size: 1.1rem; font-family: 'Georgia', serif; font-weight: 700;
+    border-radius: 50px; cursor: pointer; transition: all 0.3s ease; margin-top: 0.5rem;
+  }
+  .cta-button:hover { background: transparent; color: var(--coral); }
+
+  .submit-block { text-align: center; margin-top: 0.5rem; }
+  .submit-note { font-size: 0.85rem; color: var(--muted-purple); margin-top: 1rem; }
+  .submit-error {
+    display: none; background: #fdecea; color: #b13b2d; border-radius: 8px; padding: 0.9rem 1.1rem;
+    font-size: 0.92rem; margin-top: 1.2rem; text-align: left;
+  }
+
+  .success-panel { display: none; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 3rem 2rem; text-align: center; }
+  .success-panel .check { width: 56px; height: 56px; border-radius: 50%; background: var(--gradient); color: var(--white);
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem; }
+  .success-panel h2 { color: var(--blue); font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .success-panel p { color: #555; max-width: 480px; margin: 0 auto; }
+
+  footer { background: var(--blue); color: var(--white); text-align: center; padding: 2.5rem 2rem;
+           font-size: 0.9rem; border-top: 3px solid var(--coral); }
+  select { width: 100%; font-family: 'Georgia', serif; font-size: 1rem; color: var(--dark-text); border: 1px solid #ddd6d0; border-radius: 8px; padding: 0.65rem 0.8rem; background: var(--bg); outline: none; }
+  select:focus { border-color: var(--coral); }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1.4rem; }
+  .checks label { display: flex; gap: 0.6rem; align-items: flex-start; font-weight: 400; font-size: 0.93rem; margin: 0; cursor: pointer; }
+  .checks input { margin-top: 0.35rem; accent-color: var(--coral); flex: none; }
+  .rate-row { display: grid; grid-template-columns: 1fr 130px; gap: 1rem; align-items: center; margin-bottom: 0.7rem; }
+  .rate-row label { margin: 0; font-weight: 400; }
+  @media (max-width: 600px) { .checks { grid-template-columns: 1fr; } .rate-row { grid-template-columns: 1fr 110px; } .hero h1 { font-size: 1.9rem; } }
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1rem; }
+  .plat-row { border: 1px solid #ddd6d0; border-radius: 8px; padding: 0.55rem 0.8rem; background: var(--bg); }
+  .plat-row.on { border-color: var(--coral); background: var(--white); }
+  .plat-row label.plat-top { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 0.95rem; margin: 0; cursor: pointer; }
+  .plat-row .plat-top input { accent-color: var(--coral); }
+  .plat-row .plat-handle { display: none; margin-top: 0.5rem; }
+  .plat-row.on .plat-handle { display: block; }
+  #creator-block { display: none; }
+  @media (max-width: 600px) { .plat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="logo">MIRJ CREATIVE</div>
+  <h1>Audit Intake</h1>
+  <p>This is where we learn how your business really runs, before we diagnose it. Be specific, and know that "not sure" is a fine answer anywhere.</p>
+</div>
+<div class="content">
+  <form id="intake-form">
+    <div class="intro-card">
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="business-name">Business Name</label>
+          <input type="text" id="business-name" name="Business Name" required>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="completed-by">Completed By / Role</label>
+          <input type="text" id="completed-by" name="Completed By / Role" required>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+          <div class="hint">So we can follow up and send next steps.</div>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="phone">Best phone or contact method (optional)</label>
+          <input type="text" id="phone" name="Phone or contact method">
+        </div>
+      </div>
+      <div class="intro-row single">
+        <div class="field" style="margin-bottom:0;">
+          <label for="audit-type">Which audit did you book?</label>
+          <select id="audit-type" name="Audit booked" required><option value="" disabled selected>Select one</option><option>Operations &amp; AI Automation Audit</option><option>The Influencer Audit</option></select>
+        </div>
+      </div>
+      <div class="intro-row single">
+        <div class="field" style="margin-bottom:0;">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="Date" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card" id="creator-block">
+      <div class="section-num">Creators</div>
+      <div class="section-title">Where You Create</div>
+      <div class="section-desc">Select every platform you post on and add your handle for each. Describe the rest of the questions in terms of your creator business, including brand deals, content, and income.</div>
+      <div class="plat-grid" id="plat-grid"></div>
+      <input type="hidden" name="Platforms and handles" id="plat-summary">
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">1</div>
+      <div class="section-title">Business Snapshot</div>
+      <div class="section-desc">The basics, so we know the shape of the business before we go deep.</div>
+
+      <div class="field">
+        <label>In a sentence or two, what does your business do?</label>
+        <textarea name="1. What the business does" required></textarea>
+      </div>
+      <div class="field">
+        <label>What industry or type of business is this?</label>
+        <input type="text" name="1. Industry or type of business" required>
+      </div>
+      <div class="field">
+        <label>What stage is the business at?</label>
+        <select name="1. Business stage" required><option value="" disabled selected>Select one</option><option>Early stage (0 to 2 years)</option><option>Growth stage (2 to 5 years)</option><option>Established (5+ years)</option></select>
+      </div>
+      <div class="field">
+        <label>How many people are on your team? Include contractors, part time help, and virtual assistants.</label>
+        <select name="1. Team size" required><option value="" disabled selected>Select one</option><option>Just me</option><option>2 to 5 people</option><option>6 to 10 people</option><option>11 to 25 people</option><option>26 or more people</option></select>
+      </div>
+      <div class="field">
+        <label>What locations, sites, or service areas does the business operate in?</label>
+        <input type="text" name="1. Locations or service areas" required>
+      </div>
+      <div class="field">
+        <label>What is the busiest season, week, or day, and why?</label>
+        <textarea name="1. Busiest season, week, or day" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">2</div>
+      <div class="section-title">Roles and Responsibilities</div>
+      <div class="section-desc">Fill in every role currently being filled, even informally. Include roles one person is covering out of necessity, not just what's on an org chart.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Role / Title</th><th>Who Currently Holds It</th><th>Core Responsibilities</th><th>Hours / Week</th></tr>
+          </thead>
+          <tbody id="roles-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('roles-table','Role',['Role / Title', 'Who Currently Holds It', 'Core Responsibilities', 'Hours / Week'])">+ Add Role</button>
+
+      <div class="field" style="margin-top:1.5rem;">
+        <label>Which of these roles exist only in one person's head, meaning if that person left tomorrow, the work would stop or suffer?</label>
+        <textarea name="2. Roles that exist only in one person's head"></textarea>
+      </div>
+      <div class="field">
+        <label>Where are two or more people currently doing the same task without a clear owner? (optional)</label>
+        <textarea name="2. Duplicate ownership"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">3</div>
+      <div class="section-title">Daily Operations Flow</div>
+      <div class="section-desc">Walk through a normal day or shift from open to close, in order.</div>
+
+      <div class="field">
+        <label>What are the first tasks completed at the start of a day or shift?</label>
+        <textarea name="3. Start of day" required></textarea>
+      </div>
+      <div class="field">
+        <label>What happens in the middle of a typical day, the bulk of the work?</label>
+        <textarea name="3. Middle of day" required></textarea>
+      </div>
+      <div class="field">
+        <label>What are the last tasks completed before closing out a day or shift?</label>
+        <textarea name="3. End of day" required></textarea>
+      </div>
+      <div class="field">
+        <label>What tasks happen automatically or out of habit, without being written down anywhere?</label>
+        <textarea name="3. Automatic or habitual tasks" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">4</div>
+      <div class="section-title">Client or Customer Journey</div>
+      <div class="section-desc">Trace one client or customer from first contact through to completed service or delivery.</div>
+
+      <div class="field">
+        <label>How does a new client or customer first find or contact the business?</label>
+        <textarea name="4. First contact" required></textarea>
+      </div>
+      <div class="field">
+        <label>What happens between first contact and the client saying yes? Quotes, consultations, contracts, payment.</label>
+        <textarea name="4. Contact to yes" required></textarea>
+      </div>
+      <div class="field">
+        <label>What does onboarding or intake look like once someone signs on?</label>
+        <textarea name="4. Onboarding" required></textarea>
+      </div>
+      <div class="field">
+        <label>What does delivery look like from start to finish?</label>
+        <textarea name="4. Delivery" required></textarea>
+      </div>
+      <div class="field">
+        <label>What happens after delivery? Follow up, check ins, renewals, referrals requested.</label>
+        <textarea name="4. After delivery" required></textarea>
+      </div>
+      <div class="field">
+        <label>Where do clients most often get confused, frustrated, or drop off?</label>
+        <textarea name="4. Where clients get stuck" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">5</div>
+      <div class="section-title">Tools and Systems</div>
+      <div class="section-desc">List every platform, app, or system you use, even spreadsheets and paper logs.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tool or Platform</th><th>What It Is Used For</th><th>Who Uses It</th><th>Paid or Free</th></tr>
+          </thead>
+          <tbody id="tools-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('tools-table','Tool',['Tool or Platform', 'What It Is Used For', 'Who Uses It', 'Paid or Free'])">+ Add Tool</button>
+
+      <div class="field" style="margin-top:1.5rem;"></div>
+      <div class="field">
+        <label>Which of these tools talk to each other automatically, and which require manual re entry of the same information?</label>
+        <textarea name="5. Tools that talk to each other" required></textarea>
+      </div>
+      <div class="field">
+        <label>Are there any homemade workarounds, personal spreadsheets, sticky notes, or text reminders that are not official but that someone relies on daily? (optional)</label>
+        <textarea name="5. Homemade workarounds"></textarea>
+      </div>
+      <div class="field">
+        <label>How well is each area working today? (1 is struggling, 5 is running smoothly)</label>
+        <div class="rate-row"><label>Internal communication</label><select name="5. Rating: Internal communication"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="rate-row"><label>Project and task tracking</label><select name="5. Rating: Project and task tracking"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="rate-row"><label>Client experience and delivery</label><select name="5. Rating: Client experience and delivery"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="rate-row"><label>Team clarity (who does what)</label><select name="5. Rating: Team clarity (who does what)"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="rate-row"><label>Financial tracking and visibility</label><select name="5. Rating: Financial tracking and visibility"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="rate-row"><label>Overall day to day operations</label><select name="5. Rating: Overall day to day operations"><option value="">Rate 1 to 5</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">6</div>
+      <div class="section-title">AI and Automation</div>
+      <div class="section-desc">Where you are with AI today, and where you would love to hand work off.</div>
+
+      <div class="field">
+        <label>Are you or your team using any AI tools today? Which ones, who uses them, and for what?</label>
+        <textarea name="6. AI tools in use" required></textarea>
+        <div class="hint">If not, that is a fine answer.</div>
+      </div>
+      <div class="field">
+        <label>Which tasks would you most love to hand off to AI or automation?</label>
+        <textarea name="6. Tasks to hand off" required></textarea>
+      </div>
+      <div class="field">
+        <label>Have you tried to automate anything before? What worked, and what did not? (optional)</label>
+        <textarea name="6. AI past experience"></textarea>
+      </div>
+      <div class="field">
+        <label>How comfortable are you with AI tools right now?</label>
+        <select name="6. Comfort with AI" required><option value="" disabled selected>Select one</option><option>Brand new to it</option><option>Curious, but have not started</option><option>Using it occasionally</option><option>Using it regularly</option></select>
+      </div>
+      <div class="field">
+        <label>Is there any information that must never go into an AI tool, such as client records, financial data, or health information? (optional)</label>
+        <textarea name="6. Data and privacy limits"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">7</div>
+      <div class="section-title">Communication Channels</div>
+      <div class="section-desc">How information actually moves, not how it's supposed to move.</div>
+
+      <div class="field">
+        <label>How does the team communicate internally day to day? In person, text, email, group chat, or a project management tool.</label>
+        <textarea name="7. Internal communication" required></textarea>
+      </div>
+      <div class="field">
+        <label>How does the business communicate with clients or customers, and which channel is used for what?</label>
+        <textarea name="7. Client communication" required></textarea>
+      </div>
+      <div class="field">
+        <label>What important information tends to get lost, delayed, or miscommunicated most often?</label>
+        <textarea name="7. Information that gets lost" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">8</div>
+      <div class="section-title">Financial and Administrative Operations</div>
+      <div class="section-desc">The money and paperwork side of the business.</div>
+
+      <div class="field">
+        <label>Who handles invoicing, payment collection, and bookkeeping, and what tools do they use?</label>
+        <textarea name="8. Invoicing and bookkeeping" required></textarea>
+      </div>
+      <div class="field">
+        <label>Who handles payroll or contractor payments, and on what schedule? (optional)</label>
+        <textarea name="8. Payroll or contractor pay"></textarea>
+      </div>
+      <div class="field">
+        <label>What recurring bills, subscriptions, or vendor payments need to be tracked? (optional)</label>
+        <textarea name="8. Recurring bills"></textarea>
+      </div>
+      <div class="field">
+        <label>What financial reporting currently happens, and who sees it? (optional)</label>
+        <textarea name="8. Financial reporting"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">9</div>
+      <div class="section-title">Recurring Tasks and Cadence</div>
+      <div class="section-desc">Everything that happens on a schedule, mapped to who owns it and what it touches.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Task / Process</th><th>Frequency</th><th>Owner</th><th>Tool(s) Used</th></tr>
+          </thead>
+          <tbody id="tasks-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('tasks-table','Task',['Task / Process', 'Frequency', 'Owner', 'Tool(s) Used'])">+ Add Task</button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">10</div>
+      <div class="section-title">Documentation Status</div>
+      <div class="section-desc">What's actually written down versus what lives only in someone's memory.</div>
+
+      <div class="field">
+        <label>What processes already have written instructions, checklists, or SOPs? Where are they stored? (optional)</label>
+        <textarea name="10. Existing documentation"></textarea>
+      </div>
+      <div class="upload-box">
+        <div class="upload-box-title">Share your existing documents</div>
+        <p class="upload-box-desc">If any SOPs, checklists, process docs, screenshots, or org charts already exist as files, we would rather read them directly than have you retype them here.</p>
+        <div class="field" style="margin-bottom:0.9rem;">
+          <label>Link to your existing documents</label>
+          <input type="text" name="10. Link to existing documents" placeholder="Google Drive folder, Dropbox, Notion, Loom, etc.">
+          <div class="hint">A folder link covering everything is easiest. Set sharing to "anyone with the link can view" so we are not stuck requesting access.</div>
+        </div>
+        <p class="upload-box-desc" style="margin-bottom:0;">No link to share? Email files to <a href="mailto:hello@mirjcreative.com" style="color:var(--purple);">hello@mirjcreative.com</a> with your business name in the subject line, and we will match them up with this form.</p>
+      </div>
+      <div class="field">
+        <label>What processes have never been written down anywhere?</label>
+        <textarea name="10. Undocumented processes" required></textarea>
+      </div>
+      <div class="field">
+        <label>How is a new hire or new contractor currently trained? Is there a formal process, or is it shadowing and word of mouth? (optional)</label>
+        <textarea name="10. New hire training"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">11</div>
+      <div class="section-title">Pain Points and Bottlenecks</div>
+      <div class="section-desc">Where the friction actually is, in plain language.</div>
+
+      <div class="field">
+        <label>Check every area where you feel stress, confusion, or things slipping through the cracks</label>
+        <div class="checks"><label><input type="checkbox" name="11. Friction areas" value="Day to day task management"> Day to day task management</label><label><input type="checkbox" name="11. Friction areas" value="Client communication and follow up"> Client communication and follow up</label><label><input type="checkbox" name="11. Friction areas" value="Onboarding new clients or customers"> Onboarding new clients or customers</label><label><input type="checkbox" name="11. Friction areas" value="Onboarding new team members or contractors"> Onboarding new team members or contractors</label><label><input type="checkbox" name="11. Friction areas" value="Tracking project timelines and deadlines"> Tracking project timelines and deadlines</label><label><input type="checkbox" name="11. Friction areas" value="Managing invoices, payments, or cash flow"> Managing invoices, payments, or cash flow</label><label><input type="checkbox" name="11. Friction areas" value="Repeating the same work that could be a process"> Repeating the same work that could be a process</label><label><input type="checkbox" name="11. Friction areas" value="Knowing who is responsible for what"> Knowing who is responsible for what</label><label><input type="checkbox" name="11. Friction areas" value="Using too many tools that do not talk to each other"> Using too many tools that do not talk to each other</label><label><input type="checkbox" name="11. Friction areas" value="Getting things done but not knowing if it is efficient"> Getting things done but not knowing if it is efficient</label><label><input type="checkbox" name="11. Friction areas" value="Delivering consistent quality across the team"> Delivering consistent quality across the team</label><label><input type="checkbox" name="11. Friction areas" value="Finding information when you need it"> Finding information when you need it</label></div>
+      </div>
+      <div class="field">
+        <label>What breaks down first when the business gets busy or someone is out sick or on vacation?</label>
+        <textarea name="11. When it gets busy" required></textarea>
+      </div>
+      <div class="field">
+        <label>What is the single biggest source of stress or burnout on the team right now?</label>
+        <textarea name="11. Biggest stress" required></textarea>
+      </div>
+      <div class="field">
+        <label>Describe a moment in the last 30 days when something fell apart or felt harder than it should have.</label>
+        <textarea name="11. Moment it fell apart" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">12</div>
+      <div class="section-title">Goals for This Engagement</div>
+      <div class="section-desc">What a successful outcome looks like, in your own words.</div>
+
+      <div class="field">
+        <label>What would a successful audit outcome look like to you?</label>
+        <textarea name="12. Successful outcome" required></textarea>
+      </div>
+      <div class="field">
+        <label>If we could only solve one problem, what would it be?</label>
+        <textarea name="12. One problem" required></textarea>
+      </div>
+      <div class="field">
+        <label>Are there any constraints we should know about? Budget limits, tools you cannot change, team dynamics, timeline pressures.</label>
+        <textarea name="12. Constraints" required></textarea>
+      </div>
+      <div class="field">
+        <label>What are you not willing to change, even if it would be more efficient? Culture, client experience, personal involvement. (optional)</label>
+        <textarea name="12. Not willing to change"></textarea>
+      </div>
+      <div class="field">
+        <label>Ideal timeline or any hard deadlines (optional)</label>
+        <input type="text" name="12. Timeline">
+      </div>
+      <div class="field">
+        <label>How do you prefer to receive your findings? (optional)</label>
+        <select name="12. Preferred deliverable format"><option value="" disabled selected>Select one</option><option>Written report</option><option>Live walkthrough call</option><option>A mix of both</option></select>
+      </div>
+      <div class="field">
+        <label>Who else should we loop in? Names, roles, and preferred contact methods. (optional)</label>
+        <textarea name="12. Others to loop in"></textarea>
+      </div>
+      <div class="field">
+        <label>How did you hear about MIRJ Creative? (optional)</label>
+        <select name="12. How you heard about MIRJ Creative"><option value="" disabled selected>Select one</option><option>Instagram or social media</option><option>LinkedIn</option><option>Referral from someone I know</option><option>Google or web search</option><option>Other</option></select>
+      </div>
+      <div class="field">
+        <label>Anything else we should know before we begin? (optional)</label>
+        <textarea name="12. Anything else"></textarea>
+      </div>
+    </div>
+
+    <div class="submit-block">
+      <button type="submit" class="cta-button" id="submit-btn">Submit Intake Form</button>
+      <p class="submit-note">Everything here stays between us and shapes exactly where we focus first. Please submit at least 48 hours before your first call.</p>
+      <div class="submit-error" id="submit-error">Something went wrong sending this form. Please check your connection and try again, or email hello@mirjcreative.com directly and we will get you sorted.</div>
+    </div>
+  </form>
+
+  <div class="success-panel" id="success-panel">
+    <div class="check">&#10003;</div>
+    <h2>Received. Thank you.</h2>
+    <p>Your intake has been submitted. We will review everything before your first call. If you have not booked your call yet, <a href="https://calendar.app.google/HPbR75GEgbWkPyev5" target="_blank" style="color:#F48575;font-weight:700;">schedule it here</a>.</p>
+  </div>
+
+</div>
+
+<footer>
+  MIRJ Creative | Operations and Automation Consulting
+</footer>
+
+<script>
+  var rowCounts = { 'roles-table': 0, 'tasks-table': 0, 'tools-table': 0 };
+
+  function addRow(tableBodyId, prefix, columns) {
+    var tbody = document.getElementById(tableBodyId);
+    rowCounts[tableBodyId] += 1;
+    var n = rowCounts[tableBodyId];
+    var tr = document.createElement('tr');
+    columns.forEach(function (col) {
+      var td = document.createElement('td');
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.name = prefix + ' ' + n + ' / ' + col;
+      input.setAttribute('aria-label', prefix + ' ' + n + ' ' + col);
+      td.appendChild(input);
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
+
+  var ROLE_COLS = ['Title', 'Who Currently Holds It', 'Core Responsibilities', 'Hours / Week'];
+  var TASK_COLS = ['Name', 'Frequency', 'Owner', 'Tool(s) Used'];
+  var TOOL_COLS = ['Name', 'Used For', 'Who Uses It', 'Paid or Free'];
+  for (var i = 0; i < 4; i++) { addRow('roles-table', 'Role', ROLE_COLS); }
+  for (var i = 0; i < 5; i++) { addRow('tasks-table', 'Task', TASK_COLS); }
+  for (var i = 0; i < 6; i++) { addRow('tools-table', 'Tool', TOOL_COLS); }
+
+  try { document.getElementById('date').valueAsDate = new Date(); } catch (e) {}
+
+  var PLATFORMS = ['Instagram', 'TikTok', 'YouTube', 'Threads', 'Pinterest', 'LinkedIn', 'X', 'Facebook', 'Twitch', 'Other'];
+  (function () {
+    var grid = document.getElementById('plat-grid');
+    PLATFORMS.forEach(function (name, i) {
+      var row = document.createElement('div'); row.className = 'plat-row';
+      var top = document.createElement('label'); top.className = 'plat-top';
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = 'plat-' + i;
+      top.appendChild(cb); top.appendChild(document.createTextNode(name));
+      var h = document.createElement('input'); h.type = 'text'; h.className = 'plat-handle'; h.id = 'handle-' + i;
+      h.placeholder = name === 'Other' ? 'Platform name and handle' : '@yourhandle';
+      h.setAttribute('aria-label', name + ' handle');
+      cb.addEventListener('change', function () { row.classList.toggle('on', cb.checked); if (cb.checked) h.focus(); });
+      row.appendChild(top); row.appendChild(h); grid.appendChild(row);
+    });
+    document.getElementById('audit-type').addEventListener('change', function () {
+      document.getElementById('creator-block').style.display = this.value === 'The Influencer Audit' ? 'block' : 'none';
+    });
+  })();
+
+  function collectPlatforms() {
+    var out = [];
+    PLATFORMS.forEach(function (name, i) {
+      if (document.getElementById('plat-' + i).checked) out.push({ p: name, h: document.getElementById('handle-' + i).value.trim() });
+    });
+    return out;
+  }
+
+  document.getElementById('intake-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var errorBox = document.getElementById('submit-error');
+    var btn = document.getElementById('submit-btn');
+    errorBox.style.display = 'none';
+    if (document.getElementById('audit-type').value === 'The Influencer Audit') {
+      var plats = collectPlatforms();
+      if (!plats.length || plats.some(function (x) { return !x.h; })) {
+        errorBox.textContent = 'Please select at least one platform and add your handle for each one you select.';
+        errorBox.style.display = 'block';
+        document.getElementById('creator-block').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      document.getElementById('plat-summary').value = plats.map(function (x) { return x.p + ': ' + x.h; }).join('; ');
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var data = new FormData(form);
+    var businessName = data.get('Business Name') || 'Unknown Business';
+    data.append('_subject', (data.get('Audit booked') || 'Audit') + ' Intake: ' + businessName);
+
+    fetch('https://formspree.io/f/mgodgnqd', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('success-panel').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    }).catch(function () {
+      errorBox.textContent = 'Something went wrong sending this form. Please check your connection and try again, or email hello@mirjcreative.com directly and we will get you sorted.';
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Submit Intake Form';
+    });
+  });
+</script>
+
+</body>
+</html>
