@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://mirjcreative.com/influencer-audit.html">
+<meta name="description" content="Operations infrastructure for social media creators who want structure without handing their business to an agency. The Influencer Audit from MIRJ Creative.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MIRJ Creative">
+<meta property="og:title" content="The Influencer Audit | MIRJ Creative">
+<meta property="og:description" content="Operations infrastructure for social media creators who want structure without handing their business to an agency. The Influencer Audit from MIRJ Creative.">
+<meta property="og:url" content="https://mirjcreative.com/influencer-audit.html">
+<meta property="og:image" content="https://mirjcreative.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Influencer Audit | MIRJ Creative">
+<meta name="twitter:description" content="Operations infrastructure for social media creators who want structure without handing their business to an agency. The Influencer Audit from MIRJ Creative.">
+<meta name="twitter:image" content="https://mirjcreative.com/assets/og-image.png">
+<title>The Influencer Audit | MIRJ Creative</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+  --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+}
+body { font-family: 'Georgia', serif; color: var(--dark-text); background: #faf8f6; line-height: 1.7; }
+a { color: inherit; }
+
+.top-link {
+  display: block;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  font-size: 0.85rem;
+  background: var(--dark-text);
+  color: var(--cream);
+  text-decoration: none;
+}
+.top-link:hover { color: var(--white); }
+
+.hero { background: var(--gradient); color: var(--white); padding: 4.5rem 2rem 3.5rem; text-align: center; }
+.hero .logo { font-size: 1.5rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 1.5rem; }
+.hero .eyebrow {
+  text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;
+  color: var(--cream); margin-bottom: 1rem;
+}
+.hero h1 { font-size: 2.4rem; margin-bottom: 1rem; line-height: 1.2; max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero p { font-size: 1.1rem; color: var(--cream); max-width: 600px; margin: 0 auto; }
+.hero .hero-note { font-size: 0.95rem; margin-top: 1.1rem; font-style: italic; color: var(--white); opacity: 0.92; }
+
+.content { max-width: 800px; margin: 0 auto; padding: 3.5rem 2rem; }
+
+.section-label {
+  text-transform: uppercase; letter-spacing: 2px; font-size: 0.78rem;
+  color: var(--coral); text-align: center; margin-bottom: 0.4rem;
+}
+.section-title { color: var(--blue); font-size: 1.5rem; margin-bottom: 1.2rem; text-align: center; }
+
+.intro { font-size: 1.08rem; color: #444; text-align: center; max-width: 660px; margin: 0 auto 3rem; }
+
+.card-box {
+  background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2rem 2.2rem; margin-bottom: 3rem;
+}
+.card-box ul { list-style: none; }
+.card-box li { padding-left: 1.8rem; position: relative; margin-bottom: 0.9rem; font-size: 1rem; color: #444; }
+.card-box li:last-child { margin-bottom: 0; }
+.card-box li::before {
+  content: "\2713"; position: absolute; left: 0; color: var(--coral); font-weight: 700;
+}
+.card-box .turnaround {
+  margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid #eee;
+  font-size: 0.95rem; color: var(--muted-purple);
+}
+
+.process-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem;
+}
+@media (max-width: 640px) { .process-grid { grid-template-columns: 1fr; } }
+.process-card {
+  background: var(--white); border-left: 4px solid var(--purple); border-radius: 10px;
+  padding: 1.4rem 1.6rem; box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.process-card .num { font-size: 0.78rem; letter-spacing: 2px; color: var(--muted-purple); margin-bottom: 0.2rem; }
+.process-card h3 { color: var(--blue); font-size: 1.05rem; margin-bottom: 0.4rem; }
+.process-card p { color: #555; font-size: 0.92rem; }
+
+.method-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem;
+}
+@media (max-width: 640px) { .method-grid { grid-template-columns: 1fr; } }
+.method-card {
+  background: var(--white); border-left: 4px solid var(--coral); border-radius: 10px;
+  padding: 1.3rem 1.6rem; box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.method-card h3 { color: var(--blue); font-size: 1.05rem; margin-bottom: 0.3rem; }
+.method-card p { color: #555; font-size: 0.92rem; }
+
+.stay-creator {
+  background: #f4f1eb; border-radius: 12px; padding: 1.6rem 2rem; margin-bottom: 3rem;
+  font-size: 0.98rem; color: #444; text-align: center;
+}
+.stay-creator strong { color: var(--blue); }
+
+.pricing-card {
+  background: var(--white); border-radius: 14px; box-shadow: 0 6px 26px rgba(0,0,0,0.1);
+  padding: 2.4rem; text-align: center; margin-bottom: 2rem;
+}
+.pricing-card .price { font-size: 1.9rem; color: var(--coral); font-weight: 700; margin-bottom: 0.3rem; }
+.pricing-card .price-sub { font-size: 0.95rem; color: var(--muted-purple); margin-bottom: 1.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+.pricing-card .fine-print { font-size: 0.88rem; color: #777; margin-top: 1.2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+.cta-button {
+  display: inline-block; background: var(--coral); color: var(--white);
+  padding: 1rem 2.6rem; text-decoration: none; border-radius: 50px; font-size: 1.05rem;
+  border: 2px solid var(--coral); font-weight: 600; transition: all 0.3s ease;
+}
+.cta-button:hover { background: transparent; color: var(--coral); }
+
+.upsell-note {
+  background: #f4f1eb; border-radius: 12px; padding: 1.6rem 2rem; text-align: center;
+  font-size: 0.95rem; color: #444; margin-bottom: 3rem;
+}
+.upsell-note a { color: var(--blue); font-weight: 700; text-decoration: none; }
+.upsell-note a:hover { text-decoration: underline; }
+
+footer {
+  background: var(--blue); color: var(--white); text-align: center; padding: 2.2rem 2rem;
+  font-size: 0.9rem; border-top: 3px solid var(--coral);
+}
+footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8rem; }
+  .content { padding: 2.5rem 1.2rem; }
+  .card-box { padding: 1.6rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<a class="top-link" href="/">&larr; Back to mirjcreative.com</a>
+
+<section class="hero">
+  <div class="logo">MIRJ CREATIVE</div>
+  <div class="eyebrow">The Influencer Audit</div>
+  <h1>Operations infrastructure for creators who run their own show.</h1>
+  <p>You built your audience on your own terms. The Influencer Audit builds the systems underneath it, so your content, partnerships, and income can grow without you holding every piece in your head.</p>
+  <p class="hero-note">No agency. No manager. A clear plan that you run yourself.</p>
+</section>
+
+<div class="content">
+
+  <p class="intro">Creators get asked to be the talent, the editor, the strategist, the salesperson, and the bookkeeper all at once. We find what is slowing your creative operations down and give you the structure to keep scaling, without giving up control of your business.</p>
+
+  <div class="section-label">Who it is for</div>
+  <h2 class="section-title">Creators ready to scale</h2>
+  <div class="card-box">
+    <ul>
+      <li>Social media creators and influencers publishing on one or more platforms</li>
+      <li>Creators whose brand deals, affiliate income, or products have outgrown a notes app and a spreadsheet</li>
+      <li>Solo creators and small creator teams who want structure without handing the business to an agency or a manager</li>
+    </ul>
+  </div>
+
+  <div class="section-label">What we look at</div>
+  <h2 class="section-title">Built around your business</h2>
+  <div class="card-box">
+    <p style="color:#444; font-size:1rem; text-align:center;">Every creator business runs differently, so we do not hand you a generic checklist. Your intake shapes what we look at, and the specifics are shared once you book. What you can count on is a clear read on where your content, partnerships, and income are held together by hand, and what to do about it.</p>
+  </div>
+
+  <div class="section-label">How we work</div>
+  <h2 class="section-title">Our four step method</h2>
+  <div class="method-grid">
+    <div class="method-card">
+      <h3>Diagnose</h3>
+      <p>We map how your content and business run today.</p>
+    </div>
+    <div class="method-card">
+      <h3>Clarify</h3>
+      <p>We name the root cause behind each bottleneck.</p>
+    </div>
+    <div class="method-card">
+      <h3>Realign</h3>
+      <p>We match your systems to your priorities and growth goals.</p>
+    </div>
+    <div class="method-card">
+      <h3>Recommend</h3>
+      <p>You get specific next steps, ranked by impact.</p>
+    </div>
+  </div>
+
+  <div class="section-label">What you receive</div>
+  <h2 class="section-title">A plan you can start on right away</h2>
+  <div class="card-box">
+    <ul>
+      <li>Written findings and recommendations built from your intake</li>
+      <li>A prioritized action plan you can start on right away</li>
+      <li>A 45 minute debrief call to walk through everything</li>
+    </ul>
+    <div class="turnaround">Delivered within five business days of your intake submission.</div>
+  </div>
+
+  <div class="stay-creator">
+    <strong>You stay the creator.</strong> The Influencer Audit is not content creation, editing, scheduling, account management, or talent representation. We do not step in for your voice or your creative direction. We build the structure around you.
+  </div>
+
+  <div class="pricing-card">
+    <div class="price">Let's scope it together</div>
+    <div class="price-sub">Every audit is scoped after a short discovery call, so you only invest in what fits your business.</div>
+    <a class="cta-button" href="/book.html?type=consult">Book a Discovery Call</a>
+    <div class="fine-print">After your discovery call, we will send next steps and your intake, so we start from what is true for your business.</div>
+  </div>
+
+  <div class="upsell-note">
+    Want support putting the plan into motion? The Influencer Audit is the first step into our <a href="/growth-systems-retainer.html">Operations and Automation Retainer</a>. Your findings become the roadmap, so ongoing support starts from your real priorities instead of a blank page.
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 MIRJ Creative LLC. Crafted with intention.</p>
+  <p><a href="mailto:hello@mirjcreative.com">hello@mirjcreative.com</a></p>
+</footer>
+
+</body>
+</html>
