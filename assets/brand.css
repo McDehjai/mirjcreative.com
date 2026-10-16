@@ -1,0 +1,12 @@
+/* MIRJ Creative brand header logo. Wide lockup on desktop, combined mark on phones. */
+.logo, .nav-logo { display: flex; align-items: center; line-height: 0; text-decoration: none; }
+.logo img, .nav-logo img { display: block; width: auto; }
+.logo .lg-wide, .nav-logo .lg-wide { height: 40px; }
+.logo .lg-mark, .nav-logo .lg-mark { display: none; height: 40px; }
+@media (max-width: 640px) {
+  .logo .lg-wide, .nav-logo .lg-wide { display: none; }
+  .logo .lg-mark, .nav-logo .lg-mark { display: block; }
+}
+
+/* Header sits directly on the page gradient, no solid stripe. */
+header:has(nav) { position: absolute !important; background: transparent !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; box-shadow: none !important; }
