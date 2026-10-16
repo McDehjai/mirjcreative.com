@@ -7,3 +7,6 @@
   .logo .lg-wide, .nav-logo .lg-wide { display: none; }
   .logo .lg-mark, .nav-logo .lg-mark { display: block; }
 }
+
+/* Header sits directly on the page gradient, no solid stripe. */
+header:has(nav) { position: absolute !important; background: transparent !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; box-shadow: none !important; }
