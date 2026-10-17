@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Follow Up Intake | MIRJ Creative</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --coral: #F48575; --blue: #2846ab; --purple: #8354c5;
+    --muted-purple: #8487ae; --cream: #dfd7ae; --dark-text: #1a1a1a;
+    --white: #ffffff; --bg: #faf8f6;
+    --gradient: linear-gradient(135deg, #2846ab 0%, #8354c5 50%, #e84cb5 100%);
+  }
+  body { font-family: 'Georgia', serif; color: var(--dark-text); background: var(--bg); line-height: 1.7; }
+
+  .hero { background: var(--gradient); color: var(--white); padding: 4rem 2rem 3.5rem; text-align: center; }
+  .hero .logo { font-size: 1.4rem; font-weight: 700; color: var(--coral); letter-spacing: 2px; margin-bottom: 1.75rem; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 0.85rem; line-height: 1.2; }
+  .hero p { font-size: 1.05rem; color: var(--cream); max-width: 620px; margin: 0 auto; font-style: italic; }
+
+  .content { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .intro-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 1.75rem 2rem; margin-bottom: 2.25rem;
+  }
+  .intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.1rem; }
+  .intro-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .intro-row { grid-template-columns: 1fr; } }
+
+  .section-card {
+    background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 2rem 2rem 1.5rem; margin-bottom: 1.75rem;
+  }
+  .section-num { color: var(--coral); font-weight: 700; font-size: 0.95rem; }
+  .section-title { color: var(--purple); font-size: 1.4rem; margin: 0.2rem 0 0.5rem; padding-bottom: 0.65rem;
+                   border-bottom: 2px solid var(--purple); }
+  .section-desc { font-style: italic; color: var(--muted-purple); font-size: 0.95rem; margin-bottom: 1.4rem; }
+
+  label { display: block; font-weight: 700; font-size: 0.98rem; margin-bottom: 0.4rem; color: var(--dark-text); }
+  .field { margin-bottom: 1.4rem; }
+  .field .hint { font-size: 0.82rem; color: var(--muted-purple); font-weight: normal; font-style: italic; margin-top: 0.25rem; }
+
+  input[type="text"], input[type="email"], input[type="date"], textarea {
+    width: 100%; font-family: 'Georgia', serif; font-size: 1rem; color: var(--dark-text);
+    border: 1px solid #ddd6d0; border-radius: 8px; padding: 0.65rem 0.8rem; background: var(--bg);
+    outline: none; transition: border-color 0.2s;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea:focus {
+    border-color: var(--coral);
+  }
+  textarea { min-height: 4.5rem; resize: vertical; }
+
+  .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; }
+  th { background: #ece5f5; color: var(--purple); text-align: left; font-size: 0.85rem;
+       padding: 0.6rem 0.6rem; border: 1px solid #ddd6d0; white-space: nowrap; }
+  td { border: 1px solid #ddd6d0; padding: 0.4rem; }
+  td input { border: none; background: transparent; padding: 0.4rem; font-size: 0.92rem; }
+  td input:focus { background: #fff; border-radius: 4px; }
+
+  .add-row-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: 1.5px dashed var(--purple);
+    color: var(--purple); font-family: 'Georgia', serif; font-size: 0.88rem; font-weight: 700;
+    padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+  }
+  .add-row-btn:hover { background: var(--purple); color: var(--white); }
+
+  .upload-box {
+    background: #f6f2fb; border: 1.5px dashed var(--purple); border-radius: 10px;
+    padding: 1.4rem 1.5rem; margin-bottom: 1.4rem;
+  }
+  .upload-box-title { font-weight: 700; color: var(--purple); font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .upload-box-desc { font-size: 0.9rem; color: #555; margin-bottom: 0.9rem; line-height: 1.55; }
+  .upload-box input[type="text"] { background: var(--white); }
+
+  .cta-button {
+    display: block; width: 100%; background: var(--coral); color: var(--white); border: 2px solid var(--coral);
+    padding: 1.1rem 2rem; font-size: 1.1rem; font-family: 'Georgia', serif; font-weight: 700;
+    border-radius: 50px; cursor: pointer; transition: all 0.3s ease; margin-top: 0.5rem;
+  }
+  .cta-button:hover { background: transparent; color: var(--coral); }
+
+  .submit-block { text-align: center; margin-top: 0.5rem; }
+  .submit-note { font-size: 0.85rem; color: var(--muted-purple); margin-top: 1rem; }
+  .submit-error {
+    display: none; background: #fdecea; color: #b13b2d; border-radius: 8px; padding: 0.9rem 1.1rem;
+    font-size: 0.92rem; margin-top: 1.2rem; text-align: left;
+  }
+
+  .success-panel { display: none; background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 3rem 2rem; text-align: center; }
+  .success-panel .check { width: 56px; height: 56px; border-radius: 50%; background: var(--gradient); color: var(--white);
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem; }
+  .success-panel h2 { color: var(--blue); font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .success-panel p { color: #555; max-width: 480px; margin: 0 auto; }
+
+  footer { background: var(--blue); color: var(--white); text-align: center; padding: 2.5rem 2rem;
+           font-size: 0.9rem; border-top: 3px solid var(--coral); }
+  .attach { margin-top:0.55rem; font-size:0.85rem; color:var(--muted-purple); }
+  .attach span { display:block; font-style:italic; margin-bottom:0.25rem; }
+  .attach input[type=file] { font-family:Georgia,serif; font-size:0.85rem; max-width:100%; }
+</style>
+<script>
+  /* Gate: this page is only reachable after signing the agreement. */
+  (function () {
+    var ok = false;
+    try {
+      var t = parseInt(localStorage.getItem('mirj_agreement_probono'), 10);
+      ok = t && (Date.now() - t) < 1000 * 60 * 60 * 24 * 30;
+    } catch (err) { ok = true; }
+    if (!ok) {
+      document.documentElement.style.display = 'none';
+      window.location.replace('agreement.html?service=probono&intake=followup');
+    }
+  })();
+</script>
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/brand/mark-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand/brand.css">
+<meta property="og:image" content="https://mirjcreative.com/assets/brand/link-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mirjcreative.com/assets/brand/link-preview.png">
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo"><img class="lg-wide" src="/assets/brand/lockup-header-reversed.svg" alt="MIRJ Creative"><img class="lg-mark" src="/assets/brand/mark-combined.svg" alt="MIRJ Creative"></div>
+  <h1>Follow Up Intake</h1>
+  <p>We have read everything you shared. These are the questions that will fill the remaining gaps in how your organization runs today.</p>
+</div>
+
+<div class="content">
+
+  <form id="intake-form">
+
+    <div class="intro-card">
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="org-name">Organization Name</label>
+          <input type="text" id="org-name" name="Organization Name" required>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="completed-by">Completed By / Role</label>
+          <input type="text" id="completed-by" name="Completed By / Role" required>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+          <div class="hint">So we can follow up and send next steps.</div>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="Date" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">A</div>
+      <div class="section-title">Structure and Decision Making</div>
+      <div class="section-desc">We want to build on the right foundation, so we start with how the organization is set up and who decides.</div>
+      <div class="field">
+        <label>1. How is the organization set up today, legally and in practice? If there is more than one entity, brand, or program arm, how do they relate, which one should this work focus on, and who makes the final call on decisions that affect them?</label>
+        <textarea name="Q1. Organization structure and decision making" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q1 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>2. Who is the day to day point of contact for this work, and who else needs to approve or be kept in the loop? Include names, roles, and preferred contact methods.</label>
+        <textarea name="Q2. Point of contact and stakeholders" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q2 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">B</div>
+      <div class="section-title">Roles and Board</div>
+      <div class="section-desc">Include roles being covered informally or out of necessity, not just what is on paper.</div>
+      <div class="field">
+        <label>3. Fill in every role currently being filled across staff, volunteers, and committees.</label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Title</th><th>Who Currently Holds It</th><th>Core Responsibilities</th><th>Hours / Week</th></tr></thead>
+          <tbody id="roles-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('roles-table','Role',['Title', 'Who Currently Holds It', 'Core Responsibilities', 'Hours / Week'])" style="margin-bottom:0.8rem;">+ Add Role</button>
+      <div class="attach" style="margin-bottom:1.4rem;"><span>Or upload documents that explain this</span><input type="file" name="Q3 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      <div class="field">
+        <label>4. Which roles or tasks live only in one person's head, meaning the work would stop or suffer if that person left tomorrow? Where are two or more people doing the same task without a clear owner?</label>
+        <textarea name="Q4. Single person dependencies and duplicate ownership" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q4 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>5. Where does board recruitment stand today? Include current members and terms, how many seats you are trying to fill, how new members will be onboarded, and how often the board meets.</label>
+        <textarea name="Q5. Board status, recruitment, and cadence" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q5 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>6. Which governance documents exist today, such as bylaws, conflict of interest policy, committee descriptions, or a succession plan, and where are they stored?</label>
+        <textarea name="Q6. Governance documents" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q6 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">C</div>
+      <div class="section-title">Programs and Members</div>
+      <div class="section-desc">Walk through how things actually run, not how they are supposed to run.</div>
+      <div class="field">
+        <label>7. Pick your main recurring program, such as your flagship program, event series, or service, and walk us through it from planning to follow up. Who does what, in what order, and with which tools?</label>
+        <textarea name="Q7. Program walkthrough start to finish" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q7 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>8. Trace one member or participant from first contact through active involvement. How do they find you, what does onboarding look like, and what happens when they go quiet or leave?</label>
+        <textarea name="Q8. Member journey" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q8 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>9. Where do programs and the member experience slow down, get confusing, or create the most friction?</label>
+        <textarea name="Q9. Program and member friction points" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q9 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">D</div>
+      <div class="section-title">Funding and Partnerships</div>
+      <div class="section-desc">The money and relationship side of the organization.</div>
+      <div class="field">
+        <label>10. What does funding look like today versus what is planned? Cover dues or membership, subscriptions, sponsorships, grants, and events. Who handles bookkeeping and payment collection, with which tools, and what financial reporting is shared with the board or funders?</label>
+        <textarea name="Q10. Funding today vs planned, bookkeeping, and reporting" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q10 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>11. Which partnerships are active today, which are in conversation, and which are still ideas? For each, note whether anything is in writing and who on your team owns the relationship.</label>
+        <textarea name="Q11. Partnership status and ownership" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q11 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">E</div>
+      <div class="section-title">Tools and Communication</div>
+      <div class="section-desc">How the tools and the information actually behave day to day.</div>
+      <div class="field">
+        <label>12. List every platform, app, or system in use, including spreadsheets and paper logs.</label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Platform Name</th><th>Purpose</th><th>Who Has Access</th><th>Monthly Cost</th></tr></thead>
+          <tbody id="tools-table"></tbody>
+        </table>
+      </div>
+      <button type="button" class="add-row-btn" onclick="addRow('tools-table','Tool',['Platform Name', 'Purpose', 'Who Has Access', 'Monthly Cost'])" style="margin-bottom:0.8rem;">+ Add Tool</button>
+      <div class="attach" style="margin-bottom:1.4rem;"><span>Or upload documents that explain this</span><input type="file" name="Q12 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      <div class="field">
+        <label>13. Which tools talk to each other automatically, and which require typing the same information in twice? Are there any homemade workarounds, personal spreadsheets, or text reminders that someone relies on daily?</label>
+        <textarea name="Q13. Tool integration, manual re-entry, and workarounds" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q13 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>14. How do the team and board communicate day to day, and how do you communicate with members? What important information gets lost, delayed, or miscommunicated most often?</label>
+        <textarea name="Q14. Communication channels and where information gets lost" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q14 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>15. What processes are already written down, and where are they stored? Which important processes have never been written down anywhere?</label>
+        <textarea name="Q15. Documentation status and gaps" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q15 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="upload-box">
+        <div class="upload-box-title">Share additional documents</div>
+        <p class="upload-box-desc">You have already shared several documents with us, so there is no need to resend those. Use this space only for anything additional that we do not already have, such as bylaws, policies, or onboarding materials.</p>
+        <div class="field" style="margin-bottom:0.5rem;">
+          <label>Link to additional documents</label>
+          <input type="text" name="Link to additional documents" placeholder="Google Drive folder, Dropbox, Notion, etc.">
+          <div class="hint">Set sharing to "anyone with the link can view" so we are not stuck requesting access. Or email files to <a href="mailto:hello@mirjcreative.com" style="color:var(--purple);">hello@mirjcreative.com</a> with your organization name in the subject line.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-num">F</div>
+      <div class="section-title">Pain Points and Goals</div>
+      <div class="section-desc">Where the friction is, and what success looks like in your own words.</div>
+      <div class="field">
+        <label>16. What breaks down first when the organization gets busy or a key person is unavailable?</label>
+        <textarea name="Q16. What breaks down first" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q16 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>17. If one thing could be fixed, automated, or taken off someone's plate immediately, what would it be?</label>
+        <textarea name="Q17. One thing to fix first" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q17 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>18. What does the organization need to look like in 90 days, and in six months, for this work to have been worth it?</label>
+        <textarea name="Q18. 90 day and six month outcome" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q18 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>19. What deadlines or milestone dates should we plan around, and how would you like to receive findings? For example a written report, a live walkthrough, or a board presentation.</label>
+        <textarea name="Q19. Deadlines and preferred delivery format" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q19 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>20. What are you not willing to change, even if it would be more efficient? Anything else we should know before we begin?</label>
+        <textarea name="Q20. What not to change and anything else" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q20 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+      <div class="field">
+        <label>21. How would you like to work with us? Tell us what kind of support fits best, such as a written audit and roadmap you run yourself, hands on help building and setting up systems, ongoing support on a retainer, or something else. Include your preferred meeting rhythm and communication style, and any budget or capacity limits we should know about.</label>
+        <textarea name="Q21. How the client wants to work with MIRJ Creative" placeholder="Type your answer, upload documents below, or both."></textarea>
+        <div class="attach"><span>Or upload documents that explain this</span><input type="file" name="Q21 Upload" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.png,.jpg,.jpeg,.pptx"></div>
+      </div>
+    </div>
+
+    <div class="submit-block">
+      <button type="submit" class="cta-button" id="submit-btn">Submit Follow Up Intake</button>
+      <p class="submit-note">You can type your answers, upload documents that explain your business, or do both on any question. Keep uploads under 10 MB total, and email larger files to hello@mirjcreative.com. Everything here stays between us and shapes exactly where we focus first. No pressure to have perfect answers, "N/A" or "not sure" is a fine answer anywhere.</p>
+      <div class="submit-error" id="submit-error">Something went wrong sending this form. Please check your connection and try again, or email hello@mirjcreative.com directly and we will get you sorted.</div>
+    </div>
+  </form>
+
+  <div class="success-panel" id="success-panel">
+    <div class="check">&#10003;</div>
+    <h2>Received. Thank you.</h2>
+    <p>Your follow up intake has been submitted. We will review everything before our next conversation and reach out if we need anything else.</p>
+  </div>
+
+</div>
+
+<footer>
+  MIRJ Creative | Operations and Automation Consulting
+</footer>
+
+<script>
+  var rowCounts = { 'roles-table': 0, 'tools-table': 0 };
+
+  function addRow(tableBodyId, prefix, columns) {
+    var tbody = document.getElementById(tableBodyId);
+    rowCounts[tableBodyId] += 1;
+    var n = rowCounts[tableBodyId];
+    var tr = document.createElement('tr');
+    columns.forEach(function (col) {
+      var td = document.createElement('td');
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.name = prefix + ' ' + n + ' - ' + col;
+      td.appendChild(input);
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
+
+  // Seed starting rows to match the printed form
+  for (var i = 0; i < 6; i++) { addRow('roles-table', 'Role', ['Title', 'Who Currently Holds It', 'Core Responsibilities', 'Hours / Week']); }
+  for (var i = 0; i < 6; i++) { addRow('tools-table', 'Tool', ['Platform Name', 'Purpose', 'Who Has Access', 'Monthly Cost']); }
+
+  document.getElementById('intake-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var errorBox = document.getElementById('submit-error');
+    var btn = document.getElementById('submit-btn');
+    errorBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var data = new FormData(form);
+    var orgName = data.get('Organization Name') || 'Unknown Organization';
+    data.append('_subject', 'Follow Up Intake, ' + orgName);
+
+    fetch('https://formspree.io/f/mgodgnqd', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('success-panel').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    }).catch(function () {
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Submit Follow Up Intake';
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -251,6 +251,15 @@ var requestedService = getParam('service');
 var serviceKey = SERVICES.hasOwnProperty(requestedService) ? requestedService : 'audit';
 var service = SERVICES[serviceKey];
 
+/* Pro bono agreement can route to different intake forms. Whitelisted names only. */
+var INTAKES = {
+  followup: 'https://mirjcreative.com/client-follow-up-intake.html'
+};
+var requestedIntake = getParam('intake');
+if (serviceKey === 'probono' && INTAKES.hasOwnProperty(requestedIntake)) {
+  service = Object.assign({}, service, { redirectUrl: INTAKES[requestedIntake] });
+}
+
 document.getElementById('page-title').textContent = service.name + ': Engagement Agreement';
 document.getElementById('step-subtitle').textContent = service.stepSubtitle;
 document.getElementById('service-name').textContent = service.name;
@@ -294,6 +303,7 @@ document.getElementById('agreement-form').addEventListener('submit', function (e
   }).catch(function () {
     /* proceed even if logging fails, so a backend hiccup never blocks the client */
   }).finally(function () {
+    try { localStorage.setItem('mirj_agreement_' + serviceKey, String(Date.now())); } catch (err) { /* storage blocked, intake page will allow through */ }
     window.location.href = service.redirectUrl || service.stripeUrl;
   });
 });
