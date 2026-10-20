@@ -218,7 +218,7 @@ footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
   <div class="download-panel" id="confirmation-panel">
     <div class="check">&#10003;</div>
     <h2>You're all set.</h2>
-    <p>Your answers are in. Your Brand Clarity Brief and Action Brief will be built from them and emailed to you within 5 business days.</p>
+    <p>Your answers are in. Your Brand Clarity Brief and Action Brief will be built from them and emailed to you within <span id="delivery-days">5</span> business days.</p>
     <p>Questions in the meantime? Email <a href="mailto:hello@mirjcreative.com" style="color:#2846ab; font-weight:600;">hello@mirjcreative.com</a>.</p>
   </div>
 
@@ -271,5 +271,8 @@ footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
 })();
 </script>
 
+<script>
+(function(){try{if(new URLSearchParams(window.location.search).get("plan")==="bundle"){var d=document.getElementById("delivery-days");if(d){d.textContent="10";}}}catch(e){}})();
+</script>
 </body>
 </html>
