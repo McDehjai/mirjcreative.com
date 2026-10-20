@@ -431,6 +431,29 @@
     padding: 26px;
     font-size: 13px;
   }
+
+  /* Clarity Systems Starter banner */
+  .starter-banner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+    align-items: center;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: #fff;
+    border-radius: 16px;
+    padding: 30px 34px;
+    margin: -60px 0 32px;
+    position: relative;
+    box-shadow: 0 10px 34px rgba(40,70,171,0.22);
+  }
+  .starter-banner + .product-card { margin-top: 0; }
+  .starter-banner .sb-kicker { color: var(--coral); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .starter-banner h2 { font-size: 28px; margin-bottom: 6px; }
+  .starter-banner .sb-sub { font-style: italic; color: var(--cream); margin-bottom: 8px; }
+  .starter-banner p { font-size: 15px; color: #EDE9F7; }
+  .starter-banner .sb-cta { display: block; text-align: center; background: var(--coral); color: #fff; font-weight: 700; padding: 15px 22px; border-radius: 8px; }
+  .starter-banner .sb-note { text-align: center; font-size: 12px; color: #EDE9F7; margin-top: 8px; }
+  @media (max-width: 700px) { .starter-banner { grid-template-columns: 1fr; padding: 24px; } }
 </style>
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/assets/brand/mark-favicon.svg">
@@ -454,6 +477,18 @@
   </section>
 
   <div class="wrap">
+    <div class="starter-banner">
+      <div>
+        <div class="sb-kicker" id="sb-kicker">Coming Friday, October 23</div>
+        <h2>Clarity Systems Starter</h2>
+        <div class="sb-sub">A brand audit plus the systems kit to run it.</div>
+        <p>The Brand Clarity Audit and the Groundwork Kit together, for founders and creators. Launch pricing for the first 15 buyers.</p>
+      </div>
+      <div>
+        <a class="sb-cta" id="sb-cta" href="/clarity-systems-starter.html">See what is coming</a>
+        <div class="sb-note" id="sb-note">Opens Friday at 12:00 PM ET</div>
+      </div>
+    </div>
     <div class="product-card">
       <div class="product-visual">
         <div class="kicker">MIRJ Creative Product</div>
@@ -516,7 +551,7 @@
       <div>
         <span class="service-badge">Self Service</span>
         <h2>Brand Clarity Audit</h2>
-        <p>A complete brand brief, built around your answers. Complete a nine question intake on your own time and receive a full Brand Clarity Brief covering your identity, voice and visual direction, plus a prioritized Action Brief. No call required.</p>
+        <p>A complete brand brief, built around your answers. Complete a nine section intake on your own time and receive a full Brand Clarity Brief covering your identity, voice and visual direction, plus a prioritized Action Brief. No call required.</p>
         <div class="service-price">$375, a single payment. Delivered within 5 business days.</div>
       </div>
       <a href="/brand-clarity-audit.html" class="cta-button">See Details &amp; Start</a>
@@ -541,5 +576,15 @@
     MIRJ CREATIVE &nbsp;·&nbsp; mirjcreative.com
   </footer>
 
+<script>
+(function () {
+  // After Friday Oct 23, 2026 at 12:00 PM EDT the banner switches from teaser to live wording.
+  if (Date.now() >= Date.UTC(2026, 9, 23, 16, 0, 0)) {
+    document.getElementById("sb-kicker").textContent = "Now open";
+    document.getElementById("sb-cta").textContent = "Get the Starter";
+    document.getElementById("sb-note").textContent = "Launch pricing for the first 15 buyers";
+  }
+})();
+</script>
 </body>
 </html>
