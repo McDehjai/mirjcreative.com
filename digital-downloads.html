@@ -489,6 +489,29 @@
         <div class="sb-note" id="sb-note">Opens Friday at 12:00 PM ET</div>
       </div>
     </div>
+    <div class="product-card" id="bundle-card" style="display:none;margin-bottom:32px;">
+      <div class="product-visual">
+        <div class="kicker">New Bundle</div>
+        <h2>Clarity Systems Starter</h2>
+        <p>Get clear on your brand, then build the systems to run your business. The Brand Clarity Audit and the Groundwork Kit together, so you know who you are in the market and have the foundation to serve your first clients.</p>
+      </div>
+      <div class="product-details">
+        <div class="launch-badge">First 15 Buyers, Then $474</div>
+        <div class="price-row">
+          <span class="price-now">$250</span>
+          <span class="price-was">$525</span>
+        </div>
+        <ul class="includes">
+          <li>Brand Clarity Audit: a nine question intake, then your written Brand Clarity Brief and prioritized Action Brief, no call required</li>
+          <li>Groundwork Kit: the printable workbook, clickable module slides, and the Notion dashboard with client onboarding, Client Tracker and Invoice Tracker</li>
+          <li>Your Brand Clarity Brief arrives by email within 10 business days of your submitted intake</li>
+          <li>30 days of email support on the kit, up to 3 questions</li>
+        </ul>
+        <a href="https://buy.stripe.com/bJedR31va8wQ0v04su7ss06" class="cta-button">Get the Bundle</a>
+        <div class="fine-print">Instant access to your downloads after purchase. One time purchase, no updates included.</div>
+      </div>
+    </div>
+
     <div class="product-card">
       <div class="product-visual">
         <div class="kicker">MIRJ Creative Product</div>
@@ -546,6 +569,8 @@
 (function () {
   // After Friday Oct 23, 2026 at 12:00 PM EDT the banner switches from teaser to live wording.
   if (Date.now() >= Date.UTC(2026, 9, 23, 16, 0, 0)) {
+    var bn=document.querySelector(".starter-banner"); if(bn){bn.style.display="none";}
+    var bc=document.getElementById("bundle-card"); if(bc){bc.style.display="";}
     document.getElementById("sb-kicker").textContent = "Now open";
     document.getElementById("sb-cta").textContent = "Get the Starter";
     document.getElementById("sb-note").textContent = "Launch pricing for the first 15 buyers";
