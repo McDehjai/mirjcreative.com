@@ -52,6 +52,7 @@ form {
 }
 .form-group textarea { min-height: 100px; resize: vertical; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--coral); }
+.req { color: var(--coral); font-weight: 700; }
 .optional-tag { color: var(--muted-purple); font-weight: normal; font-size: 0.82rem; }
 
 .submit-btn {
@@ -101,12 +102,12 @@ footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
 <section class="hero">
   <div class="logo"><img class="lg-wide" src="/assets/brand/lockup-header-reversed.svg" alt="MIRJ Creative"><img class="lg-mark" src="/assets/brand/mark-combined.svg" alt="MIRJ Creative"></div>
   <h1>Your Brand Clarity Audit intake.</h1>
-  <p>The same nine section deep dive MIRJ Creative used to build its own brand core, now built around your business. Plan on 20 to 30 minutes, and feel free to draft your answers elsewhere first if that is easier.</p>
+  <p>The same nine section deep dive MIRJ Creative used to build its own brand core, now built around your business. Plan on 30 to 45 minutes, and feel free to draft your answers elsewhere first if that is easier. The story and the words you own and avoid take the longest.</p>
 </section>
 
 <div class="content">
 
-  <div class="progress-note">Nine short sections. Answer in your own words, there are no wrong answers here, only <strong>specific</strong> or <strong>vague</strong>, and specific is what makes your brief sharp.</div>
+  <div class="progress-note"><strong>Fields marked <span class="req">*</span> are required.</strong> Nine short sections. Answer in your own words, there are no wrong answers here, only <strong>specific</strong> or <strong>vague</strong>, and specific is what makes your brief sharp.</div>
 
   <form id="intake-form" action="https://formspree.io/f/mgaelowr" method="POST">
     <input type="hidden" name="_subject" value="Brand Clarity Audit Intake">
@@ -116,86 +117,90 @@ footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
 
     <div class="form-section-label first">The basics</div>
     <div class="form-group">
-      <label for="fullName">Full name</label>
+      <label for="fullName">Full name <span class="req">*</span></label>
       <input type="text" id="fullName" name="fullName" required>
     </div>
     <div class="form-group">
-      <label for="business">Business name</label>
+      <label for="business">Business name <span class="req">*</span></label>
       <input type="text" id="business" name="business" required>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
+      <label for="email">Email <span class="req">*</span></label>
       <input type="email" id="email" name="email" required>
     </div>
 
     <div class="form-section-label">01. Established identity</div>
     <div class="form-section-sub">What already exists, so we build on it instead of starting over.</div>
     <div class="form-group">
-      <label for="establishedIdentity">Do you already have a logo, brand colors, fonts, or a tagline in place</label>
+      <label for="establishedIdentity">Do you already have a logo, brand colors, fonts, or a tagline in place <span class="req">*</span></label>
       <textarea id="establishedIdentity" name="establishedIdentity" placeholder="Describe what already exists today, including anything you like or dislike about it. If you are starting from a blank page, say so." required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="brandPresence">Where does your brand show up online today, and does your logo look the same everywhere <span class="req">*</span></label>
+      <textarea id="brandPresence" name="brandPresence" placeholder="For example, your website, Instagram, LinkedIn, email, a booking page. Tell us where it matches and where it does not." required></textarea>
     </div>
 
     <div class="form-section-label">02. Audience</div>
     <div class="form-section-sub">Who we serve.</div>
     <div class="form-group">
-      <label for="audience">Describe your ideal client or customer</label>
+      <label for="audience">Describe your ideal client or customer <span class="req">*</span></label>
       <textarea id="audience" name="audience" placeholder="Who are they, what stage of their journey are they in when they find you, and what do they care about most" required></textarea>
     </div>
 
     <div class="form-section-label">03. Transformation</div>
     <div class="form-section-sub">The change you create.</div>
     <div class="form-group">
-      <label for="transformationBefore">Before working with you, what does your client's world look like</label>
+      <label for="transformationBefore">Before working with you, what does your client's world look like <span class="req">*</span></label>
       <textarea id="transformationBefore" name="transformationBefore" required></textarea>
     </div>
     <div class="form-group">
-      <label for="transformationAfter">After working with you, what has changed for them</label>
+      <label for="transformationAfter">After working with you, what has changed for them <span class="req">*</span></label>
       <textarea id="transformationAfter" name="transformationAfter" required></textarea>
     </div>
 
     <div class="form-section-label">04. Field</div>
     <div class="form-section-sub">Brands your audience already trusts.</div>
     <div class="form-group">
-      <label for="field">Name two or three brands or businesses your audience already knows or compares you to</label>
+      <label for="field">Name two or three brands or businesses your audience already knows or compares you to <span class="req">*</span></label>
       <textarea id="field" name="field" placeholder="What do you do differently from each of them" required></textarea>
     </div>
 
     <div class="form-section-label">05. Feeling</div>
     <div class="form-section-sub">The feeling in the room.</div>
     <div class="form-group">
-      <label for="feeling">How should someone feel after interacting with your brand</label>
+      <label for="feeling">How should someone feel after interacting with your brand <span class="req">*</span></label>
       <textarea id="feeling" name="feeling" placeholder="On your site, in a meeting, using your product or service" required></textarea>
     </div>
 
     <div class="form-section-label">06. Position</div>
     <div class="form-section-sub">How you would say what makes you different, in your own words.</div>
     <div class="form-group">
-      <label for="position">In one or two sentences, what makes you different from others who do something similar <span class="optional-tag">(optional)</span></label>
-      <textarea id="position" name="position" placeholder="Take your best shot, we will sharpen this either way"></textarea>
+      <label for="position">In one or two sentences, what makes you different from others who do something similar <span class="req">*</span></label>
+      <textarea id="position" name="position" placeholder="Take your best shot, we will sharpen this either way" required></textarea>
     </div>
 
     <div class="form-section-label">07. Personality</div>
     <div class="form-section-sub">If your brand were a person.</div>
     <div class="form-group">
-      <label for="personality">What three to five traits would define your brand's personality</label>
+      <label for="personality">What three to five traits would define your brand's personality <span class="req">*</span></label>
       <input type="text" id="personality" name="personality" placeholder="For example, direct, grounded, warm, quietly confident" required>
     </div>
 
     <div class="form-section-label">08. Vocabulary</div>
     <div class="form-section-sub">Words we own, words we reject.</div>
     <div class="form-group">
-      <label for="wordsOwn">What words or phrases do you want associated with your brand</label>
+      <label for="wordsOwn">What words or phrases do you want associated with your brand <span class="req">*</span></label>
       <input type="text" id="wordsOwn" name="wordsOwn" required>
     </div>
     <div class="form-group">
-      <label for="wordsReject">What words or phrases do you want to avoid</label>
+      <label for="wordsReject">What words or phrases do you want to avoid <span class="req">*</span></label>
       <input type="text" id="wordsReject" name="wordsReject" required>
     </div>
 
     <div class="form-section-label">09. The story</div>
     <div class="form-section-sub">Your 30 second story.</div>
     <div class="form-group">
-      <label for="story">How would you describe your business out loud to someone new, in about 30 seconds</label>
+      <label for="story">How would you describe your business out loud to someone new, in about 30 seconds <span class="req">*</span></label>
       <textarea id="story" name="story" placeholder="Write it exactly how you would actually say it" required></textarea>
     </div>
 
@@ -204,7 +209,11 @@ footer a { color: var(--coral); text-decoration: none; font-weight: 600; }
     <div class="form-group">
       <label for="existingAssets">Link to your current website, logo, or brand materials <span class="optional-tag">(optional)</span></label>
       <input type="url" id="existingAssets" name="existingAssets" placeholder="https://">
-      <div class="hint">If it is a shared drive folder, set sharing to anyone with the link can view.</div>
+      <div class="hint">Not sure how to share? Pick whichever is easiest. We only need to view, never edit.<br>
+        <strong>Google Drive:</strong> right click the file or folder, choose Share, and add hello@mirjcreative.com as a Viewer. Or set General access to Anyone with the link as Viewer, then paste the link here.<br>
+        <strong>Dropbox:</strong> click Share, enter hello@mirjcreative.com, and set it to Can view. Or create a view only link and paste it here.<br>
+        <strong>Canva:</strong> click Share, enter hello@mirjcreative.com, and set it to Can view. Or choose Anyone with the link can view.<br>
+        No files handy? Paste your website address instead. Please do not send passwords, login details or payment information. If we cannot open your link, we will email you to ask for access.</div>
     </div>
     <div class="form-group">
       <label for="notes">Anything else we should know <span class="optional-tag">(optional)</span></label>
