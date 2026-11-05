@@ -158,7 +158,12 @@ src="https://ct.pinterest.com/v3/?event=init&tid=2613892466117&noscript=1" />
 <div class="result-tier" id="result-tier"></div>
 <div class="result-score" id="result-score"></div>
 <p class="result-blurb" id="result-blurb"></p>
-<a href="/agreement.html?service=ai" class="cta-primary" id="cta-primary">Start Your Operations &amp; AI Automation Audit</a>
+<div class="result-win" id="result-win" style="text-align:left;background:#F3ECDF;border-left:4px solid #F48575;border-radius:8px;padding:1rem 1.2rem;margin:0 0 1.6rem 0;">
+<strong id="result-win-title" style="display:block;margin-bottom:0.4rem;color:#2846AB;"></strong>
+<span id="result-win-text"></span>
+</div>
+<p class="result-blurb" id="result-next" style="margin-bottom:1.2rem;"></p>
+<a href="/groundwork-kit.html" class="cta-primary" id="cta-primary">See the Groundwork Kit</a>
 </div>
 </div>
 </main>
@@ -176,7 +181,7 @@ var QUESTIONS = [
 "Meetings happen mainly to share status updates that should be automatic.",
 "You don't have clear visibility into where the team's time actually goes each week.",
 "Growth has created more chaos rather than more capacity.",
-"You haven't seriously evaluated where AI or automation could take manual work off your plate."
+"You know what is slowing the business down, but you have not had the time or support to fix it."
 ];
 
 var SCALE = [
@@ -253,17 +258,32 @@ function getTier(score) {
 if (score <= 17) {
 return {
 tier: 'Solid Foundation',
-blurb: "Your workflow is mostly holding up. Keep an eye on the friction points you flagged so they don't grow as you scale."
+blurb: "Your workflow is mostly holding up. The friction points you flagged are small today, but they tend to grow as you take on more clients, so this is the right time to get ahead of them.",
+winTitle: 'Your quick win: write down one process',
+win: "Pick the one task you repeat most each week. Write the steps in order, note who owns each step, and save it where your whole team can find it. Fifteen minutes now saves hours the next time someone new needs to run it.",
+next: "When you are ready to put simple systems behind the whole business, the Groundwork Kit gives you the setup, intake, and delivery templates already built.",
+href: '/groundwork-kit.html',
+cta: 'See the Groundwork Kit'
 };
 } else if (score <= 27) {
 return {
 tier: 'Friction Building',
-blurb: "There are real bottlenecks costing your team time every week. An audit now would help you fix them before they get more expensive."
+blurb: "There are real bottlenecks costing you time every week. The good news is that friction at this level is structural, which means it is fixable once you can see where it lives.",
+winTitle: 'Your quick win: find the handoff that keeps stalling',
+win: "Look at your last three projects and ask where work waited on a person, a reply, or a missing file. The spot that shows up twice is your first fix. Name an owner for it and give it a due date.",
+next: "A Brand Clarity Audit gives you a written brief and action brief that show where the gaps are and what to do first, so you are not guessing.",
+href: '/brand-clarity-audit.html',
+cta: 'See the Brand Clarity Audit'
 };
 } else {
 return {
 tier: 'High Friction',
-blurb: "Your workflow is actively costing you time and money. This is exactly what the Operations & AI Automation Audit is built to fix."
+blurb: "Your workflow is actively costing you time and money, and it is likely reaching clients as well as your own calendar. The sooner it is mapped, the less expensive it gets to fix.",
+winTitle: 'Your quick win: list every manual copy and paste step',
+win: "For one week, write down each time you move the same information between tools or retype it. Circle the three that happen most. Those three are your best candidates for automation and usually give back the most time.",
+next: "The Operations and AI Automation Audit maps these leaks, ranks them, and shows you what to automate first, with a plan you can act on right away.",
+href: '/agreement.html?service=ai',
+cta: 'Start Your Operations & AI Automation Audit'
 };
 }
 }
@@ -296,6 +316,12 @@ document.getElementById('lead-screen').classList.add('hidden');
 document.getElementById('result-tier').textContent = result.tier;
 document.getElementById('result-score').textContent = 'Your score: ' + finalScore + ' / 40';
 document.getElementById('result-blurb').textContent = result.blurb;
+document.getElementById('result-win-title').textContent = result.winTitle;
+document.getElementById('result-win-text').textContent = result.win;
+document.getElementById('result-next').textContent = result.next;
+var cta = document.getElementById('cta-primary');
+cta.setAttribute('href', result.href);
+cta.textContent = result.cta;
 document.getElementById('result-screen').classList.remove('hidden');
 window.scrollTo(0, 0);
 }
